@@ -12,6 +12,8 @@ const App = () => (
   <Router>
     <div className="app">
       <Routes>
+        console.log("App Component is Running");
+
         <Route exact path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/whoiam" element={<WhoIam />} />
