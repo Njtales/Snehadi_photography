@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Snehadi_photography/static/css/main.f3142d78.css",
-    "main.js": "/Snehadi_photography/static/js/main.2f259977.js",
+    "main.js": "/Snehadi_photography/static/js/main.224def71.js",
     "static/js/175.c4998f83.chunk.js": "/Snehadi_photography/static/js/175.c4998f83.chunk.js",
     "static/js/988.3690edef.chunk.js": "/Snehadi_photography/static/js/988.3690edef.chunk.js",
     "static/media/bump_img11.png": "/Snehadi_photography/static/media/bump_img11.59ec2b1c0affa8b37887.png",
@@ -73,18 +73,18 @@
     "static/media/slick.eot": "/Snehadi_photography/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/Snehadi_photography/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Snehadi_photography/static/media/slick.295183786cd8a1389865.woff",
-    "index.html": "/Snehadi_photography/index.html",
     "static/media/home_left_nav_svg.svg": "/Snehadi_photography/static/media/home_left_nav_svg.06f0b87e560a59f5afe0a54ede5ea5fa.svg",
+    "index.html": "/Snehadi_photography/index.html",
     "static/media/portfolio_left_nav_svg.svg": "/Snehadi_photography/static/media/portfolio_left_nav_svg.c838def14edbce6a1bcc456d015abf59.svg",
     "static/media/home_right_nav_svg.svg": "/Snehadi_photography/static/media/home_right_nav_svg.6d91819cce2913745f794083ccc32445.svg",
     "static/media/portfolio_right_nav_svg.svg": "/Snehadi_photography/static/media/portfolio_right_nav_svg.15c4c1b3898d9c9683b16ee93d0f6914.svg",
     "main.f3142d78.css.map": "/Snehadi_photography/static/css/main.f3142d78.css.map",
-    "main.2f259977.js.map": "/Snehadi_photography/static/js/main.2f259977.js.map",
+    "main.224def71.js.map": "/Snehadi_photography/static/js/main.224def71.js.map",
     "175.c4998f83.chunk.js.map": "/Snehadi_photography/static/js/175.c4998f83.chunk.js.map",
     "988.3690edef.chunk.js.map": "/Snehadi_photography/static/js/988.3690edef.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f3142d78.css",
-    "static/js/main.2f259977.js"
+    "static/js/main.224def71.js"
   ]
 }
