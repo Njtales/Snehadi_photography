@@ -206,7 +206,9 @@ body, html {
 
         .PageHeader-center-nav-logo {
           height: 45px;
-          width: 90px;
+          width: auto;
+          z-index: 2;
+          margin: 0 45px 0 45px;
           div, span {
             text-align: center;
             color: var(--darkgrey-color);

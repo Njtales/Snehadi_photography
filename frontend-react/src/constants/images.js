@@ -66,6 +66,9 @@ import sj_logo_cropped from '../assets/images/sj_logo_cropped.svg';
 import sj_logo from '../assets/images/sj_logo.svg';
 import sj_logo01 from '../assets/images/sj_logo01.svg';
 import sj_logo02 from '../assets/images/sj_logo02.svg';
+import child_icon from '../assets/images/child_icon.svg';
+
+
 
 export default {
   bump_img01,
@@ -135,5 +138,6 @@ export default {
   sj_logo_cropped,
   sj_logo,
   sj_logo01,
-  sj_logo02
+  sj_logo02,
+  child_icon
 };

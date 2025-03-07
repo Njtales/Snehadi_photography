@@ -22,7 +22,7 @@ return (
           <nav className="PageHeader-navigation">
             <div className="PageHeader-left-nav">
               <img 
-                src={images.portfolio_left_nav_svg}
+                src={images.portfolio_left_nav_svg} 
                 alt="portfolio_left_nav_svg"
                 className="PageHeader-svg-left-nav" />
               
@@ -50,7 +50,7 @@ return (
             <div className="PageHeader-center-nav">
               <a href="/home" className="PageHeader-center-nav-link">
                 <img 
-                  src={images.sj_logo}
+                  src={images.child_icon} // child_icon -- sj_logo
                   alt="SNEHAL JATALE PHOTOGRAPHY"
                   className="PageHeader-center-nav-logo" />
                 <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span>
