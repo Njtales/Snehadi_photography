@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Snehadi_photography/static/css/main.f3142d78.css",
-    "main.js": "/Snehadi_photography/static/js/main.92f8cf1f.js",
+    "main.js": "/Snehadi_photography/static/js/main.224def71.js",
     "static/js/175.c4998f83.chunk.js": "/Snehadi_photography/static/js/175.c4998f83.chunk.js",
     "static/js/988.3690edef.chunk.js": "/Snehadi_photography/static/js/988.3690edef.chunk.js",
     "static/media/bump_img11.png": "/Snehadi_photography/static/media/bump_img11.59ec2b1c0affa8b37887.png",
@@ -63,7 +63,7 @@
     "static/media/kids_img04.png": "/Snehadi_photography/static/media/kids_img04.f144a8dea65c03fe5ce8.png",
     "static/media/bump_img03.png": "/Snehadi_photography/static/media/bump_img03.6274f569d852f611d2c5.png",
     "static/media/bump_img06.png": "/Snehadi_photography/static/media/bump_img06.e1b26280858697cbf7c5.png",
-    "static/media/child_icon.svg": "/Snehadi_photography/static/media/child_icon.be46333f43d3dcca322e50701b263114.svg",
+    "static/media/child_icon.svg": "/Snehadi_photography/static/media/child_icon.200150cee938aae3f0ad2aa37c459782.svg",
     "static/media/sj_logo02.svg": "/Snehadi_photography/static/media/sj_logo02.d3314405f5c76e88dc64a3597c519707.svg",
     "static/media/sj_logo_cropped.svg": "/Snehadi_photography/static/media/sj_logo_cropped.55ea6986c656db1b5f3f1882093a0190.svg",
     "static/media/sj_logo.svg": "/Snehadi_photography/static/media/sj_logo.7bbe3059790661556c0ff2d285fe2919.svg",
@@ -79,12 +79,12 @@
     "static/media/home_right_nav_svg.svg": "/Snehadi_photography/static/media/home_right_nav_svg.6d91819cce2913745f794083ccc32445.svg",
     "static/media/portfolio_right_nav_svg.svg": "/Snehadi_photography/static/media/portfolio_right_nav_svg.15c4c1b3898d9c9683b16ee93d0f6914.svg",
     "main.f3142d78.css.map": "/Snehadi_photography/static/css/main.f3142d78.css.map",
-    "main.92f8cf1f.js.map": "/Snehadi_photography/static/js/main.92f8cf1f.js.map",
+    "main.224def71.js.map": "/Snehadi_photography/static/js/main.224def71.js.map",
     "175.c4998f83.chunk.js.map": "/Snehadi_photography/static/js/175.c4998f83.chunk.js.map",
     "988.3690edef.chunk.js.map": "/Snehadi_photography/static/js/988.3690edef.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f3142d78.css",
-    "static/js/main.92f8cf1f.js"
+    "static/js/main.224def71.js"
   ]
 }
