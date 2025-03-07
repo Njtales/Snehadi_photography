@@ -2,7 +2,7 @@
   "name": "photography-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://njtales.github.io/Snehadi_photography/",
+  "homepage": "https://njtales.github.io/Snehadi_photography",
   "dependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@sanity/client": "^6.10.0",
@@ -40,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
