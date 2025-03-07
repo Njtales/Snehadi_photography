@@ -2,7 +2,6 @@
   "name": "photography-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://njtales.github.io/Snehadi_photography/",
   "dependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@sanity/client": "^6.10.0",
