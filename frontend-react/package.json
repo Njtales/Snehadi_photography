@@ -2,7 +2,7 @@
   "name": "photography-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://njtales.github.io/Snehadi_photography",
+  "homepage": "https://njtales.github.io/Snehadi_photography/",
   "dependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@sanity/client": "^6.10.0",
@@ -29,12 +29,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -46,9 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "source-map-loader": "^4.0.2"
   }
 }
