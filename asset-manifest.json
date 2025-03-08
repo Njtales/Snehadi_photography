@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Snehadi_photography/static/css/main.f3142d78.css",
-    "main.js": "/Snehadi_photography/static/js/main.fa23bb8e.js",
+    "main.css": "/Snehadi_photography/static/css/main.eca35ec4.css",
+    "main.js": "/Snehadi_photography/static/js/main.8e6162b0.js",
     "static/js/796.594e4676.chunk.js": "/Snehadi_photography/static/js/796.594e4676.chunk.js",
     "static/js/165.b2907d03.chunk.js": "/Snehadi_photography/static/js/165.b2907d03.chunk.js",
     "static/js/453.e16c3784.chunk.js": "/Snehadi_photography/static/js/453.e16c3784.chunk.js",
@@ -79,14 +79,14 @@
     "static/media/portfolio_left_nav_svg.svg": "/Snehadi_photography/static/media/portfolio_left_nav_svg.c838def14edbce6a1bcc456d015abf59.svg",
     "static/media/home_right_nav_svg.svg": "/Snehadi_photography/static/media/home_right_nav_svg.6d91819cce2913745f794083ccc32445.svg",
     "static/media/portfolio_right_nav_svg.svg": "/Snehadi_photography/static/media/portfolio_right_nav_svg.15c4c1b3898d9c9683b16ee93d0f6914.svg",
-    "main.f3142d78.css.map": "/Snehadi_photography/static/css/main.f3142d78.css.map",
-    "main.fa23bb8e.js.map": "/Snehadi_photography/static/js/main.fa23bb8e.js.map",
+    "main.eca35ec4.css.map": "/Snehadi_photography/static/css/main.eca35ec4.css.map",
+    "main.8e6162b0.js.map": "/Snehadi_photography/static/js/main.8e6162b0.js.map",
     "796.594e4676.chunk.js.map": "/Snehadi_photography/static/js/796.594e4676.chunk.js.map",
     "165.b2907d03.chunk.js.map": "/Snehadi_photography/static/js/165.b2907d03.chunk.js.map",
     "453.e16c3784.chunk.js.map": "/Snehadi_photography/static/js/453.e16c3784.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3142d78.css",
-    "static/js/main.fa23bb8e.js"
+    "static/css/main.eca35ec4.css",
+    "static/js/main.8e6162b0.js"
   ]
 }
