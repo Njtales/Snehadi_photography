@@ -72,17 +72,22 @@ const Home = () => {
                 </div>
                   
               <a href="/WhoIAm" className="home-navsubmenu-link">WHO I AM</a>
-              <a href="/moreinfo" className="home-navsubmenu-link">MORE INFO</a>
+              <a  className="home-navsubmenu-link">MORE INFO</a>
                     <div className="home-navigation-submenu">
-                      <a href="/kindwords">Kind Words</a>
+                      <a href="/testimonial">Kind Words</a>
                       <a href="/pricing">Pricing</a>
-                      <a href="/book">Book</a>
+                      <a href="/contact">Book</a>
                     </div>
             </div>
-          <div className="home-center-nav">
-            <div>SNEHAL JATALE <br/>
-              <span>PHOTOGRAPHY</span></div>
-          </div>
+            <div className="PageHeaderhome-center-nav">
+              <a href="/" className="PageHeaderhome-center-nav-link">
+                <img 
+                  src={images.child_icon} // child_icon -- sj_logo
+                  alt="SNEHAL JATALE PHOTOGRAPHY"
+                  className="PageHeaderhome-center-nav-logo" />
+                <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span>
+                </a>
+            </div>
           <div className="home-scroll-indicator">
               <span>SCROLL FOR MORE</span>
               <div className="home-arrowdown"><IoIosArrowDown/></div>
@@ -330,11 +335,11 @@ const UpperFooter = () => {
             ))}
           </div>
         <a href="/whoiam">WHO I AM</a>
-          <a href="/moreinfo" className="footer-link">MORE INFO</a>
+          <a  className="footer-link">MORE INFO</a>
           <div className="footer-moreinfo-submenu footer-submenu-common">
-            <a href="/kindwords">Kind words</a>
+            <a href="/testimonial">Kind Words</a>
             <a href="/pricing">Pricing</a>
-            <a href="/book">Book</a>
+            <a href="/contact">Book</a>
           </div>
         <a href="/contact">CONTACT</a>
         <a href="/Testimonial">TESTIMONIALS</a>

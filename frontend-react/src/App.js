@@ -8,22 +8,23 @@ import Contactthankyou from './container/Contact/Contactthankyou';
 import Testimonials from './container/Testimonials/Testimonials';
 import './App.scss';
 
-const App = () => (
-  <Router>
-    <div className="app">
-      <Routes>
-        console.log("App Component is Running");
+const App = () => {
+  console.log("App Component is Running");
 
-        <Route exact path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/whoiam" element={<WhoIam />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/contact-thank-you" element={<Contactthankyou />} />
-        <Route path="/testimonial" element={<Testimonials />} />
-        {/* Add other routes here */}
-      </Routes>
-    </div>
-  </Router>
-);
+  return (
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/whoiam" element={<WhoIam />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact-thank-you" element={<Contactthankyou />} />
+          <Route path="/testimonial" element={<Testimonials />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
 export default App;

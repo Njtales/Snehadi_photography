@@ -157,22 +157,65 @@ body, html {
       }
     }
   }
-  
-  .home-scroll-indicator {
-    @include flex-center;
-    position: relative; 
-    bottom: -280%; 
-    left: 18%; 
-    transform: translateX(-50%); 
-    flex-direction: column;
-    width: 100%; 
-  
+}
+
+.PageHeaderhome-center-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  text-align: center; 
+  font-family: var(--font-Kalnia);
+  letter-spacing: 1.6px;
+  z-index: 5;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .PageHeaderhome-center-nav-link {
+    color: var(--darkgrey-color);
+    text-decoration: none;
+
+    .PageHeaderhome-center-nav-logo {
+      height: 45px;
+      width: auto;
+      margin-bottom: 10px;
+    }
+
+    h1, span {
+      text-align: center;
+      color: var(--darkgrey-color);
+      line-height: 1; 
+    }
+
     span {
-      text-transform: uppercase;
-      font-size: 0.8em;
-      color: var(--darkblack-color); 
+      font-size: 1.5em;
+      display: block; 
     }
   }
+}    
+
+.home-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 150%; // Adjust if necessary
+  left: 50%;
+  transform: translateX(-50%);
+
+  span {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: var(--darkblack-color); 
+  }
+}
+.home-arrowdown {
+  display: inline-block;
+  color: var(--darkgrey-color);
+  margin-top: 10px;
+  animation: bounceArrow 1s infinite; 
 }
 @keyframes bounceArrow {
   0%, 100% {
@@ -181,13 +224,6 @@ body, html {
   50% {
     transform: translateY(10px);
   }
-}
-
-.home-arrowdown {
-  display: inline-block;
-  color: var(--darkgrey-color);
-  margin-top: 10px;
-  animation: bounceArrow 1s infinite; 
 }
 
 @media (max-width: 768px) {

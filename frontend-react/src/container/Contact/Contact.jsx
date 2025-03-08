@@ -41,17 +41,17 @@ return (
                   <a href="/WhoIAm" className="PageHeader-link">WHO I AM</a>
                 </div>
               <div className="below-vertical-divider">
-                  <a href="/moreinfo" className="PageHeader-link">MORE INFO</a>
+                  <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
-                      <a href="/kindwords">Kind Words</a>
+                      <a href="/testimonial">Kind Words</a>
                       <a href="/pricing">Pricing</a>
-                      <a href="/book">Book</a>
+                      <a href="/contact">Book</a>
                     </div>
                   </div>
                 </div>
             
             <div className="PageHeader-center-nav">
-              <a href="/home" className="PageHeader-center-nav-link">
+              <a href="/" className="PageHeader-center-nav-link">
                 <img 
                   src={images.child_icon} // child_icon -- sj_logo
                   alt="SNEHAL JATALE PHOTOGRAPHY"
@@ -77,14 +77,17 @@ return (
 const Contactbanner = () => {
   return (
     <div className="contactbanner">
-      <h1 className="contactbanner-title">THE BEGINNING OF A BEAUTIFUL RELATIONSHIP...</h1>
-      <p className="contactbanner-subtitle">I cannot wait to create art with your family! Let's capture some magic...</p>
-      <p className="contactbanner-contact">
+      <div className="contactbanner-title">Let's Create Something Beautiful...</div>
+      <p>Every family has a story-full of quiet moments, deep connections, and fleeting details that deserve to be remembered. <br/>If my style speaks to you, I'd love to capture yours in a way that feels effortless, intimate, and beautifully timeless.
+To enquire about a session, ask a question, or simply say hello, please fill out the form below. 
+<br/><br/>I'll be in touch soon, and we can start planning something truly special.
+I can't wait to hear from you.</p>
+      <div>
         <a href="tel:+44 7826343049" className="contactbanner-contact-svg">
          {/* <GiRotaryPhone />  */}
          +44 7733 419784
         </a>
-        </p>
+        </div>
     </div>
   );
 };
@@ -284,11 +287,11 @@ const ContactFooter  = () => {
               ))}
             </div>
           <a href="/whoiam">WHO I AM</a>
-            <a href="/moreinfo" className="footer-link">MORE INFO</a>
+            <a  className="footer-link">MORE INFO</a>
             <div className="footer-moreinfo-submenu footer-submenu-common">
-              <a href="/kindwords">Kind words</a>
+              <a href="/testimonial">Kind Words</a>
               <a href="/pricing">Pricing</a>
-              <a href="/book">Book</a>
+              <a href="/contact">Book</a>
             </div>
           <a href="/contact">CONTACT</a>
           <a href="/Testimonial">TESTIMONIALS</a>

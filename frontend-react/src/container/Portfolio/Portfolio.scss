@@ -21,7 +21,7 @@ body, html {
 
 
 .portfolio-content {
-  text-align: center;
+  text-align: left;
   margin: 0px auto; 
   line-height: 1.8;
   font-size: 1.1rem;
@@ -34,10 +34,10 @@ body, html {
       display: block;            
       }
   div {
-      margin: 50px 0 50px 0;
+      margin: 100px 0 50px 0;
       font-size: 1.5em;
       letter-spacing: 3px; 
-      font-weight: lighter;
+      font-weight: 600;
     }            
 }
 

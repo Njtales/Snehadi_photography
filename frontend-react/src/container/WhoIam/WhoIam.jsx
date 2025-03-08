@@ -38,17 +38,17 @@ return (
                   <a href="/WhoIAm" className="PageHeader-link">WHO I AM</a>
                 </div>
               <div className="below-vertical-divider">
-                  <a href="/moreinfo" className="PageHeader-link">MORE INFO</a>
+                  <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
-                      <a href="/kindwords">Kind Words</a>
+                      <a href="/testimonial">Kind Words</a>
                       <a href="/pricing">Pricing</a>
-                      <a href="/book">Book</a>
+                      <a href="/contact">Book</a>
                     </div>
                   </div>
                 </div>
             
               <div className="PageHeader-center-nav">
-                <a href="/home" className="PageHeader-center-nav-link">
+                <a href="/" className="PageHeader-center-nav-link">
                   <img 
                     src={images.child_icon} // child_icon -- sj_logo
                     alt="SNEHAL JATALE PHOTOGRAPHY"
@@ -194,11 +194,11 @@ const UpperFooter  = () => {
           ))}
         </div>
       <a href="/whoiam">WHO I AM</a>
-        <a href="/moreinfo" className="footer-link">MORE INFO</a>
+        <a  className="footer-link">MORE INFO</a>
         <div className="footer-moreinfo-submenu footer-submenu-common">
-          <a href="/kindwords">Kind words</a>
+          <a href="/testimonial">Kind Words</a>
           <a href="/pricing">Pricing</a>
-          <a href="/book">Book</a>
+          <a href="/contact">Book</a>
         </div>
       <a href="/contact">CONTACT</a>
       <a href="/Testimonial">TESTIMONIALS</a>

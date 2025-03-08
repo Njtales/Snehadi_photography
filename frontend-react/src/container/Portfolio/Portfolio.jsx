@@ -38,17 +38,17 @@ return (
                   <a href="/WhoIAm" className="PageHeader-link">WHO I AM</a>
                 </div>
               <div className="below-vertical-divider">
-                  <a href="/moreinfo" className="PageHeader-link">MORE INFO</a>
+                  <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
-                      <a href="/kindwords">Kind Words</a>
+                      <a href="/testimonial">Kind Words</a>
                       <a href="/pricing">Pricing</a>
-                      <a href="/book">Book</a>
+                      <a href="/contact">Book</a>
                     </div>
                   </div>
                 </div>
             
             <div className="PageHeader-center-nav">
-              <a href="/home" className="PageHeader-center-nav-link">
+              <a href="/" className="PageHeader-center-nav-link">
                 <img 
                   src={images.child_icon} // child_icon -- sj_logo
                   alt="SNEHAL JATALE PHOTOGRAPHY"
@@ -76,13 +76,11 @@ const PortfolioContent  = () => {
       <div className="portfolio-content">
         <div>Portfolio</div>
         <p>
-          Within these walls you will find a sample of my Maternity photography,
-          Newborn photography and Family photography. I want to give you natural,
-          organic and soulful photographs to share your story. Images that not only
-          reflect what you see, but what you feel.
+        Welcome to my Portfolio, where every image tells a story—a glimpse into life’s most cherished moments. Specializing in capturing love, connection, and authenticity, I believe in preserving emotions in a timeless and natural style. My goal is to create photographs that reflect the warmth of your journey, turning fleeting moments into lasting memories.
+<br/>
         </p>
         <span>
-          If my work speaks to your heart, I would be honoured to hear from you.
+        If my work speaks to you, I would be honored to document your story with artistry and heart.
         </span>
       </div>
     );
@@ -187,11 +185,11 @@ const PortfolioFooter  = () => {
             ))}
           </div>
         <a href="/whoiam">WHO I AM</a>
-          <a href="/moreinfo" className="footer-link">MORE INFO</a>
+          <a  className="footer-link">MORE INFO</a>
           <div className="footer-moreinfo-submenu footer-submenu-common">
-            <a href="/kindwords">Kind words</a>
+            <a href="/testimonial">Kind Words</a>
             <a href="/pricing">Pricing</a>
-            <a href="/book">Book</a>
+            <a href="/contact">Book</a>
           </div>
         <a href="/contact">CONTACT</a>
         <a href="/Testimonial">TESTIMONIALS</a>

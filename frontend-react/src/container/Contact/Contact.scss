@@ -1,32 +1,57 @@
-.contactbanner {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    align-items: center;
-    justify-content: center;
-    text-align: center; 
-    margin: 120px auto 120px auto ;
-    color: var(--darkgrey-color);  
-    & .contactbanner-title {
-      font-size: 1.1rem; 
-      letter-spacing: 2px;
-      font-family: var(--font-playfair-display);
-    }  
-    & .contactbanner-subtitle {
-      font-size: 1.1rem;
-      padding: 70px 30% 70px 0;
-    }  
-    & .contactbanner-contact {
-      font-size: 1rem;
-      text-decoration: underline;
-      font-family: var(--font-playfair-display);
-      .contactbanner-contact-svg {
-        color: var(--darkgrey-color);
-        // &:hover {
-        //     color: var(--grey-color);
-        // }
-      }
+// .contactbanner {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start; 
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center; 
+//     margin: 120px auto 120px auto ;
+//     color: var(--darkgrey-color);  
+//     & .contactbanner-title {
+//       font-size: 1.1rem; 
+//       letter-spacing: 2px;
+//       font-family: var(--font-playfair-display);
+//     }  
+//     & .contactbanner-subtitle {
+//       font-size: 1.1rem;
+//       padding: 70px 30% 70px 0;
+//     }  
+
+//   }
+  .contactbanner {
+    text-align: left;
+    margin: 0px auto; 
+    line-height: 1.5;
+    font-size: 1.4rem;
+    color: var(--darkgrey-color);
+    width: 100%;
+    padding: 40px 80px 40px; 
+    max-width: 1200px; 
+    p{
+      text-align: left;
     }
+    span{
+        margin: 50px 0 50px 0;
+        display: block;            
+        }
+    div {
+        margin: 50px 0 50px 0;
+        font-size: 1.5em;
+        letter-spacing: 3px; 
+        font-weight: lighter;
+      }    
+      a {        
+        font-size: 1rem;
+        text-decoration: underline;
+        color: var(--darkgrey-color);
+        font-family: var(--font-playfair-display);
+        .contactbanner-contact-svg {
+          color: var(--darkgrey-color);
+          // &:hover {
+          //     color: var(--grey-color);
+          // }
+        }
+      }
   }  
 .contact-form-container {
   display: flex;
