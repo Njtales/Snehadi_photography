@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.testimonial-container{
+  .testimonial-slider {
+    .testimonial-slide {
+      display: flex; // Use flexbox for layout
+      align-items: center; // Center items vertically
+      justify-content: center; // Center items horizontally
+      padding: 20px 0; // Add padding to the top and bottom of the slide
+
+    .testimonial-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1500px; // Adjust max-width as needed
+      margin: auto; // This centers the content-wrapper
+      padding: 0 30px; // This adds padding inside the content-wrapper
+      box-sizing: border-box; // Makes sure padding doesn't add to the width
+      width: 100%; // Ensures the content-wrapper takes the full width of the .about-aboutme-textpic
+
+      .testimonial-imagewrapper {
+      // flex: 2;
+      max-width: 50%;
+      padding-right: 0px;
+      align-items: center;
+      justify-content: center;
+      .testimonial-image {
+        align-items: left;
+        justify-content: center;
+        display: flex;
+        margin: auto; // This centers the content-wrapper
+        padding: 10px; // This adds padding inside the content-wrapper
+        box-sizing: border-box; // Makes sure padding doesn't add to the width
+        width: 100%; // Ensures the content-wrapper takes the full width of the .about-aboutme-textpic
+        img {
+          width: 80%;
+          height: auto;
+          border-radius: 5px; // Optional rounded corners
+          -webkit-user-drag: none;
+          -webkit-touch-callout: none;
+        }
+      }   
+    }
+      .testimonial-textwrapper {
+        // flex: 2.5;
+        max-width: 50%;
+        justify-content: flex-start;
+    
+        .testimonial-text {
+          // padding-top: 40px;
+            // flex: 0 1 50%; 
+            
+            flex: 1.5;
+            color: var(--darkgrey-color);
+            padding-left: 5%;
+        
+            span {
+                font-family: var(--font-playfair-display);
+                text-align: center;    
+                font-size: 2rem;
+                // display: block;
+            }
+        
+            p {
+                padding-top: 50px;
+                font-family: var(--font-playfair-display);
+                font-size: 1.4rem;
+                line-height: 1.3;
+              }
+            .testimonial-read-more {
+              font-size: 1rem;
+              font-style: italic;
+              color: var(--grey-color);
+              text-decoration: none;
+              transition: color 0.3s ease;
+      
+              &:hover {
+                color: var(--darkgrey-color); // Change for your desired hover color
+              }
+            }
+          }
+        }
+    }
+    }
+  }
+}
+
+.testimonial-navigation {
+  display: flex;
+  justify-content: center; // Center the arrows horizontally
+  color: var(--darkgrey-color);
+  svg {
+    cursor: pointer; // Changes the cursor when hovering over the arrows
+    margin: 0 10px; // Adds space between the arrows
+    width: 20px; // Sets a width for the icons
+    height: 20px; // Sets a height for the icons
+
+    &:hover {
+      color: var(--grey-color); // Change color on hover, adjust as needed
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,25 @@
+<svg
+   width="80mm"
+   height="10.820578mm"
+   viewBox="0 0 80 10.82058"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <rect
+     style="fill:#2d2d2d;stroke:#000000;stroke-width:0.0725972"
+     id="rect4"
+     width="79.927406"
+     height="0.027402779"
+     x="0.03629861"
+     y="10.731315" />
+  <rect
+     style="fill:#2d2d2d;stroke:#000000;stroke-width:0.0540059"
+     id="rect4-30"
+     width="10.661049"
+     height="0.1136923"
+     x="0.027002949"
+     y="-40.141644"
+     transform="rotate(90)" />
+</svg>

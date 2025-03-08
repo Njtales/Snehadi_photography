@@ -1,0 +1,72 @@
+.testimonial-slider {
+  padding: 150px 0 50px 0;
+  .testimonial-slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%; 
+    
+    .testimonial-image {
+      padding-left: 10%;
+      width: 50%; // Image takes up half the width
+      img {
+        justify-content: flex-end; 
+        height: 600px; 
+        width: auto; 
+        max-width: 100%;
+      }
+    }
+
+    .testimonial-text-content {
+      position: absolute;
+      top: 90%; // Start at the vertical center of the slide
+      transform: translateY(-50%); // Offset by half the height of the text box
+      left: 45%; // Start from the horizontal center of the slide
+      background: var(--offwhite-color);
+      padding: 70px; // Padding inside the text box
+      max-width: 60%; // Max width of the text box
+      box-sizing: border-box; // Include padding in the width calculation
+      text-align: left; // Text align left
+      border-radius: 4px; // Rounded corners on the right side
+      
+      .testimonial-quote {
+        font-size: 1.5rem;
+        color: var(--darkgrey-color);
+        font-style: italic;
+        letter-spacing: 1px;
+        margin-bottom: 40px; // Space between quote and author
+      }
+      
+      .testimonial-author {
+        font-size: 1.3rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+        color: var(--darkgrey-color);
+      }
+    }
+  }
+}
+
+  
+  
+
+.testimonial-navigation {
+  display: flex;
+  justify-content: center; // Center the arrows horizontally
+  padding-bottom: 150px;
+  color: var(--darkgrey-color);
+  svg {
+    cursor: pointer; // Changes the cursor when hovering over the arrows
+    margin: 0 10px; // Adds space between the arrows
+    width: 20px; // Sets a width for the icons
+    height: 20px; // Sets a height for the icons
+
+    &:hover {
+      color: var(--grey-color); // Change color on hover, adjust as needed
+    }
+  }
+}
+
+
+
