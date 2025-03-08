@@ -216,32 +216,29 @@ const About = () => {
         <Slider ref={sliderRef} {...settings} className="testimonial-slider">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="testimonial-slide">
-              <div className="testimonial-content">
-                <div className="testimonial-imagewrapper">
-                  <div className="testimonial-image">
-                    {testimonial.imgUrl && (
-                      <img src={urlFor(testimonial.imgUrl).url()} alt={`${testimonial.name}'s testimonial`} />
-                    )}
-                    </div>
-                </div>
-                <div className="testimonial-textwrapper">
-                  <div className="testimonial-text">
-                    <span>Words of Love from {testimonial.name}.</span>
-                    <p>{testimonial.feedback}</p>
-                    <a href="/testimonial" className="testimonial-read-more">Read more from the clients.</a>
-                  </div>
+            <div className="testimonial-content">
+              <div className="testimonial-textwrapper">
+                <div className="testimonial-text">
+                  <span>Words of Love from {testimonial.name}.</span>
+                  <p>{testimonial.feedback}</p>
+                  <a href="/testimonial" className="testimonial-read-more">Read more from the clients.</a>
                 </div>
               </div>
-  
+              <div className="testimonial-imagewrapper">
+                <div className="testimonial-image">
+                  {testimonial.imgUrl && (
+                    <img src={urlFor(testimonial.imgUrl).url()} alt={`${testimonial.name}'s testimonial`} />
+                  )}
+                  </div>
+              </div>
+            </div>
             </div>
           ))}
         </Slider>
-
           <div className="testimonial-navigation">
               <IoIosArrowBack onClick={goToPrevious} />
               <IoIosArrowForward onClick={goToNext} />
             </div>
-            {/* <hr className="custom-line" /> */}
             </div>
     );
   };
@@ -357,7 +354,7 @@ const LowerFooter = () => {
   };
     return (
     <div className="footer-info">
-      <p>© 2024 Snehal Jatale Photography | PH: 07753 918384</p><br />
+      <p>© 2025 Snehal Jatale Photography | PH: 07826 343049</p><br />
       <p>Snehal Jatale is an award-winning newborn photographer, maternity photographer, family photographer, and baby photographer based in Doha, Qatar. Snehal offers timeless pregnancy portraits, artistic newborn photography, beautiful family photos.</p>
       <p>Organic, natural, soulful photography.</p><br />
       <p>By appointments only.</p>

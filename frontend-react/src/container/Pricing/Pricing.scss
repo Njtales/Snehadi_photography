@@ -1,0 +1,230 @@
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    body, img {
+      cursor: default;
+      -webkit-user-select: none; 
+      -moz-user-select: none; 
+      -ms-user-select: none; 
+      user-select: none; 
+    }
+  }      
+  
+  .UpperPricing-container {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-playfair-display);
+    align-items: center;
+    margin: auto;
+    max-width: 1200px; 
+    padding: 130px 0 130px 0; 
+  
+    .UpperPricing-text-section {
+      width: 50%; 
+      margin-left: 20px;
+      overflow: hidden;
+  
+      div {
+        font-size: 1.7rem;
+        color: var(--darkgrey-color);
+      }
+  
+      p {
+        margin: 30px 0;
+        line-height: 1.6;
+        font-size: 1.2rem;
+        color: var(--darkgrey-color);
+        width: 90%; 
+      }
+  
+      .UpperPricing-get-in-touch {
+        display: inline-block;
+        font-size: 1.2rem;
+        text-decoration: none;
+        font-style: italic;
+        color: var(--darkgrey-color);
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  
+    .UpperPricing-image-section {
+        width: 50%;
+        img {
+          width: auto;
+          max-height: 600px; 
+          margin: 0 140px0 0;
+          display: block; 
+        }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .UpperPricing-container {
+      flex-direction: column;
+  
+      .UpperPricing-text-section, 
+      .UpperPricing-image-section {
+        width: 100%;
+        img {
+          max-height: auto;
+        }
+      }
+    }
+  }
+
+  .PricingPhoto_category-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-playfair-display);
+    margin: auto;
+    padding: 30px 0 30px 0;
+  
+    .PricingPhoto_category-title {
+        font-size: 2rem;
+        color: var(--darkgrey-color);
+        padding:  0 50px;
+        border-right: 1px solid var(--darkgrey-color); 
+    }
+  
+    .PricingPhoto_category-list {
+        display: flex;
+        align-items: center;
+      
+      .PricingPhoto_category {
+        text-decoration: none;
+        color: var(--darkgrey-color);
+        margin: 0 25px 0 65px;
+        font-size: 1.2rem;
+        position: relative;
+        
+        &::after {
+          position: absolute;
+          right: -20px; 
+          top: 50%;
+          transform: translateY(-50%);
+          color: var(--darkgrey-color);
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .random-facts-container {
+      flex-direction: column;
+  
+      .image-section,
+      .facts-section {
+        width: 100%;
+      }
+      
+      .facts-section {
+        padding-left: 0; // Remove padding on smaller screens
+      }
+    }
+  }
+  
+  .testimonial-container{
+    .testimonial-slider {
+      .testimonial-slide {
+        display: flex; // Use flexbox for layout
+        align-items: center; // Center items vertically
+        justify-content: center; // Center items horizontally
+        padding: 20px 0; // Add padding to the top and bottom of the slide
+  
+      .testimonial-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1500px; // Adjust max-width as needed
+        margin: auto; // This centers the content-wrapper
+        padding: 0 30px; // This adds padding inside the content-wrapper
+        box-sizing: border-box; // Makes sure padding doesn't add to the width
+        width: 100%; // Ensures the content-wrapper takes the full width of the .about-aboutme-textpic
+  
+        .testimonial-imagewrapper {
+        // flex: 2;
+        max-width: 50%;
+        padding-right: 0px;
+        align-items: center;
+        justify-content: center;
+        .testimonial-image {
+          align-items: left;
+          justify-content: center;
+          display: flex;
+          margin: auto; // This centers the content-wrapper
+          padding: 10px; // This adds padding inside the content-wrapper
+          box-sizing: border-box; // Makes sure padding doesn't add to the width
+          width: 100%; // Ensures the content-wrapper takes the full width of the .about-aboutme-textpic
+          img {
+            width: 80%;
+            height: auto;
+            border-radius: 5px; // Optional rounded corners
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+          }
+        }   
+      }
+        .testimonial-textwrapper {
+          // flex: 2.5;
+          max-width: 50%;
+          justify-content: flex-start;
+      
+          .testimonial-text {
+            // padding-top: 40px;
+              // flex: 0 1 50%; 
+              
+              flex: 1.5;
+              color: var(--darkgrey-color);
+              padding-left: 5%;
+          
+              span {
+                  font-family: var(--font-playfair-display);
+                  text-align: center;    
+                  font-size: 2rem;
+                  // display: block;
+              }
+          
+              p {
+                  padding-top: 50px;
+                  font-family: var(--font-playfair-display);
+                  font-size: 1.4rem;
+                  line-height: 1.3;
+                }
+              .testimonial-read-more {
+                font-size: 1rem;
+                font-style: italic;
+                color: var(--grey-color);
+                text-decoration: none;
+                transition: color 0.3s ease;
+        
+                &:hover {
+                  color: var(--darkgrey-color); // Change for your desired hover color
+                }
+              }
+            }
+          }
+      }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .image-overlay-container {
+      .overlay-text {
+        font-size: 1.5rem; // Smaller font size for smaller screens
+        padding: 0 10px; // Add padding to ensure text doesn't touch the edges
+      }
+    }
+  }
+  

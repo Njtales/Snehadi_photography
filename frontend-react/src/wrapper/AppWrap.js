@@ -7,7 +7,7 @@ const AppWrap = (Component, idName, classNames) => function HOC() {
       {/* app__flex */}
         <Component />
         {/* <div className="copyright">
-          <p className="p-text">@2024 Snehal Jatale Photography</p>
+          <p className="p-text">@2025 Snehal Jatale Photography</p>
           <p className="p-text">All rights reserved</p>
         </div> */}
       </div>

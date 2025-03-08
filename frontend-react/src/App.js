@@ -1,8 +1,9 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './container/Home/Home'; 
 import Portfolio from './container/Portfolio/Portfolio'; 
 import WhoIam from './container/WhoIam/WhoIam';
+import Pricing from './container/Pricing/Pricing';
 import Contact from './container/Contact/Contact';
 import Contactthankyou from './container/Contact/Contactthankyou';
 import Testimonials from './container/Testimonials/Testimonials';
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/whoiam" element={<WhoIam />} />
+          <Route path="/Pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact-thank-you" element={<Contactthankyou />} />
           <Route path="/testimonial" element={<Testimonials />} />

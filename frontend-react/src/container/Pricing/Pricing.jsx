@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { IoIosArrowBack, IoIosArrowForward, IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
 import { images } from '../../constants';
-import { IoIosArrowBack, IoIosArrowForward,IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
-import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { urlFor, client } from '../../client';
 import Slider from 'react-slick';
+import { urlFor, client } from '../../client';
 import { AppWrap, MotionWrap } from '../../wrapper';
+import './Pricing.scss';
 
-import './Testimonials.scss';
-
-const Testimonials = () => {
+const Pricing = () => {
   const [portCategories, setPortCategories] = useState([]);
   
   useEffect(() => {
@@ -37,7 +35,7 @@ return (
                       </a>
                     ))}
                   </div>
-                  <a href="/WhoIAm" className="PageHeader-link">WHO I AM</a>
+                  <a href="/Pricing" className="PageHeader-link">WHO I AM</a>
                 </div>
               <div className="below-vertical-divider">
                   <a  className="PageHeader-link">MORE INFO</a>
@@ -73,31 +71,31 @@ return (
   );
 };
 
+const UpperPricing  = () => {
+    return (
+        <div className="UpperPricing-container">
+          <div className="UpperPricing-image-section">
+            <img src={images.myimg} alt="Family on the beach" />
+          </div>
+          <div className="UpperPricing-text-section">
+            <div>An Experience, as Beautiful as the Images</div>
+            <p>From the first enquiry to the final delivery of your images, your experience is designed to feel effortless, thoughtful, and truly special. This isn't just about photographs-it's about capturing the essence of your family in a way that feels timeless, emotive, and uniquely yours.</p>
+            <p>Expect a seamless, high-end service where every detail is taken care of, so you can simply relax and enjoy the moment. Your session will be calm, natural, and filled with warmth-no awkward posing, just genuine connection and beautifully crafted imagery.</p>
+            <p>The investment: The session fee is £200, and Collections start at £600. Clients typically invest between £1,000 and £3,000 in their photography experience, images and artwork.</p>
+            <p>For full pricing details and availability, please get in touch. I'd love to create something truly unforgettable for you.</p>
+            <a href="/contact" className="UpperPricing-get-in-touch">Book your session now!</a>
+          </div>
+        </div>
+      );
+    };
 
-function NextArrow(props) {
-  const { onClick } = props;
-  return (
-    <div className="slick-next" onClick={onClick}>
-      {'>'} {/* You can replace these with your custom icons or images */}
-    </div>
-  );
-}
-
-function PrevArrow(props) {
-  const { onClick } = props;
-  return (
-    <div className="slick-prev" onClick={onClick}>
-      {'<'} {/* You can replace these with your custom icons or images */}
-    </div>
-  );
-}
-
-const UpperTestimonials = () => {
+// ===============================================================================================
+const MidPricing = () => {
   const [testimonials, setTestimonials] = useState([]);
   const sliderRef = useRef(); 
   const goToNext = () => sliderRef.current.slickNext();
   const goToPrevious = () => sliderRef.current.slickPrev();
-  
+
   useEffect(() => {
     const query = `*[_type == "testimonial"]`;
     client.fetch(query)
@@ -118,43 +116,87 @@ const UpperTestimonials = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />
   };
+
   return (
-
-
-
-    <div className="testimonial-slider">
-    <div className="testimonial-headline">
-      <p className="testimonial-headline_title">"Stop looking and book her. No one else compares!"</p>
-      <p className="testimonial-headline_author"> - Nikhil & Sayli</p>
-    </div>
+    <div className="testimonial-container">
       <Slider ref={sliderRef} {...settings} className="testimonial-slider">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="testimonial-slide">
             <div className="testimonial-content">
-              <div className="testimonial-text-content">
-                <p className="testimonial-author">{testimonial.name}</p>
-                <p className="testimonial-quote">"{testimonial.feedback}"</p>
+              
+              <div className="testimonial-textwrapper">
+                <div className="testimonial-text">
+                  <span>Words of Love from {testimonial.name}.</span>
+                  <p>{testimonial.feedback}</p>
+                  <a href="/testimonial" className="testimonial-read-more">Read more from the clients.</a>
+                </div>
               </div>
-              <div className="testimonial-image">
-                {testimonial.imgUrl && (               
-                  <img src={urlFor(testimonial.imgUrl).url()} alt={`${testimonial.name}'s testimonial`} />
-                )}
+              <div className="testimonial-imagewrapper">
+                <div className="testimonial-image">
+                  {testimonial.imgUrl && (
+                    <img src={urlFor(testimonial.imgUrl).url()} alt={`${testimonial.name}'s testimonial`} />
+                  )}
+                  </div>
               </div>
             </div>
+
           </div>
-          
         ))}
       </Slider>
-      <div className="testimonial-navigation">
-        <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
-        <HiOutlineArrowNarrowRight onClick={goToNext} />
-      </div>
-    </div>
+
+        <div className="testimonial-navigation">
+            <IoIosArrowBack onClick={goToPrevious} />
+            <IoIosArrowForward onClick={goToNext} />
+          </div>
+          {/* <hr className="custom-line" /> */}
+          </div>
   );
-  };
+};
+ //================================================================================================
+
+// MidPricing
+
+const PortfolioCategory = () => {
+    const [portCategories, setPortCategories] = useState([]);
+  
+    useEffect(() => {
+      const query = '*[_type == "portfoliocategory"]';
+  
+      client.fetch(query).then((data) => {
+        setPortCategories(data);
+      });
+    }, []);
+  
+    return (
+      <div className="portfolio-category">
+        <div className="portfolio-images">
+          {portCategories.map((category, index) => (
+            <div className="portfolio-image-item" key={index}>
+              {category.imgUrl && (
+                <img 
+                  src={urlFor(category.imgUrl).url()} 
+                  alt={`Category Image ${index + 1}`}
+                  className="portfolio-footer-image"
+                />
+              )}
+              <div className="portfolio-image-info">
+                <h3>{category.title}</h3>
+                <p>{category.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      <div className="portfolio-category-content">
+          <a href="/contact" className="portfolio-testimonial-button">Book Your Session Now!</a>
+        </div>
+      </div>
+    );
+  }; 
+//================================================================================================
       
 const UpperFooter  = () => {
   const [footerImages, setFooterImages] = useState([]);
@@ -213,7 +255,7 @@ const UpperFooter  = () => {
             </a>
           ))}
         </div>
-      <a href="/whoiam">WHO I AM</a>
+      <a href="/Pricing">WHO I AM</a>
         <a  className="footer-link">MORE INFO</a>
         <div className="footer-moreinfo-submenu footer-submenu-common">
           <a href="/testimonial">Kind Words</a>
@@ -236,7 +278,7 @@ const LowerFooter = () => {
   };
     return (
     <div className="footer-info">
-      <p>© 2024 Snehal Jatale Photography | PH: 07753 918384</p><br />
+      <p>© 2025 Snehal Jatale Photography | PH: 07826 343049</p><br />
       <p>Snehal Jatale is an award-winning newborn photographer, maternity photographer, family photographer, and baby photographer based in Doha, Qatar. Snehal offers timeless pregnancy portraits, artistic newborn photography, beautiful family photos.</p>
       <p>Organic, natural, soulful photography.</p><br />
       <p>By appointments only.</p>
@@ -247,18 +289,22 @@ const LowerFooter = () => {
     </div>
     );
   };
-  
-  const TestimonialsMotion = MotionWrap(Testimonials);
-  const UpperTestimonialsMotion = MotionWrap(UpperTestimonials);
+
+  const PricingMotion = MotionWrap(Pricing);
+  const UpperPricingMotion = MotionWrap(UpperPricing);
+  const MidPricingMotion = MotionWrap(MidPricing);
+  const PortfolioCategoryMotion = MotionWrap(PortfolioCategory);
   const UpperFooterWithMotion = MotionWrap(UpperFooter);
   const MidFooterWithMotion = MotionWrap(MidFooter);
   const LowerFooterWithMotion = MotionWrap(LowerFooter);
 
-  const TestimonialPage = () => {
+  const PortfolioPage = () => {
     return (
       <>
-        <TestimonialsMotion />
-        <UpperTestimonialsMotion />
+        <PricingMotion />
+        <UpperPricingMotion />
+        <MidPricingMotion />
+        <PortfolioCategoryMotion />
         <UpperFooterWithMotion />
         <MidFooterWithMotion />
         <LowerFooterWithMotion />
@@ -266,4 +312,4 @@ const LowerFooter = () => {
     );
   };
 
-export default AppWrap(TestimonialPage, 'testimonial');
+export default AppWrap(PortfolioPage, 'Pricing');

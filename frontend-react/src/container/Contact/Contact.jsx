@@ -309,7 +309,7 @@ const ContactFooter  = () => {
     };
       return (
       <div className="footer-info">
-        <p>© 2024 Snehal Jatale Photography | PH: 07753 918384</p><br />
+        <p>© 2025 Snehal Jatale Photography | PH: 07826 343049</p><br />
         <p>Snehal Jatale is an award-winning newborn photographer, maternity photographer, family photographer, and baby photographer based in Doha, Qatar. <br/>Snehal offers timeless pregnancy portraits, artistic newborn photography, beautiful family photos.</p>
         <p>Organic, natural, soulful photography.</p><br />
         <p>By appointments only.</p>
