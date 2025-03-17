@@ -85,7 +85,7 @@ const Home = () => {
                   src={images.child_icon} // child_icon -- sj_logo
                   alt="SNEHAL JATALE PHOTOGRAPHY"
                   className="PageHeaderhome-center-nav-logo" />
-                <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span>
+                <h1>BABY BLISS</h1><span>STUDIO</span>
                 </a>
             </div>
           <div className="home-scroll-indicator">
@@ -120,9 +120,9 @@ const About = () => {
               </div>
   
               <div className="about-nav-midtitle">
-                  <a href="/who-i-am">Doha, Qatar</a>
+                  <a href="/WhoIAm">Doha, Qatar</a>
                   <a className="about-nav-description" 
-                  href="/who-i-am">Meet the Artist</a>
+                  href="/WhoIAm">Meet the Artist</a>
               </div>
   
               <div className="about-nav-title">
@@ -138,10 +138,9 @@ const About = () => {
                       <div className="about-aboutme-text">
                           <span>Hello, I'm Snehal.</span>
                           <p>
-                              I fell in love with photography before I turned ten years of age and the rest is history. 
-                              I'm obsessed with light and creating film-like images that you will cherish forever. 
-                              My goal is to capture your family as it is... the laughter, the magic, the madness. 
-                              All of it! That is what makes every family so unique. I cannot wait to meet you!
+                            Motherhood is a story of fleeting moments- quiet anticipation, tender first embraces, and the beautiful chaos of family life. My work is about preserving these moments with a soft, film-like aesthetic that feels timeless from the very first glance. <br/><br/>
+                            With a relaxed and effortless approach, I create images that are elegant yet deeply personal- where the focus is on connection, not posing. Whether in the glow of pregnancy or the delicate early days of newborn life, I capture the essence of your family in a way that is both artistic and true to you.<br/><br/>
+                            Sessions take place in the comfort of your home, where your love naturally unfolds. If you're looking for photography that is understated, emotive, and beautifully crafted, I'd love to create something unforgettable for you.
                           </p>
                       </div>
                   </div>
@@ -221,7 +220,7 @@ const About = () => {
                 <div className="testimonial-text">
                   <span>Words of Love from {testimonial.name}.</span>
                   <p>{testimonial.feedback}</p>
-                  <a href="/testimonial" className="testimonial-read-more">Read more from the clients.</a>
+                  <a href="/testimonial" className="testimonial-read-more">Read more</a>
                 </div>
               </div>
               <div className="testimonial-imagewrapper">
@@ -247,7 +246,7 @@ const About = () => {
   // ============================================== Contact Component ==============================================
 
   const navigateToContact = () => {
-    window.location.href = '/ContactMe';
+    window.location.href = '/contact';
   };
 
 const Contact = () => {

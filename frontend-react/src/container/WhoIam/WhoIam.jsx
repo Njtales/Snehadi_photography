@@ -75,9 +75,11 @@ const UpperWhoIam  = () => {
     return (
         <div className="UpperWhoIam-container">
           <div className="UpperWhoIam-text-section">
-            <div>Hello there, I'm Snehal.</div>
+            <div>It's so lovely to meet you!</div>
             <p>It's so lovely to meet you. I'm a photographer based in Doha, Qatar.</p>
             <p>My aim is to capture you and your family in the most laid-back, authentic way. You will have film-like images of your story to look at forever; like opening a little window into that moment of time with your children and remember their tiny hands and cheeky smiles.</p>
+            <p>I would like to capture your family as it is... the laughter, the magic, the madness.</p>
+            <p>My style is natural, organic, and soulful. I love to capture the connection between you and your loved ones, the little details, and the in-between moments. My sessions are relaxed and fun, and I will guide you through the whole process. I want you to feel comfortable and enjoy the experience.</p>
             <p>I feel privileged to tell your story through my lens.</p>
             <a href="/contact" className="UpperWhoIam-get-in-touch">Get in touch!</a>
           </div>
@@ -94,7 +96,7 @@ const WhoIamPhotography = () => {
 return (
         <>
             <div className="whoiamphotography-container">
-                <div className="whoiamphotography-title">Awards</div>
+                <div className="whoiamphotography-title">Gallery</div>
                 <div className="whoiamphotography-list">
                     <a href="/Portfolio/Maternity" className="whoiamphotography">Maternity Photogaphy</a>
                     <a href="/Portfolio/Newborn" className="whoiamphotography">New Born Photography</a>
@@ -112,13 +114,15 @@ const MidWhoIam  = () => {
             <img src={images.kids_img08} alt="Family on the beach" />
           </div>
           <div className="MidWhoIam-text-section">
-            <div>5 random facts about me:</div>
+            <div>Some random facts about me:</div>
             <ul>
-                <li>I have a Masters Degree in International Relations from IE Business School.</li>
-                <li>My first camera was offered to me by my father when I was 8 years old. Yes, it was film back then, not digital.</li>
-                <li>I lived in Madrid, Spain for three years (and have missed the sunshine ever since!)</li>
-                <li>I'm French Canadian (hence the slightly odd accent I can't get rid of).</li>
-                <li>I passed my driving test 9 months pregnant with my first child (I now have three little ones).</li>
+                <li>I lived in Doha, Qatar for eight years (and have missed the rain ever since!)</li>
+                <li>I fell in love with photography after finishing my Computer Science Engineering and the rest is history.</li>
+                <li>I started capturing the moments of my first daughter, and the journey continues...</li>
+                <li>I'm an Indian (hence like to share a vibrant theme).</li>
+                <li>I'm obsessed with light and creating film-like images that you will cherish forever.</li>
+                <li>All of it! That is what makes every family so unique. I cannot wait to meet you!</li>
+
             </ul>
           </div>
         </div>

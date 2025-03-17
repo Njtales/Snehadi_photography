@@ -120,7 +120,8 @@ const PortfolioContent  = () => {
 
       <div className="portfolio-category-content">
           <a href="testimonial" className="portfolio-testimonial-button">Find out what other clients have to say about their experience!</a>
-          <p>I believe babies and children are perfect just the way they are. That is why I keep things simple...</p>
+          <p>
+          I believe babies and children are perfect just the way they are. That is why I keep things simple. My sessions are laid back, with an emphasis on natural, safe posing for newborn and babies, and relaxed, fun sessions for older children and families. My goal is to create timeless images of your child and family that will be cherished forever.</p>
         </div>
       </div>
     );

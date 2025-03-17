@@ -41,6 +41,7 @@ body, img {
             display: flex;
             align-items: center;
             margin: 20px 0 0 20px;
+            font-size: 0.9em; 
             font-family: var(--font-playfair-display);
             padding: 0 5em;
             
@@ -64,8 +65,8 @@ body, img {
             // padding: 0 6em; // Adjust horizontal padding as needed
         }
   
-        .about-nav-description{
-            font-size: 0.9em; 
+        .about-nav-description {
+            font-size: 0.8em; 
             font-style: italic;
             align-items: center;
   
@@ -81,39 +82,40 @@ body, img {
     .about-aboutme-textpic {
         display: flex;
         align-items: center;
-        background-color: var(--llightgrey-color);
+        // background-color: var(--offwhite-color);
         
         .about-aboutme-wrapper {
             display: flex;
             // align-items: center;
-            max-width: 1500px; // Adjust max-width as needed
+            max-width: 1200px; // Adjust max-width as needed
             margin: auto; // This centers the content-wrapper
-            padding: 120px; // This adds padding inside the content-wrapper
+            padding: 50px; // This adds padding inside the content-wrapper
             box-sizing: border-box; // Makes sure padding doesn't add to the width
             width: 100%; // Ensures the content-wrapper takes the full width of the .about-aboutme-textpic
-        
+            background-color: var(--offwhite-color);
             .about-aboutme-textwrapper {
                 flex: 1.5;
-                padding: 8%;
+                padding: 3%;
             
                 .about-aboutme-text {
                     // flex: 0 1 50%; 
                     flex: 1.5;
                     color: var(--darkgrey-color);
-                    padding-right: 5%;
+                    padding-right: 4%;
+                    padding-top: 10%;
                 
                     span {
                         font-family: var(--font-playfair-display);
                         text-align: center;    
-                        font-size: 2rem;
+                        font-size: 1.6rem;
                         display: block; // Make sure span behaves like a block-level element
-                        margin-bottom: 6rem; // Adds space below the span
+                        margin-bottom: 4rem; // Adds space below the span
                         margin-top: -6rem; // Adds space above the span
                     }
                 
                     p {
                         font-family: var(--font-playfair-display);
-                        font-size: 1.4rem;
+                        font-size: 1rem;
                         line-height: 1.3;
                         margin-top: 2rem; // Adds space above the paragraph
                     }

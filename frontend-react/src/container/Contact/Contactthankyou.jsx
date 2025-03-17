@@ -86,7 +86,7 @@ const Thankyou = () => {
         If you haven't heard from me in 48 hours, please check your junk folder or resend your form.
       </p>
       <p className="thankyou-closing-remark">Have a lovely day.</p>
-      <p className="thankyou-signature">x</p>
+      <p className="thankyou-signature">Snehal</p>
       <p className="thankyou-ps-message">Psst! In the meantime, browse the galleries below so you can tell me which images you love most!</p>
     </div>
   );

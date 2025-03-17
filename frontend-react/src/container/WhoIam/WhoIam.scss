@@ -25,37 +25,37 @@
     align-items: center;
     margin: auto;
     max-width: 1200px; 
-    padding: 130px 0 130px 0; 
+    padding: 8% 0 8% 0; 
   
     .UpperWhoIam-text-section {
       width: 50%; 
-      margin-left: 20px;
+      margin-left: 2%;
       overflow: hidden;
   
       div {
-        margin-bottom: 40px;
-        font-size: 2rem;
+        font-size: 1.6rem;
         color: var(--darkgrey-color);
       }
   
       p {
-        margin: 50px 0;
+        margin: 6% 0;
         line-height: 1.6;
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: var(--darkgrey-color);
-        width: 75%; 
+        width: 80%; 
       }
   
       .UpperWhoIam-get-in-touch {
-        display: inline-block;
-        font-size: 1.2rem;
-        text-decoration: none;
-        font-style: italic;
-        color: var(--darkgrey-color);
-        &:hover {
-          text-decoration: none;
-        }
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--darkgrey-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--grey-color);
       }
+    }
     }
   
     .UpperWhoIam-image-section {
@@ -93,7 +93,7 @@
     .whoiamphotography-title {
         font-size: 2rem;
         color: var(--darkgrey-color);
-        padding:  0 50px;
+        padding:  0 4%;
         border-right: 1px solid var(--darkgrey-color); 
     }
   
@@ -141,12 +141,11 @@
   
     .MidWhoIam-text-section {
         width: 50%; 
-        margin-left: 100px;
         overflow: hidden;
     
         div {
           margin-bottom: 40px;
-          font-size: 2rem;
+          font-size: 1.6rem;
           font-family: var(--font-playfair-display);
           font-weight: lighter;
           color: var(--darkgrey-color);
@@ -158,10 +157,10 @@
         padding: 0;
         
         li {
-            margin: 25px 0;
-            font-size: 1.1rem;
+            margin: 5% 0;
+            font-size: 1rem;
             color: var(--darkgrey-color);
-            width: 100%; 
+            width: 80%; 
         }
       }
     }
@@ -182,28 +181,28 @@
     }
   }
   
-
   .LowerWhoIam-container {
     position: relative;
-    padding: 100px 10px 100px 10px;
-    text-align: center; // Center align the text
-    color: white; // Set text color to white, or any color that stands out on your image
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; // Prevents overflowing content
+    display: flex;
+    align-items: center;
+    justify-content: center;
   
     .LowerWhoIam-bg-image {
       width: 100%;
-      height: auto; // Maintain aspect ratio
-      display: block;
+      height: 100%;
+      object-fit: cover; // Ensures the image fully covers the screen
     }
   
     .LowerWhoIam-overlay-text {
       position: absolute;
-      bottom: -15%; // Center vertically
-      left: 75%; // Center horizontally
-      transform: translate(-50%, -50%); // Adjust the positioning to truly center it
-      color: var(--white-color); // Change the color if needed
-      font-size: 3rem; // Adjust the font size as needed
-      line-height: 1.3; // Adjust the line height as needed
-      // Optional: Add more styling such as font-weight, font-family, etc.
+      bottom: 80%;
+      color: var(--offwhite-color);
+      font-size: 2.5rem;
+      text-align: center;
+      width: 80%;
     }
   }
   

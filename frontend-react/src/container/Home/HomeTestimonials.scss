@@ -11,7 +11,7 @@
     .testimonial-slide {
       display: flex;
       align-items: center;
-      background-color: var(--llightgrey-color);
+      // background-color: var(--offwhite-color);
     .testimonial-content {
       display: flex;
       justify-content: center;
@@ -29,7 +29,7 @@
         }
     }
       .testimonial-textwrapper {
-        justify-content: left;
+        justify-content: center;
         width: 50%; 
         margin-left: 10%;
     
@@ -40,12 +40,12 @@
                 span {
                     font-family: var(--font-playfair-display);
                     text-align: center;    
-                    font-size: 2rem;
+                    font-size: 1.4rem;
                     display: block; 
                     }              
                 p {
                     font-family: var(--font-playfair-display);
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                     margin-top: 0rem; // Adds space above the paragraph
                 }
             

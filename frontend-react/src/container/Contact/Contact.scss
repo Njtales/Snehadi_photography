@@ -21,11 +21,11 @@
   .contactbanner {
     text-align: left;
     margin: 0px auto; 
-    line-height: 1.5;
-    font-size: 1.4rem;
+    line-height: 1.8;
+    font-size: 1.2rem;
     color: var(--darkgrey-color);
     width: 100%;
-    padding: 40px 80px 40px; 
+    padding: 4% 3% 4%; 
     max-width: 1200px; 
     p{
       text-align: left;
@@ -36,7 +36,7 @@
         }
     div {
         margin: 50px 0 50px 0;
-        font-size: 1.5em;
+        font-size: 1.3em;
         letter-spacing: 3px; 
         font-weight: lighter;
       }    
@@ -177,18 +177,17 @@
   color: var(--darkgrey-color);
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: var(--font-playfair-display);
-  text-align: center;
+  padding: 3%;
+  text-align: left;
 
   .thankyou-main-message {
-    font-size: 1.1em;
-    margin: 100px 0 60px 0;
+    font-size: 1.2em;
+    margin: 8% 0 6% 0;
   }
 
   .thankyou-reply {
-    margin: 80px 0;
-    line-height: 1.8;
+    margin: 4% 0;
+    line-height: 1.5;
 
     .emphasis {
       font-style: italic;
@@ -196,13 +195,12 @@
   }
 
   .thankyou-closing-remark {
-    margin: 40px 0;
-    font-size: 1.1em; 
+    font-size: 1em; 
   }
 
   .thankyou-signature {
-    font-size: 1.5em;
-    margin: 50px 0;
+    font-size: 1.1em;
+    margin: 1% 0;
   }
 
   .thankyou-ps-message {
