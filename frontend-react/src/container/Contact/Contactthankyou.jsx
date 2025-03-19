@@ -109,11 +109,13 @@ const GalleryLinks = () => {
         <div className="gallery-links-container">
             <p className="gallery-title">BROWSE OUR GALLERIES</p>  
             <div className="gallery-links">
-              <a href="/newborn" onMouseEnter={() => handleMouseEnter(images.newborn_img06)}>01. Newborn</a>
+              
+              <a href="/gallery/cakesmash"onMouseEnter={() => handleMouseEnter(images.family_img13)}>01. Cakesmash</a>
+              <a href="/gallery/maternity" onMouseEnter={() => handleMouseEnter(images.bump_img01)}>02. Maternity / Bump</a>
+              <a href="/gallery/newborn" onMouseEnter={() => handleMouseEnter(images.newborn_img06)}>03. Newborn</a>
               {/* <a href="/cake-smash" onMouseEnter={() => handleMouseEnter(images.cake_img02)}>02. Cake Smash</a> */}
               {/* <a href="/kids" onMouseEnter={() => handleMouseEnter(images.kids_img03)}>03. kids</a> */}
-              <a href="/maternity" onMouseEnter={() => handleMouseEnter(images.bump_img01)}>02. Maternity / Bump</a>
-              <a href="/family"onMouseEnter={() => handleMouseEnter(images.family_img13)}>03. Family</a>
+              {/* <a href="/family"onMouseEnter={() => handleMouseEnter(images.family_img13)}>03. Family</a> */}
             </div>
           </div>
           <div className="gallery-image">

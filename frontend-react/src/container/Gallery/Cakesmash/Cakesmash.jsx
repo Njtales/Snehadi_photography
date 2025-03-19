@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { IoIosArrowBack, IoIosArrowForward, IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
-import { images } from '../../constants';
-import { urlFor, client } from '../../client';
-import { AppWrap, MotionWrap } from '../../wrapper';
+import { images } from '../../../constants';
+import { IoIosArrowBack, IoIosArrowForward,IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
+import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons/hi";
+import { urlFor, client } from '../../../client';
+import Slider from 'react-slick';
+import { AppWrap, MotionWrap } from '../../../wrapper';
 
-import './WhoIam.scss';
+import './Cakesmash.scss';
 
-const WhoIam = () => {
+const Cakesmash = () => {
   const [portCategories, setPortCategories] = useState([]);
   
   useEffect(() => {
@@ -63,7 +65,7 @@ return (
                 alt="portfolio_right_nav_svg"
                 className="PageHeader-svg-right-nav" />
               <a href="/contact">CONTACT</a>
-              <a href="/testimonial">TESTIMONIALS</a>
+              <a href="/testimonial">TESTIMONIAL</a>
             </div>
           </nav>
       </div>
@@ -71,74 +73,87 @@ return (
   );
 };
 
-const UpperWhoIam  = () => {
-    return (
-        <div className="UpperWhoIam-container">
-          <div className="UpperWhoIam-text-section">
-            <div>It's so lovely to meet you!</div>
-            <p>It's so lovely to meet you. I'm a photographer based in Doha, Qatar.</p>
-            <p>My aim is to capture you and your family in the most laid-back, authentic way. You will have film-like images of your story to look at forever; like opening a little window into that moment of time with your children and remember their tiny hands and cheeky smiles.</p>
-            <p>I would like to capture your family as it is... the laughter, the magic, the madness.</p>
-            <p>My style is natural, organic, and soulful. I love to capture the connection between you and your loved ones, the little details, and the in-between moments. My sessions are relaxed and fun, and I will guide you through the whole process. I want you to feel comfortable and enjoy the experience.</p>
-            <p>I feel privileged to tell your story through my lens.</p>
-            <a href="/contact" className="UpperWhoIam-get-in-touch">Get in touch!</a>
-          </div>
-          <div className="UpperWhoIam-image-section">
-            <img src={images.myimg} alt="Family on the beach" />
-          </div>
-        </div>
-      );
-    };
 
+function NextArrow(props) {
+  const { onClick } = props;
+  return (
+    <div className="slick-next" onClick={onClick}>
+      {'>'} {/* You can replace these with your custom icons or images */}
+    </div>
+  );
+}
 
-const WhoIamPhotography = () => {
+function PrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <div className="slick-prev" onClick={onClick}>
+      {'<'} {/* You can replace these with your custom icons or images */}
+    </div>
+  );
+}
+
+const UpperCakesmash = () => {
+  const [Cakesmash, setCakesmash] = useState([]);
+  const sliderRef = useRef(); 
+  const goToNext = () => sliderRef.current.slickNext();
+  const goToPrevious = () => sliderRef.current.slickPrev();
   
-return (
-        <>
-            <div className="whoiamphotography-container">
-                <div className="whoiamphotography-title">Gallery</div>
-                <div className="whoiamphotography-list">
-                    <a href="/Portfolio/gallery/cakesmash" className="whoiamphotography">Cakesmash Photography</a>
-                    <a href="/Portfolio/gallery/maternity" className="whoiamphotography">Maternity Photogaphy</a>
-                    <a href="/Portfolio/gallery/newborn" className="whoiamphotography">New Born Photography</a>
-                    
-                </div>
+  useEffect(() => {
+    const query = `*[_type == "cakesmash"]`;
+    client.fetch(query)
+      .then((data) => {
+        setCakesmash(data);
+      })
+      .catch(console.error);
+  }, []);
+
+  if (!Cakesmash.length) {
+    return <div>Loading Cakesmash...</div>;
+  }
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
+  };
+  return (
+
+
+
+    <div className="cakesmash-slider">
+    <div className="cakesmash-headline">
+      <p className="cakesmash-headline_title">"Stop looking and book her. No one else compares!"</p>
+      <p className="cakesmash-headline_author"> - Nikhil & Sayli</p>
+    </div>
+      <Slider ref={sliderRef} {...settings} className="cakesmash-slider">
+        {Cakesmash.map((cakesmash, index) => (
+          <div key={index} className="cakesmash-slide">
+            <div className="cakesmash-content">
+              <div className="cakesmash-text-content">
+                <p className="cakesmash-author">{cakesmash.name}</p>
+                <p className="cakesmash-quote">"{cakesmash.feedback}"</p>
+              </div>
+              <div className="cakesmash-image">
+                {cakesmash.imgUrl && (               
+                  <img src={urlFor(cakesmash.imgUrl).url()} alt={`${cakesmash.name}'s cakesmash`} />
+                )}
+              </div>
             </div>
-        </>
-    );
-  }; 
-
-const MidWhoIam  = () => {
-    return (
-        <div className="MidWhoIam-container">
-          <div className="MidWhoIam-image-section">
-            <img src={images.kids_img08} alt="Family on the beach" />
           </div>
-          <div className="MidWhoIam-text-section">
-            <div>Some random facts about me:</div>
-            <ul>
-                <li>I lived in Doha, Qatar for eight years (and have missed the rain ever since!)</li>
-                <li>I fell in love with photography after finishing my Computer Science Engineering and the rest is history.</li>
-                <li>I started capturing the moments of my first daughter, and the journey continues...</li>
-                <li>I'm an Indian (hence like to share a vibrant theme).</li>
-                <li>I'm obsessed with light and creating film-like images that you will cherish forever.</li>
-                <li>All of it! That is what makes every family so unique. I cannot wait to meet you!</li>
-
-            </ul>
-          </div>
-        </div>
-      );
-    };
-
-const LowerWhoIam = () => {
-    return (
-      <div className="LowerWhoIam-container">
-        <img src={images.kids_img11} alt="Family walking" className="LowerWhoIam-bg-image" />
-        <div className="LowerWhoIam-overlay-text">
-          <p>"TODAY'S LITTLE MOMENTS BECOME <br/>TOMORROW'S PRECIOUS MEMORIES."</p>
-        </div>
+          
+        ))}
+      </Slider>
+      <div className="cakesmash-navigation">
+        <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
+        <HiOutlineArrowNarrowRight onClick={goToNext} />
       </div>
-    );
+    </div>
+  );
   };
       
 const UpperFooter  = () => {
@@ -206,7 +221,7 @@ const UpperFooter  = () => {
           <a href="/contact">Book</a>
         </div>
       <a href="/contact">CONTACT</a>
-      <a href="/Testimonial">TESTIMONIALS</a>
+      <a href="/testimonial">TESTIMONIAL</a>
     </div>
     );
   };
@@ -221,7 +236,7 @@ const LowerFooter = () => {
   };
     return (
     <div className="footer-info">
-      <p>© 2025 Snehal Jatale Photography | PH: 07826 343049</p><br />
+      <p>© 2024 Snehal Jatale Photography | PH: 07753 918384</p><br />
       <p>Snehal Jatale is an award-winning newborn photographer, maternity photographer, family photographer, and baby photographer based in Doha, Qatar. Snehal offers timeless pregnancy portraits, artistic newborn photography, beautiful family photos.</p>
       <p>Organic, natural, soulful photography.</p><br />
       <p>By appointments only.</p>
@@ -232,24 +247,18 @@ const LowerFooter = () => {
     </div>
     );
   };
-
-  const WhoIamMotion = MotionWrap(WhoIam);
-  const UpperWhoIamMotion = MotionWrap(UpperWhoIam);
-  const WhoIamPhotographyWhoIamMotion = MotionWrap(WhoIamPhotography);
-  const MidWhoIamMotion = MotionWrap(MidWhoIam);
-  const LowerWhoIamMotion = MotionWrap(LowerWhoIam);
+  
+  const CakesmashMotion = MotionWrap(Cakesmash);
+  const UpperCakesmashMotion = MotionWrap(UpperCakesmash);
   const UpperFooterWithMotion = MotionWrap(UpperFooter);
   const MidFooterWithMotion = MotionWrap(MidFooter);
   const LowerFooterWithMotion = MotionWrap(LowerFooter);
 
-  const PortfolioPage = () => {
+  const cakesmashPage = () => {
     return (
       <>
-        <WhoIamMotion />
-        <UpperWhoIamMotion />
-        <WhoIamPhotographyWhoIamMotion />
-        <MidWhoIamMotion />
-        <LowerWhoIamMotion />
+        <CakesmashMotion />
+        <UpperCakesmashMotion />
         <UpperFooterWithMotion />
         <MidFooterWithMotion />
         <LowerFooterWithMotion />
@@ -257,4 +266,4 @@ const LowerFooter = () => {
     );
   };
 
-export default AppWrap(PortfolioPage, 'WhoIam');
+export default AppWrap(cakesmashPage, 'cakesmash');
