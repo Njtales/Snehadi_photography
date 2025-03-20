@@ -190,19 +190,19 @@
           
               span {
                   font-family: var(--font-playfair-display);
-                  text-align: center;    
-                  font-size: 2rem;
+                  text-align: left;    
+                  font-size: 1.5rem;
                   // display: block;
               }
           
               p {
-                  padding-top: 50px;
+                  padding-top: 15%;
                   font-family: var(--font-playfair-display);
-                  font-size: 1.4rem;
+                  font-size: 1.1rem;
                   line-height: 1.3;
                 }
               .testimonial-read-more {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 font-style: italic;
                 color: var(--grey-color);
                 text-decoration: none;
