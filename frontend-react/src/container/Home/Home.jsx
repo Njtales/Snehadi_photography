@@ -62,8 +62,8 @@ const Home = () => {
             className="home-svg-left-nav" />
             <div className="home-left-nav">            
               <a href="/Portfolio" className="home-navsubmenu-link">PORTFOLIO</a>
-              <div className="footer-submenu footer-submenu-common"></div>
-                <div className="home-navigation-submenu">
+              {/* <div className="footer-submenu footer-submenu-common"></div> */}
+                <div className="home-navigation-submenu submenu-portfolio">
                   {portCategories.map((category, index) => (
                     <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
                       {category.title}
@@ -73,7 +73,7 @@ const Home = () => {
                   
               <a href="/WhoIAm" className="home-navsubmenu-link">WHO I AM</a>
               <a  className="home-navsubmenu-link">MORE INFO</a>
-                    <div className="home-navigation-submenu">
+                    <div className="home-navigation-submenu submenu-moreinfo">
                       <a href="/testimonial">Kind Words</a>
                       <a href="/pricing">Pricing</a>
                       <a href="/contact">Book</a>
