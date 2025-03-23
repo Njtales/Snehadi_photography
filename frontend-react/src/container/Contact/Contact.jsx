@@ -33,7 +33,8 @@ return (
                 <a href="/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
+                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+
                         {category.title}
                       </a>
                     ))}
@@ -44,7 +45,7 @@ return (
                   <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
                       <a href="/testimonial">Kind Words</a>
-                      <a href="/pricing">Pricing</a>
+                      {/* <a href="/pricing">Pricing</a> */}
                       <a href="/contact">Book</a>
                     </div>
                   </div>
@@ -56,7 +57,7 @@ return (
                   src={images.child_icon} // child_icon -- sj_logo
                   alt="SNEHAL JATALE PHOTOGRAPHY"
                   className="PageHeader-center-nav-logo" />
-                <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span>
+                {/* <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span> */}
                 </a>
             </div>
 
@@ -77,14 +78,14 @@ return (
 const Contactbanner = () => {
   return (
     <div className="contactbanner">
-      <div className="contactbanner-title">Let's Create Something Beautiful...</div>
+      <div className="contactbanner-title">LET'S CREATE SOMETHING BEAUTIFUL...</div>
       <p>Every family has a story-full of quiet moments, deep connections, and fleeting details that deserve to be remembered. <br/>If my style speaks to you, I'd love to capture yours in a way that feels effortless, intimate, and beautifully timeless.
 To enquire about a session, ask a question, or simply say hello, please fill out the form below. 
 <br/><br/>I'll be in touch soon, and we can start planning something truly special.
 I can't wait to hear from you.</p>
       <div>
         <a href="tel:+44 7826343049" className="contactbanner-contact-svg">
-         {/* <GiRotaryPhone />  */}
+         <GiRotaryPhone /> 
          +44 7733 419784
         </a>
         </div>
@@ -98,15 +99,15 @@ const ContactForm = () => {
   const getMessageLabel = () => {
     switch (sessionType) {
       case 'maternity':
-        return 'Your message (When is the baby due? Please provide details for your Maternity session)';
+        return 'Your message (When is the baby due? Please share details if you would like any specific photo type)';
       case 'newborn':
-        return 'Your message (When is the baby due? Please provide details for your Newborn session)';
+        return 'Your message (When is the baby due? Please provide details for the Newborn session)';
       case 'family':
-        return 'Your message (Please tell us more about your family and any ideas you have for the session)';
-      case 'corporate':
-        return 'Your message (Please describe your corporate project and requirements)';
-      case 'other':
-        return 'Your message (Please provide details about your session)';
+        return 'Your message (Please tell us more about your family and any ideas if you have for the session)';
+      case 'cakesmash': 
+        return 'Your message (Please describe your Cake smash / pre birthday session, any style/theme you can think of)';
+      case 'sitter':
+        return 'Your message (Please provide details about the Sitter session you would like)';
       default:
         return 'Your message';
     }
@@ -119,8 +120,10 @@ const ContactForm = () => {
         return 'Please tell us the due date and any other details...';
       case 'family':
         return 'Tell us more about your family session...';
-      case 'corporate':
-        return 'Please provide details about your corporate project...';
+      case 'cakesmash':
+        return 'Please provide details about your Cake-smash or pre-birthday session...';
+      case 'sitter':
+        return 'Your message (Please provide details about the Sitter session you would like)';
       case 'other':
         return 'What would you like to talk about?';
       default:
@@ -187,10 +190,11 @@ const ContactForm = () => {
             <label htmlFor="session-type">What kind of session are we going to do together?</label>
               <select id="session-type" required onChange={(e) => setSessionType(e.target.value)}>
                 <option value="" disabled selected>------Select------</option>
-                  <option value="maternity">Maternity Photography</option>
-                  <option value="newborn">Newborn Photography</option>
-                  <option value="family">Family Photography</option>
-                  <option value="corporate">Corporate Project</option>
+                  <option value="maternity">Maternity Photo Session</option>
+                  <option value="newborn">Newborn Photo Session</option>
+                  <option value="family">Family Photo Session</option>
+                  <option value="cakesmash">Cake-Smash / Pre-birthday Photo Session</option>
+                  <option value="sitter">Sitter Photo Session</option>
                   <option value="other">Something else</option>
               </select>
             
@@ -205,14 +209,14 @@ const ContactForm = () => {
             <label htmlFor="message">{getMessageLabel()} *</label>
             <textarea id="message" name="message" placeholder={getMessagePlaceholder()} required rows="5"></textarea>
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="photo-love">Tell me which photo you LOVE on my Website!</label>
             <input type="text" id="photo-love" placeholder="Favorite Photo" />
-          </div>
-          <div className="form-group">
+          </div> */}
+          {/* <div className="form-group">
             <label htmlFor="postcode">Postal Code / Where are you based *</label>
             <input type="text" id="postcode" name="postal code" placeholder="postal code" required />
-          </div>
+          </div> */}
           <div className="form-group">
             <label htmlFor="referral">Where did you hear about me?</label>
             <input type="text" id="referral" placeholder="Referral Source" />
@@ -281,7 +285,8 @@ const ContactFooter  = () => {
           <a href="/portfolio" className="footer-link">PORTFOLIO</a>
             <div className="footer-submenu footer-submenu-common">
               {portCategories.map((category, index) => (
-                <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
+                <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+
                   {category.title}
                 </a>
               ))}
@@ -290,7 +295,7 @@ const ContactFooter  = () => {
             <a  className="footer-link">MORE INFO</a>
             <div className="footer-moreinfo-submenu footer-submenu-common">
               <a href="/testimonial">Kind Words</a>
-              <a href="/pricing">Pricing</a>
+              {/* <a href="/pricing">Pricing</a> */}
               <a href="/contact">Book</a>
             </div>
           <a href="/contact">CONTACT</a>

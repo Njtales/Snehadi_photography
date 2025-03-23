@@ -9,7 +9,8 @@ import Contactthankyou from './container/Contact/Contactthankyou';
 import Testimonials from './container/Testimonials/Testimonials';
 import Maternity from './container/Gallery/Maternity/Maternity';
 import Newborn from './container/Gallery/Newborn/Newborn';
-import CakeSmash from './container/Gallery/Cakesmash/Cakesmash';
+import Cakesmashprebirthday from './container/Gallery/Cakesmashprebirthday/Cakesmashprebirthday';
+import Family from './container/Gallery/Family/Family';
 
 import './App.scss';
 
@@ -29,7 +30,8 @@ const App = () => {
           <Route path="/testimonial" element={<Testimonials />} />
           <Route path="/gallery/maternity" element={<Maternity />} />
           <Route path="/gallery/newborn" element={<Newborn />} />
-          <Route path="/gallery/cakesmash" element={<CakeSmash />} />
+          <Route path="/gallery/cakesmashprebirthday" element={<Cakesmashprebirthday />} />
+          <Route path="/gallery/family" element={<Family />} />
         </Routes>
       </div>
     </Router>

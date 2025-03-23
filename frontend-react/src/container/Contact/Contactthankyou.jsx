@@ -35,7 +35,8 @@ return (
                 <a href="/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
+                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+
                         {category.title}
                       </a>
                     ))}
@@ -46,7 +47,7 @@ return (
                   <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
                       <a href="/testimonial">Kind Words</a>
-                      <a href="/pricing">Pricing</a>
+                      {/* <a href="/pricing">Pricing</a> */}
                       <a href="/contact">Book</a>
                     </div>
                   </div>
@@ -58,7 +59,7 @@ return (
                     src={images.child_icon} // child_icon -- sj_logo
                     alt="SNEHAL JATALE PHOTOGRAPHY"
                     className="PageHeader-center-nav-logo" />
-                  <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span>
+                  {/* <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span> */}
                   </a>
               </div>
 
@@ -110,12 +111,10 @@ const GalleryLinks = () => {
             <p className="gallery-title">BROWSE OUR GALLERIES</p>  
             <div className="gallery-links">
               
-              <a href="/gallery/cakesmash"onMouseEnter={() => handleMouseEnter(images.family_img13)}>01. Cakesmash</a>
+              <a href="/gallery/cakesmashprebirthday"onMouseEnter={() => handleMouseEnter(images.family_img13)}>01. Cake Smash / Pre-birthday</a>
               <a href="/gallery/maternity" onMouseEnter={() => handleMouseEnter(images.bump_img01)}>02. Maternity / Bump</a>
               <a href="/gallery/newborn" onMouseEnter={() => handleMouseEnter(images.newborn_img06)}>03. Newborn</a>
-              {/* <a href="/cake-smash" onMouseEnter={() => handleMouseEnter(images.cake_img02)}>02. Cake Smash</a> */}
-              {/* <a href="/kids" onMouseEnter={() => handleMouseEnter(images.kids_img03)}>03. kids</a> */}
-              {/* <a href="/family"onMouseEnter={() => handleMouseEnter(images.family_img13)}>03. Family</a> */}
+              <a href="/gallery/family" onMouseEnter={() => handleMouseEnter(images.cake_img02)}>04. Family</a>
             </div>
           </div>
           <div className="gallery-image">
@@ -181,7 +180,8 @@ const ContactFooter  = () => {
           <a href="/portfolio" className="footer-link">PORTFOLIO</a>
             <div className="footer-submenu footer-submenu-common">
               {portCategories.map((category, index) => (
-                <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
+                <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+
                   {category.title}
                 </a>
               ))}
@@ -190,7 +190,7 @@ const ContactFooter  = () => {
             <a  className="footer-link">MORE INFO</a>
             <div className="footer-moreinfo-submenu footer-submenu-common">
               <a href="/testimonial">Kind Words</a>
-              <a href="/pricing">Pricing</a>
+              {/* <a href="/pricing">Pricing</a> */}
               <a href="/contact">Book</a>
             </div>
           <a href="/contact">CONTACT</a>

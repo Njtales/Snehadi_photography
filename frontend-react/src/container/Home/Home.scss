@@ -36,7 +36,8 @@ body, html {
     top: 0;
     left: 0;
     right: 0;
-    padding: 20px;
+    // padding: 20px;
+    padding: 1.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,7 +47,7 @@ body, html {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin: 4% 0 0 4%;
+      margin: 4% 0 0 0;
       font-size: 1.0rem;
       letter-spacing: 1.6px;
       font-family: var(--font-playfair-display);
@@ -57,11 +58,11 @@ body, html {
         color: var(--darkblack-color);
         font-weight: bold;
         margin-top: -4%;
-        margin-bottom: 45px;
+        margin-bottom: 11%;
         transition: color 0.3s ease;
-        position: relative;
+        // position: relative;
         z-index: 10;
-        padding: 0 50px;     ///////// align this for better view but hover don't work
+        padding: 5% 90px 5% 60px;     ///////// align this for better view but hover don't work
       }
     
       .home-navigation-submenu {
@@ -71,29 +72,17 @@ body, html {
         position: absolute;
         background-color: var(--offwhite-color);
         z-index: 5;
+        margin: 0.7% 0 0 0.3%;
         padding: 1% 3%;
-        width: 14%;
+        width: 20%;
         text-align: center;
         transform: translateY(-10px);
-        
-        // &::after {
-        //   content: '';
-        //   position: absolute;
-        //   bottom: 100%;
-        //   left: 50%;
-        //   transform: translateX(-50%);
-        //   border-style: solid;
-        //   // border-width: 0 10px 10px;
-        //   border-color: transparent transparent var(--offwhite-color) transparent;
-        //   z-index: 5;
-        // }
     
         a {
           text-decoration: none;
           color: var(--darkgrey-color);
           display: block;
-          margin: 5px 0;
-          // padding: 5px 40px;
+          margin: 4% 0;
           transition: background-color 0.3s ease;
     
           &:hover {
@@ -122,9 +111,14 @@ body, html {
         left: 16%;
       }
     }
-    
-    
 
+    .home-right-nav {
+      .home-navsubmenu-link {
+        padding: 0 0 0 0;
+        margin: 0 0 40px 0;
+      }
+    }
+    
       .home-right-nav {
         // margin: 60px 0 0 300px;
         margin-right: 2%;
@@ -186,9 +180,9 @@ body, html {
     text-decoration: none;
 
     .PageHeaderhome-center-nav-logo {
-      height: 45px;
+      height: 250px;
       width: auto;
-      margin-bottom: 10px;
+      margin-top: 140%;
     }
 
     h1, span {

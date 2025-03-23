@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { images } from '../../constants';
+import { images } from '../../../constants';
 import { IoIosArrowBack, IoIosArrowForward,IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { urlFor, client } from '../../client';
+import { urlFor, client } from '../../../client';
 import Slider from 'react-slick';
-import { AppWrap, MotionWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../../wrapper';
 
-import './Testimonials.scss';
+import './Family.scss';
 
-const Testimonials = () => {
+const Family = () => {
   const [portCategories, setPortCategories] = useState([]);
   
   useEffect(() => {
@@ -66,7 +66,7 @@ return (
                 alt="portfolio_right_nav_svg"
                 className="PageHeader-svg-right-nav" />
               <a href="/contact">CONTACT</a>
-              <a href="/testimonial">TESTIMONIALS</a>
+              <a href="/testimonial">TESTIMONIAL</a>
             </div>
           </nav>
       </div>
@@ -93,23 +93,23 @@ function PrevArrow(props) {
   );
 }
 
-const UpperTestimonials = () => {
-  const [testimonials, setTestimonials] = useState([]);
+const UpperFamily = () => {
+  const [Family, setFamily] = useState([]);
   const sliderRef = useRef(); 
   const goToNext = () => sliderRef.current.slickNext();
   const goToPrevious = () => sliderRef.current.slickPrev();
   
   useEffect(() => {
-    const query = `*[_type == "testimonial"]`;
+    const query = `*[_type == "Family"]`;
     client.fetch(query)
       .then((data) => {
-        setTestimonials(data);
+        setFamily(data);
       })
       .catch(console.error);
   }, []);
 
-  if (!testimonials.length) {
-    return <div>Loading testimonials...</div>;
+  if (!Family.length) {
+    return <div>Loading Family...</div>;
   }
 
   const settings = {
@@ -126,22 +126,22 @@ const UpperTestimonials = () => {
 
 
 
-    <div className="testimonial-slider">
-    <div className="testimonial-headline">
-      <p className="testimonial-headline_title">"Stop looking and book her. No one else compares!"</p>
-      <p className="testimonial-headline_author"> - Nikhil & Sayli</p>
+    <div className="Family-slider">
+    <div className="Family-headline">
+      <p className="Family-headline_title">"Stop looking and book her. No one else compares!"</p>
+      <p className="Family-headline_author"> - Nikhil & Sayli</p>
     </div>
-      <Slider ref={sliderRef} {...settings} className="testimonial-slider">
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="testimonial-slide">
-            <div className="testimonial-content">
-              <div className="testimonial-text-content">
-                <p className="testimonial-author">{testimonial.name}</p>
-                <p className="testimonial-quote">"{testimonial.feedback}"</p>
+      <Slider ref={sliderRef} {...settings} className="Family-slider">
+        {Family.map((Family, index) => (
+          <div key={index} className="Family-slide">
+            <div className="Family-content">
+              <div className="Family-text-content">
+                <p className="Family-author">{Family.name}</p>
+                <p className="Family-quote">"{Family.feedback}"</p>
               </div>
-              <div className="testimonial-image">
-                {testimonial.imgUrl && (               
-                  <img src={urlFor(testimonial.imgUrl).url()} alt={`${testimonial.name}'s testimonial`} />
+              <div className="Family-image">
+                {Family.imgUrl && (               
+                  <img src={urlFor(Family.imgUrl).url()} alt={`${Family.name}'s Family`} />
                 )}
               </div>
             </div>
@@ -149,7 +149,7 @@ const UpperTestimonials = () => {
           
         ))}
       </Slider>
-      <div className="testimonial-navigation">
+      <div className="Family-navigation">
         <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
         <HiOutlineArrowNarrowRight onClick={goToNext} />
       </div>
@@ -223,7 +223,7 @@ const UpperFooter  = () => {
           <a href="/contact">Book</a>
         </div>
       <a href="/contact">CONTACT</a>
-      <a href="/Testimonial">TESTIMONIALS</a>
+      <a href="/testimonial">TESTIMONIAL</a>
     </div>
     );
   };
@@ -239,7 +239,7 @@ const LowerFooter = () => {
     return (
     <div className="footer-info">
       <p>© 2024 Snehal Jatale Photography | PH: 07753 918384</p><br />
-      <p>Snehal Jatale is an award-winning newborn photographer, maternity photographer, family photographer, and baby photographer based in Doha, Qatar. Snehal offers timeless pregnancy portraits, artistic newborn photography, beautiful family photos.</p>
+      <p>Snehal Jatale is an award-winning Family photographer, maternity photographer, family photographer, and baby photographer based in Doha, Qatar. Snehal offers timeless pregnancy portraits, artistic Family photography, beautiful family photos.</p>
       <p>Organic, natural, soulful photography.</p><br />
       <p>By appointments only.</p>
 
@@ -250,17 +250,17 @@ const LowerFooter = () => {
     );
   };
   
-  const TestimonialsMotion = MotionWrap(Testimonials);
-  const UpperTestimonialsMotion = MotionWrap(UpperTestimonials);
+  const FamilyMotion = MotionWrap(Family);
+  const UpperFamilyMotion = MotionWrap(UpperFamily);
   const UpperFooterWithMotion = MotionWrap(UpperFooter);
   const MidFooterWithMotion = MotionWrap(MidFooter);
   const LowerFooterWithMotion = MotionWrap(LowerFooter);
 
-  const TestimonialPage = () => {
+  const FamilyPage = () => {
     return (
       <>
-        <TestimonialsMotion />
-        <UpperTestimonialsMotion />
+        <FamilyMotion />
+        <UpperFamilyMotion />
         <UpperFooterWithMotion />
         <MidFooterWithMotion />
         <LowerFooterWithMotion />
@@ -268,4 +268,4 @@ const LowerFooter = () => {
     );
   };
 
-export default AppWrap(TestimonialPage, 'testimonial');
+export default AppWrap(FamilyPage, 'Family');

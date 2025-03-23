@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { images } from '../../constants';
+import { images } from '../../../../../../constants';
 import { IoIosArrowBack, IoIosArrowForward,IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { urlFor, client } from '../../client';
+import { urlFor, client } from '../../../../../../client';
 import Slider from 'react-slick';
-import { AppWrap, MotionWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../../../../../wrapper';
 
-import './Testimonials.scss';
+import './Cakesmashprebirthday.scss';
 
-const Testimonials = () => {
+const Cakesmash = () => {
   const [portCategories, setPortCategories] = useState([]);
   
   useEffect(() => {
@@ -66,7 +66,7 @@ return (
                 alt="portfolio_right_nav_svg"
                 className="PageHeader-svg-right-nav" />
               <a href="/contact">CONTACT</a>
-              <a href="/testimonial">TESTIMONIALS</a>
+              <a href="/testimonial">TESTIMONIAL</a>
             </div>
           </nav>
       </div>
@@ -93,23 +93,23 @@ function PrevArrow(props) {
   );
 }
 
-const UpperTestimonials = () => {
-  const [testimonials, setTestimonials] = useState([]);
+const UpperCakesmash = () => {
+  const [Cakesmash, setCakesmash] = useState([]);
   const sliderRef = useRef(); 
   const goToNext = () => sliderRef.current.slickNext();
   const goToPrevious = () => sliderRef.current.slickPrev();
   
   useEffect(() => {
-    const query = `*[_type == "testimonial"]`;
+    const query = `*[_type == "cakesmash"]`;
     client.fetch(query)
       .then((data) => {
-        setTestimonials(data);
+        setCakesmash(data);
       })
       .catch(console.error);
   }, []);
 
-  if (!testimonials.length) {
-    return <div>Loading testimonials...</div>;
+  if (!Cakesmash.length) {
+    return <div>Loading Cakesmash...</div>;
   }
 
   const settings = {
@@ -126,22 +126,22 @@ const UpperTestimonials = () => {
 
 
 
-    <div className="testimonial-slider">
-    <div className="testimonial-headline">
-      <p className="testimonial-headline_title">"Stop looking and book her. No one else compares!"</p>
-      <p className="testimonial-headline_author"> - Nikhil & Sayli</p>
+    <div className="cakesmash-slider">
+    <div className="cakesmash-headline">
+      <p className="cakesmash-headline_title">"Stop looking and book her. No one else compares!"</p>
+      <p className="cakesmash-headline_author"> - Nikhil & Sayli</p>
     </div>
-      <Slider ref={sliderRef} {...settings} className="testimonial-slider">
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="testimonial-slide">
-            <div className="testimonial-content">
-              <div className="testimonial-text-content">
-                <p className="testimonial-author">{testimonial.name}</p>
-                <p className="testimonial-quote">"{testimonial.feedback}"</p>
+      <Slider ref={sliderRef} {...settings} className="cakesmash-slider">
+        {Cakesmash.map((cakesmash, index) => (
+          <div key={index} className="cakesmash-slide">
+            <div className="cakesmash-content">
+              <div className="cakesmash-text-content">
+                <p className="cakesmash-author">{cakesmash.name}</p>
+                <p className="cakesmash-quote">"{cakesmash.feedback}"</p>
               </div>
-              <div className="testimonial-image">
-                {testimonial.imgUrl && (               
-                  <img src={urlFor(testimonial.imgUrl).url()} alt={`${testimonial.name}'s testimonial`} />
+              <div className="cakesmash-image">
+                {cakesmash.imgUrl && (               
+                  <img src={urlFor(cakesmash.imgUrl).url()} alt={`${cakesmash.name}'s cakesmash`} />
                 )}
               </div>
             </div>
@@ -149,7 +149,7 @@ const UpperTestimonials = () => {
           
         ))}
       </Slider>
-      <div className="testimonial-navigation">
+      <div className="cakesmash-navigation">
         <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
         <HiOutlineArrowNarrowRight onClick={goToNext} />
       </div>
@@ -223,7 +223,7 @@ const UpperFooter  = () => {
           <a href="/contact">Book</a>
         </div>
       <a href="/contact">CONTACT</a>
-      <a href="/Testimonial">TESTIMONIALS</a>
+      <a href="/testimonial">TESTIMONIAL</a>
     </div>
     );
   };
@@ -250,17 +250,17 @@ const LowerFooter = () => {
     );
   };
   
-  const TestimonialsMotion = MotionWrap(Testimonials);
-  const UpperTestimonialsMotion = MotionWrap(UpperTestimonials);
+  const CakesmashMotion = MotionWrap(Cakesmash);
+  const UpperCakesmashMotion = MotionWrap(UpperCakesmash);
   const UpperFooterWithMotion = MotionWrap(UpperFooter);
   const MidFooterWithMotion = MotionWrap(MidFooter);
   const LowerFooterWithMotion = MotionWrap(LowerFooter);
 
-  const TestimonialPage = () => {
+  const cakesmashPage = () => {
     return (
       <>
-        <TestimonialsMotion />
-        <UpperTestimonialsMotion />
+        <CakesmashMotion />
+        <UpperCakesmashMotion />
         <UpperFooterWithMotion />
         <MidFooterWithMotion />
         <LowerFooterWithMotion />
@@ -268,4 +268,4 @@ const LowerFooter = () => {
     );
   };
 
-export default AppWrap(TestimonialPage, 'testimonial');
+export default AppWrap(cakesmashPage, 'cakesmash');

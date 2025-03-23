@@ -30,7 +30,8 @@ return (
                 <a href="/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
+                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+
                         {category.title}
                       </a>
                     ))}
@@ -41,7 +42,7 @@ return (
                   <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
                       <a href="/testimonial">Kind Words</a>
-                      <a href="/pricing">Pricing</a>
+                      {/* <a href="/pricing">Pricing</a> */}
                       <a href="/contact">Book</a>
                     </div>
                   </div>
@@ -53,7 +54,7 @@ return (
                     src={images.child_icon} // child_icon -- sj_logo
                     alt="SNEHAL JATALE PHOTOGRAPHY"
                     className="PageHeader-center-nav-logo" />
-                  <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span>
+                  {/* <h1>BABY BLISS</h1><span>STUDIO</span> */}
                   </a>
               </div>
 
@@ -75,7 +76,7 @@ const UpperWhoIam  = () => {
     return (
         <div className="UpperWhoIam-container">
           <div className="UpperWhoIam-text-section">
-            <div>It's so lovely to meet you!</div>
+            <div>IT'S SO LOVELY TO MEET YOU!</div>
             <p>It's so lovely to meet you. I'm a photographer based in Doha, Qatar.</p>
             <p>My aim is to capture you and your family in the most laid-back, authentic way. You will have film-like images of your story to look at forever; like opening a little window into that moment of time with your children and remember their tiny hands and cheeky smiles.</p>
             <p>I would like to capture your family as it is... the laughter, the magic, the madness.</p>
@@ -98,10 +99,10 @@ return (
             <div className="whoiamphotography-container">
                 <div className="whoiamphotography-title">Gallery</div>
                 <div className="whoiamphotography-list">
-                    <a href="/Portfolio/gallery/cakesmash" className="whoiamphotography">Cakesmash Photography</a>
-                    <a href="/Portfolio/gallery/maternity" className="whoiamphotography">Maternity Photogaphy</a>
-                    <a href="/Portfolio/gallery/newborn" className="whoiamphotography">New Born Photography</a>
-                    
+                    <a href="/gallery/cakesmashprebirthday" className="whoiamphotography">Cakesmash</a>
+                    <a href="/gallery/maternity" className="whoiamphotography">Maternity</a>
+                    <a href="/gallery/newborn" className="whoiamphotography">New Born</a>
+                    <a href="/gallery/family" className="whoiamphotography">Family</a>                    
                 </div>
             </div>
         </>
@@ -115,7 +116,7 @@ const MidWhoIam  = () => {
             <img src={images.kids_img08} alt="Family on the beach" />
           </div>
           <div className="MidWhoIam-text-section">
-            <div>Some random facts about me:</div>
+            <div>SOME RANDOM FACTS ABOUT ME:</div>
             <ul>
                 <li>I lived in Doha, Qatar for eight years (and have missed the rain ever since!)</li>
                 <li>I fell in love with photography after finishing my Computer Science Engineering and the rest is history.</li>
@@ -193,7 +194,8 @@ const UpperFooter  = () => {
       <a href="/portfolio" className="footer-link">PORTFOLIO</a>
         <div className="footer-submenu footer-submenu-common">
           {portCategories.map((category, index) => (
-            <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
+            <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+
               {category.title}
             </a>
           ))}
@@ -202,7 +204,7 @@ const UpperFooter  = () => {
         <a  className="footer-link">MORE INFO</a>
         <div className="footer-moreinfo-submenu footer-submenu-common">
           <a href="/testimonial">Kind Words</a>
-          <a href="/pricing">Pricing</a>
+          {/* <a href="/pricing">Pricing</a> */}
           <a href="/contact">Book</a>
         </div>
       <a href="/contact">CONTACT</a>

@@ -32,7 +32,8 @@ return (
                 <a href="/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
+                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+
                         {category.title}
                       </a>
                     ))}
@@ -43,7 +44,7 @@ return (
                   <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
                       <a href="/testimonial">Kind Words</a>
-                      <a href="/pricing">Pricing</a>
+                      {/* <a href="/pricing">Pricing</a> */}
                       <a href="/contact">Book</a>
                     </div>
                   </div>
@@ -55,7 +56,7 @@ return (
                     src={images.child_icon} // child_icon -- sj_logo
                     alt="SNEHAL JATALE PHOTOGRAPHY"
                     className="PageHeader-center-nav-logo" />
-                  <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span>
+                  {/* <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span> */}
                   </a>
               </div>
 
@@ -208,7 +209,8 @@ const UpperFooter  = () => {
       <a href="/portfolio" className="footer-link">PORTFOLIO</a>
         <div className="footer-submenu footer-submenu-common">
           {portCategories.map((category, index) => (
-            <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
+            <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+
               {category.title}
             </a>
           ))}
@@ -217,7 +219,7 @@ const UpperFooter  = () => {
         <a  className="footer-link">MORE INFO</a>
         <div className="footer-moreinfo-submenu footer-submenu-common">
           <a href="/testimonial">Kind Words</a>
-          <a href="/pricing">Pricing</a>
+          {/* <a href="/pricing">Pricing</a> */}
           <a href="/contact">Book</a>
         </div>
       <a href="/contact">CONTACT</a>

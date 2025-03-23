@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { MdEmail, MdPhone } from 'react-icons/md';
+
 import { images } from '../../constants';
 import { IoIosArrowBack, IoIosArrowForward,IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
 import { urlFor, client } from '../../client';
@@ -65,7 +68,8 @@ const Home = () => {
               {/* <div className="footer-submenu footer-submenu-common"></div> */}
                 <div className="home-navigation-submenu submenu-portfolio">
                   {portCategories.map((category, index) => (
-                    <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
+                    <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+
                       {category.title}
                     </a>
                   ))}
@@ -75,7 +79,7 @@ const Home = () => {
               <a  className="home-navsubmenu-link">MORE INFO</a>
                     <div className="home-navigation-submenu submenu-moreinfo">
                       <a href="/testimonial">Kind Words</a>
-                      <a href="/pricing">Pricing</a>
+                      {/* <a href="/pricing">Pricing</a> */}
                       <a href="/contact">Book</a>
                     </div>
             </div>
@@ -85,7 +89,7 @@ const Home = () => {
                   src={images.child_icon} // child_icon -- sj_logo
                   alt="SNEHAL JATALE PHOTOGRAPHY"
                   className="PageHeaderhome-center-nav-logo" />
-                <h1>BABY BLISS</h1><span>STUDIO</span>
+                {/* <h1>BABY BLISS</h1><span>STUDIO</span> */}
                 </a>
             </div>
           <div className="home-scroll-indicator">
@@ -98,7 +102,7 @@ const Home = () => {
               alt="home_right_nav_svg"
               className="home-svg-right-nav" />
               <a href="/contact" className="home-navsubmenu-link">CONTACT</a>
-              <a href="/testimonial" className="home-navsubmenu-link">TESTIMONIALS</a>
+              <a href="/testimonial" className="home-navsubmenu-link">TESTIMONIALS</a>   {/* className="home-navsubmenu-link" */}
           </div>
         </div>
       </div>
@@ -325,7 +329,8 @@ const UpperFooter = () => {
         <a href="/portfolio" className="footer-link">PORTFOLIO</a>
           <div className="footer-submenu footer-submenu-common">
             {portCategories.map((category, index) => (
-              <a href={`/${category.title.replace(/\s+/g, '').toLowerCase()}`} key={index}>
+              <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+
                 {category.title}
               </a>
             ))}
@@ -334,7 +339,7 @@ const UpperFooter = () => {
           <a  className="footer-link">MORE INFO</a>
           <div className="footer-moreinfo-submenu footer-submenu-common">
             <a href="/testimonial">Kind Words</a>
-            <a href="/pricing">Pricing</a>
+            {/* <a href="/pricing">Pricing</a> */}
             <a href="/contact">Book</a>
           </div>
         <a href="/contact">CONTACT</a>
@@ -342,6 +347,19 @@ const UpperFooter = () => {
       </div>
     );
   };
+
+const SocialIconsFooter = () => {
+    return (
+      <div className="social-icons-footer">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"> <FaFacebookF /> </a>
+        <a href="https://www.instagram.com/snehaljatale_photography/" target="_blank" rel="noopener noreferrer"> <FaInstagram /> </a>
+        <a href="tel:+97450530042"> <MdPhone /> </a>
+        <a href="https://wa.me/97450530042" target="_blank" rel="noopener noreferrer"> <FaWhatsapp /> </a>
+        {/* https://wa.me/447826343049 */}
+        <a href="mailto:sneh.photography1512@gmail.com"> <MdEmail /> </a>
+      </div>
+    );
+};
 
 const LowerFooter = () => {
 
@@ -373,7 +391,9 @@ const TestimonialWithMotion = MotionWrap(Testimonial);
 const ContactWithMotion = MotionWrap(Contact);
 const UpperFooterWithMotion = MotionWrap(UpperFooter);
 const MidFooterWithMotion = MotionWrap(MidFooter);
+const SocialIconsFooterWithMotion = MotionWrap(SocialIconsFooter);
 const LowerFooterWithMotion = MotionWrap(LowerFooter);
+
 
 const HomePage = () => {
   return (
@@ -384,6 +404,7 @@ const HomePage = () => {
       <ContactWithMotion />
       <UpperFooterWithMotion />
       <MidFooterWithMotion />
+      <SocialIconsFooterWithMotion />
       <LowerFooterWithMotion />
     </>
   );
