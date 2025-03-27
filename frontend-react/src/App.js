@@ -11,6 +11,7 @@ import Maternity from './container/Gallery/Maternity/Maternity';
 import Newborn from './container/Gallery/Newborn/Newborn';
 import Cakesmashprebirthday from './container/Gallery/Cakesmashprebirthday/Cakesmashprebirthday';
 import Family from './container/Gallery/Family/Family';
+import Socialicons from './container/Socialicons/Socialicons';
 
 import './App.scss';
 
@@ -21,6 +22,7 @@ const App = () => {
     <Router>
       <div className="app">
         <Routes>
+        <Socialicons />
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/whoiam" element={<WhoIam />} />
@@ -32,6 +34,7 @@ const App = () => {
           <Route path="/gallery/newborn" element={<Newborn />} />
           <Route path="/gallery/cakesmashprebirthday" element={<Cakesmashprebirthday />} />
           <Route path="/gallery/family" element={<Family />} />
+          <Route path="/socialicons" element={<Socialicons />} />
         </Routes>
       </div>
     </Router>

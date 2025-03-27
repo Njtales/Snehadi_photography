@@ -1,0 +1,17 @@
+.social-icons-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9%;
+    // padding: 10px 0;
+    a {
+      color: var(--grey-color);
+      font-size: 1.1rem;
+      transition: color 1s ease;
+  
+      &:hover {
+        color: var(--darkgrey-color);
+        transform: scale(1.1);
+      }
+    }
+  }

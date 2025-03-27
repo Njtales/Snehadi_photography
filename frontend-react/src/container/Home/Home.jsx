@@ -348,19 +348,6 @@ const UpperFooter = () => {
     );
   };
 
-const SocialIconsFooter = () => {
-    return (
-      <div className="social-icons-footer">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"> <FaFacebookF /> </a>
-        <a href="https://www.instagram.com/snehaljatale_photography/" target="_blank" rel="noopener noreferrer"> <FaInstagram /> </a>
-        <a href="tel:+97450530042"> <MdPhone /> </a>
-        <a href="https://wa.me/97450530042" target="_blank" rel="noopener noreferrer"> <FaWhatsapp /> </a>
-        {/* https://wa.me/447826343049 */}
-        <a href="mailto:sneh.photography1512@gmail.com"> <MdEmail /> </a>
-      </div>
-    );
-};
-
 const LowerFooter = () => {
 
   const scrollToTop = () => {
