@@ -5,7 +5,7 @@ import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons
 import { urlFor, client } from '../../../client';
 import Slider from 'react-slick';
 import { AppWrap, MotionWrap } from '../../../wrapper';
-
+import Masonry from 'react-masonry-css';
 import './Maternity.scss';
 
 const Maternity = () => {
@@ -93,6 +93,67 @@ function PrevArrow(props) {
   );
 }
 
+// const UpperMaternity = () => {
+//   const [Maternity, setMaternity] = useState([]);
+//   const sliderRef = useRef(); 
+//   const goToNext = () => sliderRef.current.slickNext();
+//   const goToPrevious = () => sliderRef.current.slickPrev();
+  
+//   useEffect(() => {
+//     const query = `*[_type == "maternity"]`;
+//     client.fetch(query)
+//       .then((data) => {
+//         setMaternity(data);
+//       })
+//       .catch(console.error);
+//   }, []);
+
+//   if (!Maternity.length) {
+//     return <div>Loading Maternity...</div>;
+//   }
+
+//   const settings = {
+//     dots: false,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: false,
+//     nextArrow: <NextArrow />,
+//     prevArrow: <PrevArrow />
+//   };
+//   return (
+//     <div className="maternity-slider">
+//     <div className="maternity-headline">
+//       <p className="maternity-headline_title">"Stop looking and book her. No one else compares!"</p>
+//       <p className="maternity-headline_author"> - Nikhil & Sayli</p>
+//     </div>
+//       <Slider ref={sliderRef} {...settings} className="maternity-slider">
+//         {Maternity.map((maternity, index) => (
+//           <div key={index} className="maternity-slide">
+//             <div className="maternity-content">
+//               <div className="maternity-text-content">
+//                 <p className="maternity-author">{maternity.name}</p>
+//                 <p className="maternity-quote">"{maternity.feedback}"</p>
+//               </div>
+//               <div className="maternity-image">
+//                 {maternity.imgUrl && (               
+//                   <img src={urlFor(maternity.imgUrl).url()} alt={`${maternity.name}'s maternity`} />
+//                 )}
+//               </div>
+//             </div>
+//           </div>
+          
+//         ))}
+//       </Slider>
+//       <div className="maternity-navigation">
+//         <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
+//         <HiOutlineArrowNarrowRight onClick={goToNext} />
+//       </div>
+//     </div>
+//   );
+//   };
+
 const UpperMaternity = () => {
   const [Maternity, setMaternity] = useState([]);
   const sliderRef = useRef(); 
@@ -123,9 +184,6 @@ const UpperMaternity = () => {
     prevArrow: <PrevArrow />
   };
   return (
-
-
-
     <div className="maternity-slider">
     <div className="maternity-headline">
       <p className="maternity-headline_title">"Stop looking and book her. No one else compares!"</p>
@@ -156,7 +214,8 @@ const UpperMaternity = () => {
     </div>
   );
   };
-      
+
+  
 const UpperFooter  = () => {
   const [footerImages, setFooterImages] = useState([]);
   

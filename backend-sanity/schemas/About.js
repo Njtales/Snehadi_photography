@@ -4,8 +4,8 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'photography title',
-            title: 'Photography Title',
+            name: 'title',
+            title: 'Title',
             type: 'string'
         },
         {

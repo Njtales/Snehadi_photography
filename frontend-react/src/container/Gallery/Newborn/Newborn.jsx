@@ -94,21 +94,21 @@ function PrevArrow(props) {
 }
 
 const UpperNewborn = () => {
-  const [Newborn, setNewborn] = useState([]);
+  const [newbornImages, setNewbornImages] = useState([]);
   const sliderRef = useRef(); 
   const goToNext = () => sliderRef.current.slickNext();
   const goToPrevious = () => sliderRef.current.slickPrev();
   
   useEffect(() => {
-    const query = `*[_type == "Newborn"]`;
+    const query = `*[_type == "newbornGallery"]`;
     client.fetch(query)
       .then((data) => {
-        setNewborn(data);
+        setNewbornImages(data);
       })
       .catch(console.error);
   }, []);
 
-  if (!Newborn.length) {
+  if (!newbornImages.length) {
     return <div>Loading Newborn...</div>;
   }
 
@@ -132,16 +132,18 @@ const UpperNewborn = () => {
       <p className="Newborn-headline_author"> - Nikhil & Sayli</p>
     </div>
       <Slider ref={sliderRef} {...settings} className="Newborn-slider">
-        {Newborn.map((Newborn, index) => (
+        {newbornImages.map((item, index) => (
           <div key={index} className="Newborn-slide">
             <div className="Newborn-content">
               <div className="Newborn-text-content">
-                <p className="Newborn-author">{Newborn.name}</p>
-                <p className="Newborn-quote">"{Newborn.feedback}"</p>
+                <p className="Newborn-author">{item.name}</p>
+                <p className="Newborn-quote">"{item.feedback}"</p>
               </div>
               <div className="Newborn-image">
-                {Newborn.imgUrl && (               
-                  <img src={urlFor(Newborn.imgUrl).url()} alt={`${Newborn.name}'s Newborn`} />
+                {item.imgUrl && (               
+                  <img 
+                  loading="lazy"
+                  src={urlFor(item.imgUrl).url()} alt={`${item.name}'s Newborn`} />
                 )}
               </div>
             </div>

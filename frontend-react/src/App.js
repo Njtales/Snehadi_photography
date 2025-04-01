@@ -21,8 +21,8 @@ const App = () => {
   return (
     <Router>
       <div className="app">
+      <Socialicons />
         <Routes>
-        <Socialicons />
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/whoiam" element={<WhoIam />} />
@@ -34,7 +34,7 @@ const App = () => {
           <Route path="/gallery/newborn" element={<Newborn />} />
           <Route path="/gallery/cakesmashprebirthday" element={<Cakesmashprebirthday />} />
           <Route path="/gallery/family" element={<Family />} />
-          <Route path="/socialicons" element={<Socialicons />} />
+          {/* <Route path="/socialicons" element={<Socialicons />} /> */}
         </Routes>
       </div>
     </Router>
