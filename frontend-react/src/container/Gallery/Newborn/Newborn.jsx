@@ -3,6 +3,8 @@ import { images } from '../../../constants';
 import { IoIosArrowBack, IoIosArrowForward,IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { urlFor, client } from '../../../client';
+import Masonry from 'react-masonry-css';
+
 import Slider from 'react-slick';
 import { AppWrap, MotionWrap } from '../../../wrapper';
 
@@ -95,12 +97,10 @@ function PrevArrow(props) {
 
 const UpperNewborn = () => {
   const [newbornImages, setNewbornImages] = useState([]);
-  const sliderRef = useRef(); 
-  const goToNext = () => sliderRef.current.slickNext();
-  const goToPrevious = () => sliderRef.current.slickPrev();
-  
+
   useEffect(() => {
-    const query = `*[_type == "newbornGallery"]`;
+    // Use the correct schema type name
+    const query = `*[_type == "newbornGallery"] | order(_createdAt asc)`;
     client.fetch(query)
       .then((data) => {
         setNewbornImages(data);
@@ -109,55 +109,40 @@ const UpperNewborn = () => {
   }, []);
 
   if (!newbornImages.length) {
-    return <div>Loading Newborn...</div>;
+    return <div>Loading Newborn Gallery...</div>;
   }
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+  // Define responsive column breakpoints
+  const breakpointColumnsObj = {
+    default: 3,
+    1100: 2,
+    700: 1,
   };
+
   return (
-
-
-
-    <div className="Newborn-slider">
-    <div className="Newborn-headline">
-      <p className="Newborn-headline_title">"Stop looking and book her. No one else compares!"</p>
-      <p className="Newborn-headline_author"> - Nikhil & Sayli</p>
-    </div>
-      <Slider ref={sliderRef} {...settings} className="Newborn-slider">
+    <div className="masonry-gallery">
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
         {newbornImages.map((item, index) => (
-          <div key={index} className="Newborn-slide">
-            <div className="Newborn-content">
-              <div className="Newborn-text-content">
-                <p className="Newborn-author">{item.name}</p>
-                <p className="Newborn-quote">"{item.feedback}"</p>
-              </div>
-              <div className="Newborn-image">
-                {item.imgUrl && (               
-                  <img 
-                  loading="lazy"
-                  src={urlFor(item.imgUrl).url()} alt={`${item.name}'s Newborn`} />
-                )}
-              </div>
-            </div>
+          <div key={index} className="masonry-item">
+            {item.imgUrl && (
+              <img 
+                loading="lazy"
+                src={urlFor(item.imgUrl).width(1200).quality(75).url()} 
+                alt={item.altText || item.title} 
+              />
+            )}
+            {item.title && <p className="image-title">{item.title}</p>}
           </div>
-          
         ))}
-      </Slider>
-      <div className="Newborn-navigation">
-        <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
-        <HiOutlineArrowNarrowRight onClick={goToNext} />
-      </div>
+      </Masonry>
     </div>
   );
-  };
+};
+
       
 const UpperFooter  = () => {
   const [footerImages, setFooterImages] = useState([]);

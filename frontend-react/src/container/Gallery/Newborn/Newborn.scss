@@ -55,6 +55,61 @@
   }
 }
 }
+.masonry-gallery {
+  padding: 4% 7%;
+  // max-width: 1400px;
+  margin: 0 auto;
+
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0.5rem;
+  }
+}
+
+/* Masonry grid container */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -1rem; /* Adjust gutter */
+  width: auto;
+}
+
+/* Masonry grid column */
+.my-masonry-grid_column {
+  padding-left: 1rem; /* Same as gutter size */
+  background-clip: padding-box;
+}
+
+/* Each masonry item */
+.masonry-item {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 8px;
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+    // display: block;
+    // border-radius: 8px;
+  }
+
+  .image-title {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+}
+
 
 .newborn-navigation {
   display: flex;
