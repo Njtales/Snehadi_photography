@@ -5,6 +5,7 @@ import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons
 import { urlFor, client } from '../../../client';
 import Slider from 'react-slick';
 import { AppWrap, MotionWrap } from '../../../wrapper';
+import Masonry from 'react-masonry-css';
 
 import './Family.scss';
 
@@ -91,72 +92,56 @@ function PrevArrow(props) {
       {'<'} {/* You can replace these with your custom icons or images */}
     </div>
   );
-}
+} 
 
-const UpperFamily = () => {
-  const [Family, setFamily] = useState([]);
-  const sliderRef = useRef(); 
-  const goToNext = () => sliderRef.current.slickNext();
-  const goToPrevious = () => sliderRef.current.slickPrev();
+  const UpperFamily = () => {
+    const [familyImages, setFamilyImages] = useState([]);
   
-  useEffect(() => {
-    const query = `*[_type == "Family"]`;
-    client.fetch(query)
-      .then((data) => {
-        setFamily(data);
-      })
-      .catch(console.error);
-  }, []);
-
-  if (!Family.length) {
-    return <div>Loading Family...</div>;
-  }
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
-  };
-  return (
-
-
-
-    <div className="Family-slider">
-    <div className="Family-headline">
-      <p className="Family-headline_title">"Stop looking and book her. No one else compares!"</p>
-      <p className="Family-headline_author"> - Nikhil & Sayli</p>
-    </div>
-      <Slider ref={sliderRef} {...settings} className="Family-slider">
-        {Family.map((Family, index) => (
-          <div key={index} className="Family-slide">
-            <div className="Family-content">
-              <div className="Family-text-content">
-                <p className="Family-author">{Family.name}</p>
-                <p className="Family-quote">"{Family.feedback}"</p>
-              </div>
-              <div className="Family-image">
-                {Family.imgUrl && (               
-                  <img src={urlFor(Family.imgUrl).url()} alt={`${Family.name}'s Family`} />
-                )}
-              </div>
+    useEffect(() => {
+      // Use the correct schema type name
+      const query = `*[_type == "familyGallery"] `; // | order(_createdAt asc)
+      client.fetch(query)
+        .then((data) => {
+          setFamilyImages(data);
+        })
+        .catch(console.error);
+    }, []);
+  
+    if (!familyImages.length) {
+      return <div>Loading Family Gallery...</div>;
+    }
+  
+    // Define responsive column breakpoints
+    const breakpointColumnsObj = {
+      default: 3,
+      1100: 2,
+      700: 1,
+    };
+  
+    return (
+      <div className="masonry-gallery">
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {familyImages.map((item, index) => (
+            <div key={index} className="masonry-item">
+              {item.imgUrl && (
+                <img 
+                  loading="lazy"
+                  src={urlFor(item.imgUrl).width(1200).quality(75).url()} 
+                  alt={item.altText || item.title} 
+                />
+              )}
+              {item.title && <p className="image-title">{item.title}</p>}
             </div>
-          </div>
-          
-        ))}
-      </Slider>
-      <div className="Family-navigation">
-        <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
-        <HiOutlineArrowNarrowRight onClick={goToNext} />
+          ))}
+        </Masonry>
       </div>
-    </div>
-  );
+    );
   };
-      
+
 const UpperFooter  = () => {
   const [footerImages, setFooterImages] = useState([]);
   
@@ -252,6 +237,7 @@ const LowerFooter = () => {
   
   const FamilyMotion = MotionWrap(Family);
   const UpperFamilyMotion = MotionWrap(UpperFamily);
+  // const UpperNewbornMotion = MotionWrap(UpperNewborn);
   const UpperFooterWithMotion = MotionWrap(UpperFooter);
   const MidFooterWithMotion = MotionWrap(MidFooter);
   const LowerFooterWithMotion = MotionWrap(LowerFooter);
@@ -260,6 +246,7 @@ const LowerFooter = () => {
     return (
       <>
         <FamilyMotion />
+        {/* <UpperNewbornMotion /> */}
         <UpperFamilyMotion />
         <UpperFooterWithMotion />
         <MidFooterWithMotion />

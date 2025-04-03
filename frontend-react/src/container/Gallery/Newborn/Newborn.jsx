@@ -100,7 +100,7 @@ const UpperNewborn = () => {
 
   useEffect(() => {
     // Use the correct schema type name
-    const query = `*[_type == "newbornGallery"] | order(_createdAt asc)`;
+    const query = `*[_type == "newbornGallery"] `; // | order(_createdAt asc)
     client.fetch(query)
       .then((data) => {
         setNewbornImages(data);
@@ -135,7 +135,7 @@ const UpperNewborn = () => {
                 alt={item.altText || item.title} 
               />
             )}
-            {item.title && <p className="image-title">{item.title}</p>}
+            {/* {item.title && <p className="image-title">{item.title}</p>} */}
           </div>
         ))}
       </Masonry>
