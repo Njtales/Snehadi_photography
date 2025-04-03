@@ -154,65 +154,112 @@ function PrevArrow(props) {
 //   );
 //   };
 
-const UpperMaternity = () => {
-  const [Maternity, setMaternity] = useState([]);
-  const sliderRef = useRef(); 
-  const goToNext = () => sliderRef.current.slickNext();
-  const goToPrevious = () => sliderRef.current.slickPrev();
+// const UpperMaternity = () => {
+//   const [Maternity, setMaternity] = useState([]);
+//   const sliderRef = useRef(); 
+//   const goToNext = () => sliderRef.current.slickNext();
+//   const goToPrevious = () => sliderRef.current.slickPrev();
   
-  useEffect(() => {
-    const query = `*[_type == "maternity"]`;
-    client.fetch(query)
-      .then((data) => {
-        setMaternity(data);
-      })
-      .catch(console.error);
-  }, []);
+//   useEffect(() => {
+//     const query = `*[_type == "maternity"]`;
+//     client.fetch(query)
+//       .then((data) => {
+//         setMaternity(data);
+//       })
+//       .catch(console.error);
+//   }, []);
 
-  if (!Maternity.length) {
-    return <div>Loading Maternity...</div>;
-  }
+//   if (!Maternity.length) {
+//     return <div>Loading Maternity...</div>;
+//   }
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
-  };
-  return (
-    <div className="maternity-slider">
-    <div className="maternity-headline">
-      <p className="maternity-headline_title">"Stop looking and book her. No one else compares!"</p>
-      <p className="maternity-headline_author"> - Nikhil & Sayli</p>
-    </div>
-      <Slider ref={sliderRef} {...settings} className="maternity-slider">
-        {Maternity.map((maternity, index) => (
-          <div key={index} className="maternity-slide">
-            <div className="maternity-content">
-              <div className="maternity-text-content">
-                <p className="maternity-author">{maternity.name}</p>
-                <p className="maternity-quote">"{maternity.feedback}"</p>
-              </div>
-              <div className="maternity-image">
-                {maternity.imgUrl && (               
-                  <img src={urlFor(maternity.imgUrl).url()} alt={`${maternity.name}'s maternity`} />
-                )}
-              </div>
-            </div>
-          </div>
+//   const settings = {
+//     dots: false,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: false,
+//     nextArrow: <NextArrow />,
+//     prevArrow: <PrevArrow />
+//   };
+//   return (
+//     <div className="maternity-slider">
+//     <div className="maternity-headline">
+//       <p className="maternity-headline_title">"Stop looking and book her. No one else compares!"</p>
+//       <p className="maternity-headline_author"> - Nikhil & Sayli</p>
+//     </div>
+//       <Slider ref={sliderRef} {...settings} className="maternity-slider">
+//         {Maternity.map((maternity, index) => (
+//           <div key={index} className="maternity-slide">
+//             <div className="maternity-content">
+//               <div className="maternity-text-content">
+//                 <p className="maternity-author">{maternity.name}</p>
+//                 <p className="maternity-quote">"{maternity.feedback}"</p>
+//               </div>
+//               <div className="maternity-image">
+//                 {maternity.imgUrl && (               
+//                   <img src={urlFor(maternity.imgUrl).url()} alt={`${maternity.name}'s maternity`} />
+//                 )}
+//               </div>
+//             </div>
+//           </div>
           
-        ))}
-      </Slider>
-      <div className="maternity-navigation">
-        <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
-        <HiOutlineArrowNarrowRight onClick={goToNext} />
+//         ))}
+//       </Slider>
+//       <div className="maternity-navigation">
+//         <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
+//         <HiOutlineArrowNarrowRight onClick={goToNext} />
+//       </div>
+//     </div>
+//   );
+//   };
+  const UpperMaternity = () => {
+    const [maternityImages, setMaternityImages] = useState([]);
+  
+    useEffect(() => {
+      // Use the correct schema type name
+      const query = `*[_type == "maternityGallery"] `; // | order(_createdAt asc)
+      client.fetch(query)
+        .then((data) => {
+          setMaternityImages(data);
+        })
+        .catch(console.error);
+    }, []);
+  
+    if (!maternityImages.length) {
+      return <div>Loading Maternity Gallery...</div>;
+    }
+  
+    // Define responsive column breakpoints
+    const breakpointColumnsObj = {
+      default: 3,
+      1100: 2,
+      700: 1,
+    };
+  
+    return (
+      <div className="masonry-gallery">
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {maternityImages.map((item, index) => (
+            <div key={index} className="masonry-item">
+              {item.imgUrl && (
+                <img 
+                  loading="lazy"
+                  src={urlFor(item.imgUrl).width(1200).quality(75).url()} 
+                  alt={item.altText || item.title} 
+                />
+              )}
+              {item.title && <p className="image-title">{item.title}</p>}
+            </div>
+          ))}
+        </Masonry>
       </div>
-    </div>
-  );
+    );
   };
 
   
