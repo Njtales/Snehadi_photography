@@ -5,7 +5,7 @@ import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons
 import { urlFor, client } from '../../../client';
 import Slider from 'react-slick';
 import { AppWrap, MotionWrap } from '../../../wrapper';
-
+import Masonry from 'react-masonry-css';
 import './Cakesmashprebirthday.scss';
 
 const Cakesmash = () => {
@@ -93,70 +93,114 @@ function PrevArrow(props) {
   );
 }
 
-const UpperCakesmash = () => {
-  const [Cakesmash, setCakesmash] = useState([]);
-  const sliderRef = useRef(); 
-  const goToNext = () => sliderRef.current.slickNext();
-  const goToPrevious = () => sliderRef.current.slickPrev();
+// const UpperCakesmash = () => {
+//   const [Cakesmash, setCakesmash] = useState([]);
+//   const sliderRef = useRef(); 
+//   const goToNext = () => sliderRef.current.slickNext();
+//   const goToPrevious = () => sliderRef.current.slickPrev();
   
-  useEffect(() => {
-    const query = `*[_type == "cakesmash"]`;
-    client.fetch(query)
-      .then((data) => {
-        setCakesmash(data);
-      })
-      .catch(console.error);
-  }, []);
+//   useEffect(() => {
+//     const query = `*[_type == "cakesmash"]`;
+//     client.fetch(query)
+//       .then((data) => {
+//         setCakesmash(data);
+//       })
+//       .catch(console.error);
+//   }, []);
 
-  if (!Cakesmash.length) {
-    return <div>Loading Cakesmash...</div>;
-  }
+//   if (!Cakesmash.length) {
+//     return <div>Loading Cakesmash...</div>;
+//   }
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
-  };
-  return (
-
-
-
-    <div className="cakesmash-slider">
-    <div className="cakesmash-headline">
-      <p className="cakesmash-headline_title">"Stop looking and book her. No one else compares!"</p>
-      <p className="cakesmash-headline_author"> - Nikhil & Sayli</p>
-    </div>
-      <Slider ref={sliderRef} {...settings} className="cakesmash-slider">
-        {Cakesmash.map((cakesmash, index) => (
-          <div key={index} className="cakesmash-slide">
-            <div className="cakesmash-content">
-              <div className="cakesmash-text-content">
-                <p className="cakesmash-author">{cakesmash.name}</p>
-                <p className="cakesmash-quote">"{cakesmash.feedback}"</p>
-              </div>
-              <div className="cakesmash-image">
-                {cakesmash.imgUrl && (               
-                  <img src={urlFor(cakesmash.imgUrl).url()} alt={`${cakesmash.name}'s cakesmash`} />
-                )}
-              </div>
-            </div>
-          </div>
+//   const settings = {
+//     dots: false,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: false,
+//     nextArrow: <NextArrow />,
+//     prevArrow: <PrevArrow />
+//   };
+//   return (
+//     <div className="cakesmash-slider">
+//     <div className="cakesmash-headline">
+//       <p className="cakesmash-headline_title">"Stop looking and book her. No one else compares!"</p>
+//       <p className="cakesmash-headline_author"> - Nikhil & Sayli</p>
+//     </div>
+//       <Slider ref={sliderRef} {...settings} className="cakesmash-slider">
+//         {Cakesmash.map((cakesmash, index) => (
+//           <div key={index} className="cakesmash-slide">
+//             <div className="cakesmash-content">
+//               <div className="cakesmash-text-content">
+//                 <p className="cakesmash-author">{cakesmash.name}</p>
+//                 <p className="cakesmash-quote">"{cakesmash.feedback}"</p>
+//               </div>
+//               <div className="cakesmash-image">
+//                 {cakesmash.imgUrl && (               
+//                   <img src={urlFor(cakesmash.imgUrl).url()} alt={`${cakesmash.name}'s cakesmash`} />
+//                 )}
+//               </div>
+//             </div>
+//           </div>
           
-        ))}
-      </Slider>
-      <div className="cakesmash-navigation">
-        <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
-        <HiOutlineArrowNarrowRight onClick={goToNext} />
+//         ))}
+//       </Slider>
+//       <div className="cakesmash-navigation">
+//         <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
+//         <HiOutlineArrowNarrowRight onClick={goToNext} />
+//       </div>
+//     </div>
+//   );
+//   };
+  const UpperCakesmash = () => {
+    const [cakesmashImages, setcakesmashImages] = useState([]);
+  
+    useEffect(() => {
+      // Use the correct schema type name
+      const query = `*[_type == "cakesmashprebirthdayGallery"] `; // | order(_createdAt asc)
+      client.fetch(query)
+        .then((data) => {
+          setcakesmashImages(data);
+        })
+        .catch(console.error);
+    }, []);
+  
+    if (!cakesmashImages.length) {
+      return <div>Loading Cakesmash Gallery...</div>;
+    }
+  
+    // Define responsive column breakpoints
+    const breakpointColumnsObj = {
+      default: 3,
+      1100: 2,
+      700: 1,
+    };
+  
+    return (
+      <div className="masonry-gallery">
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {cakesmashImages.map((item, index) => (
+            <div key={index} className="masonry-item">
+              {item.imgUrl && (
+                <img 
+                  loading="lazy"
+                  src={urlFor(item.imgUrl).width(1200).quality(75).url()} 
+                  alt={item.altText || item.title} 
+                />
+              )}
+              {item.title && <p className="image-title">{item.title}</p>}
+            </div>
+          ))}
+        </Masonry>
       </div>
-    </div>
-  );
+    );
   };
-      
+
 const UpperFooter  = () => {
   const [footerImages, setFooterImages] = useState([]);
   
