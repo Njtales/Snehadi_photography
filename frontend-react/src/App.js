@@ -34,7 +34,7 @@ const App = () => {
           <Route path="/gallery/newborn" element={<Newborn />} />
           <Route path="/gallery/cakesmashprebirthday" element={<Cakesmashprebirthday />} />
           <Route path="/gallery/family" element={<Family />} />
-          {/* <Route path="/socialicons" element={<Socialicons />} /> */}
+          {/* <Route path="/Socialicons" element={<Socialicons />} /> */}
         </Routes>
       </div>
     </Router>

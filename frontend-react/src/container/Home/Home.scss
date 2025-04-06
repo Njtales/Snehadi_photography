@@ -171,7 +171,7 @@ body, html {
   letter-spacing: 1.6px;
   z-index: 5;
   position: absolute;
-  top: 80%;
+  top: 150%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -203,19 +203,19 @@ body, html {
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 150%; // Adjust if necessary
+  bottom: -180%; // Adjust if necessary
   left: 50%;
   transform: translateX(-50%);
 
   span {
     text-transform: uppercase;
     font-size: 0.8em;
-    color: var(--darkblack-color); 
+    color: var(--offwhite-color); 
   }
 }
 .home-arrowdown {
   display: inline-block;
-  color: var(--darkgrey-color);
+  color: var(--offwhite-color);
   margin-top: 10px;
   animation: bounceArrow 1s infinite; 
 }

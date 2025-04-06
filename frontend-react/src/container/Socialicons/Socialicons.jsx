@@ -3,7 +3,7 @@ import './Socialicons.scss';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { MdPhone, MdEmail } from 'react-icons/md';
 
-const SocialIcons = () => {
+const Socialicons = () => {
   return (
     <div className="floating-social-icons">
       <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
@@ -15,4 +15,4 @@ const SocialIcons = () => {
   );
 };
 
-export default SocialIcons;
+export default Socialicons;

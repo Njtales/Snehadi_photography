@@ -15,7 +15,7 @@ import './HeaderFooter.scss';
 import './HomeAbout.scss'; 
 import './HomeTestimonials.scss';
 import './HomeContact.scss';
-import SocialIcons from '../../container/Socialicons/Socialicons';
+import Socialicons from '../../container/Socialicons/Socialicons';
 
   // ============================================== Home Component ==============================================
 const Home = () => {
@@ -379,7 +379,7 @@ const TestimonialWithMotion = MotionWrap(Testimonial);
 const ContactWithMotion = MotionWrap(Contact);
 const UpperFooterWithMotion = MotionWrap(UpperFooter);
 const MidFooterWithMotion = MotionWrap(MidFooter);
-const SocialIconsWithMotion = MotionWrap(SocialIcons);
+const SocialiconsWithMotion = MotionWrap(Socialicons);
 const LowerFooterWithMotion = MotionWrap(LowerFooter);
 
 
@@ -392,7 +392,7 @@ const HomePage = () => {
       <ContactWithMotion />
       <UpperFooterWithMotion />
       <MidFooterWithMotion />
-      <SocialIconsWithMotion />
+      <SocialiconsWithMotion />
       <LowerFooterWithMotion />
     </>
   );
