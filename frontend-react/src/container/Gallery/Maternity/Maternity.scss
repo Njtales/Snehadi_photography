@@ -80,6 +80,57 @@
 }
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255,255,255, 0.90);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.modal-image {
+  max-width: 60%;
+  max-height: 75%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px color(var(--darkgrey-color));
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: var(--grey-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 21;
+  padding: 0 10%;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+    color: var(--grey-color);
+  }
+}
+
+
+
 .maternity-navigation {
   display: flex;
   justify-content: center; // Center the arrows horizontally

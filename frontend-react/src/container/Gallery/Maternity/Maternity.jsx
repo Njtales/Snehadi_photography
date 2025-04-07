@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { images } from '../../../constants';
+import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 import { IoIosArrowBack, IoIosArrowForward,IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
+
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { urlFor, client } from '../../../client';
 import Slider from 'react-slick';
@@ -32,8 +34,7 @@ return (
                 <a href="#/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
-
+                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
                         {category.title}
                       </a>
                     ))}
@@ -44,7 +45,6 @@ return (
                   <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
                       <a href="#/testimonial">Kind Words</a>
-                      {/* <a href="#/pricing">Pricing</a> */}
                       <a href="#/contact">Book</a>
                     </div>
                   </div>
@@ -56,7 +56,6 @@ return (
                     src={images.child_icon} // child_icon -- sj_logo
                     alt="SNEHAL JATALE PHOTOGRAPHY"
                     className="PageHeader-center-nav-logo" />
-                  {/* <h1>SNEHAL JATALE</h1><span>PHOTOGRAPHY</span> */}
                   </a>
               </div>
 
@@ -93,152 +92,42 @@ function PrevArrow(props) {
   );
 }
 
-// const UpperMaternity = () => {
-//   const [Maternity, setMaternity] = useState([]);
-//   const sliderRef = useRef(); 
-//   const goToNext = () => sliderRef.current.slickNext();
-//   const goToPrevious = () => sliderRef.current.slickPrev();
-  
-//   useEffect(() => {
-//     const query = `*[_type == "maternity"]`;
-//     client.fetch(query)
-//       .then((data) => {
-//         setMaternity(data);
-//       })
-//       .catch(console.error);
-//   }, []);
+const UpperMaternity = () => {
+  const [maternityImages, setMaternityImages] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-//   if (!Maternity.length) {
-//     return <div>Loading Maternity...</div>;
-//   }
+  useEffect(() => {
+    const query = `*[_type == "maternityGallery"]`;
+    client.fetch(query)
+      .then((data) => {
+        setMaternityImages(data);
+      })
+      .catch(console.error);
+  }, []);
 
-//   const settings = {
-//     dots: false,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     autoplay: false,
-//     nextArrow: <NextArrow />,
-//     prevArrow: <PrevArrow />
-//   };
-//   return (
-//     <div className="maternity-slider">
-//     <div className="maternity-headline">
-//       <p className="maternity-headline_title">"Stop looking and book her. No one else compares!"</p>
-//       <p className="maternity-headline_author"> - Nikhil & Sayli</p>
-//     </div>
-//       <Slider ref={sliderRef} {...settings} className="maternity-slider">
-//         {Maternity.map((maternity, index) => (
-//           <div key={index} className="maternity-slide">
-//             <div className="maternity-content">
-//               <div className="maternity-text-content">
-//                 <p className="maternity-author">{maternity.name}</p>
-//                 <p className="maternity-quote">"{maternity.feedback}"</p>
-//               </div>
-//               <div className="maternity-image">
-//                 {maternity.imgUrl && (               
-//                   <img src={urlFor(maternity.imgUrl).url()} alt={`${maternity.name}'s maternity`} />
-//                 )}
-//               </div>
-//             </div>
-//           </div>
-          
-//         ))}
-//       </Slider>
-//       <div className="maternity-navigation">
-//         <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
-//         <HiOutlineArrowNarrowRight onClick={goToNext} />
-//       </div>
-//     </div>
-//   );
-//   };
+  const handleImageClick = (img) => {
+    setSelectedImage(img);
+    setIsModalOpen(true);
+  };
 
-// const UpperMaternity = () => {
-//   const [Maternity, setMaternity] = useState([]);
-//   const sliderRef = useRef(); 
-//   const goToNext = () => sliderRef.current.slickNext();
-//   const goToPrevious = () => sliderRef.current.slickPrev();
-  
-//   useEffect(() => {
-//     const query = `*[_type == "maternity"]`;
-//     client.fetch(query)
-//       .then((data) => {
-//         setMaternity(data);
-//       })
-//       .catch(console.error);
-//   }, []);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
 
-//   if (!Maternity.length) {
-//     return <div>Loading Maternity...</div>;
-//   }
+  if (!maternityImages.length) {
+    return <div>Loading Maternity Gallery...</div>;
+  }
 
-//   const settings = {
-//     dots: false,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     autoplay: false,
-//     nextArrow: <NextArrow />,
-//     prevArrow: <PrevArrow />
-//   };
-//   return (
-//     <div className="maternity-slider">
-//     <div className="maternity-headline">
-//       <p className="maternity-headline_title">"Stop looking and book her. No one else compares!"</p>
-//       <p className="maternity-headline_author"> - Nikhil & Sayli</p>
-//     </div>
-//       <Slider ref={sliderRef} {...settings} className="maternity-slider">
-//         {Maternity.map((maternity, index) => (
-//           <div key={index} className="maternity-slide">
-//             <div className="maternity-content">
-//               <div className="maternity-text-content">
-//                 <p className="maternity-author">{maternity.name}</p>
-//                 <p className="maternity-quote">"{maternity.feedback}"</p>
-//               </div>
-//               <div className="maternity-image">
-//                 {maternity.imgUrl && (               
-//                   <img src={urlFor(maternity.imgUrl).url()} alt={`${maternity.name}'s maternity`} />
-//                 )}
-//               </div>
-//             </div>
-//           </div>
-          
-//         ))}
-//       </Slider>
-//       <div className="maternity-navigation">
-//         <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
-//         <HiOutlineArrowNarrowRight onClick={goToNext} />
-//       </div>
-//     </div>
-//   );
-//   };
-  const UpperMaternity = () => {
-    const [maternityImages, setMaternityImages] = useState([]);
-  
-    useEffect(() => {
-      // Use the correct schema type name
-      const query = `*[_type == "maternityGallery"] `; // | order(_createdAt asc)
-      client.fetch(query)
-        .then((data) => {
-          setMaternityImages(data);
-        })
-        .catch(console.error);
-    }, []);
-  
-    if (!maternityImages.length) {
-      return <div>Loading Maternity Gallery...</div>;
-    }
-  
-    // Define responsive column breakpoints
-    const breakpointColumnsObj = {
-      default: 3,
-      1100: 2,
-      700: 1,
-    };
-  
-    return (
+  const breakpointColumnsObj = {
+    default: 3,
+    1100: 2,
+    700: 1,
+  };
+
+  return (
+    <>
       <div className="masonry-gallery">
         <Masonry
           breakpointCols={breakpointColumnsObj}
@@ -246,12 +135,19 @@ function PrevArrow(props) {
           columnClassName="my-masonry-grid_column"
         >
           {maternityImages.map((item, index) => (
-            <div key={index} className="masonry-item">
+            <div
+              key={index}
+              className="masonry-item"
+              onClick={() => {
+                setSelectedImage(index);
+                setIsModalOpen(true);
+              }}
+            >
               {item.imgUrl && (
-                <img 
+                <img
                   loading="lazy"
-                  src={urlFor(item.imgUrl).width(1200).quality(75).url()} 
-                  alt={item.altText || item.title} 
+                  src={urlFor(item.imgUrl).width(1200).quality(75).url()}
+                  alt={item.altText || item.title}
                 />
               )}
               {item.title && <p className="image-title">{item.title}</p>}
@@ -259,22 +155,48 @@ function PrevArrow(props) {
           ))}
         </Masonry>
       </div>
-    );
-  };
-
   
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <button className="modal-arrow left" onClick={(e) => {
+            e.stopPropagation();
+            setSelectedImage((prev) =>
+              prev === 0 ? maternityImages.length - 1 : prev - 1
+            );
+          }}>
+            <MdArrowBackIos  />
+          </button>
+  
+          <img
+            src={urlFor(maternityImages[selectedImage].imgUrl).width(1600).quality(90).url()}
+            alt="Enlarged"
+            className="modal-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+  
+          <button className="modal-arrow right" onClick={(e) => {
+            e.stopPropagation();
+            setSelectedImage((prev) =>
+              prev === maternityImages.length - 1 ? 0 : prev + 1
+            );
+          }}>
+            <MdArrowForwardIos />
+          </button>
+        </div>
+      )}
+    </>
+  );
+};
+
 const UpperFooter  = () => {
   const [footerImages, setFooterImages] = useState([]);
-  
   useEffect(() => {
     const query = '*[_type == "home"]';
-
     client.fetch(query).then((data) => {
       const imageUrls = data.map(doc => doc.imgUrl);
       setFooterImages(imageUrls);
     });      
   }, []);
-
     return (
     <footer className="footer">
       <a href="https://www.instagram.com/snehaljatale_photography/" target="_blank" className="footer-link">
@@ -283,7 +205,6 @@ const UpperFooter  = () => {
           <p>@snehaljatale_photography</p>
         </div>
       </a>
-
       <div className="footer-images">
         {footerImages.map((image, index) => (
           <img 
@@ -293,19 +214,15 @@ const UpperFooter  = () => {
             className="footer-image"
           />
         ))}
-
       </div>
-
     </footer>
     );
   };
 
  const MidFooter  = () => {
   const [portCategories, setPortCategories] = useState([]);
-  
   useEffect(() => {
     const query = '*[_type == "portfoliocategory"]';
-
     client.fetch(query).then((data) => {
       setPortCategories(data);
     });
@@ -315,8 +232,7 @@ const UpperFooter  = () => {
       <a href="#/portfolio" className="footer-link">PORTFOLIO</a>
         <div className="footer-submenu footer-submenu-common">
           {portCategories.map((category, index) => (
-            <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
-
+            <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
               {category.title}
             </a>
           ))}
@@ -325,7 +241,6 @@ const UpperFooter  = () => {
         <a  className="footer-link">MORE INFO</a>
         <div className="footer-moreinfo-submenu footer-submenu-common">
           <a href="#/testimonial">Kind Words</a>
-          {/* <a href="#/pricing">Pricing</a> */}
           <a href="#/contact">Book</a>
         </div>
       <a href="#/contact">CONTACT</a>

@@ -32,7 +32,7 @@ return (
                 <a href="#/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
                         {category.title}
                       </a>
@@ -253,7 +253,7 @@ const UpperFooter  = () => {
       <a href="#/portfolio" className="footer-link">PORTFOLIO</a>
         <div className="footer-submenu footer-submenu-common">
           {portCategories.map((category, index) => (
-            <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+            <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
               {category.title}
             </a>
