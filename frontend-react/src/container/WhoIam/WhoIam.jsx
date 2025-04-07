@@ -27,29 +27,29 @@ return (
                 className="PageHeader-svg-left-nav" />
               
               <div className="above-vertical-divider">
-                <a href="/Portfolio" className="PageHeader-link">PORTFOLIO</a>
+                <a href="#/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+                      <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
                         {category.title}
                       </a>
                     ))}
                   </div>
-                  <a href="/WhoIAm" className="PageHeader-link">WHO I AM</a>
+                  <a href="#/WhoIAm" className="PageHeader-link">WHO I AM</a>
                 </div>
               <div className="below-vertical-divider">
                   <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
-                      <a href="/testimonial">Kind Words</a>
-                      {/* <a href="/pricing">Pricing</a> */}
-                      <a href="/contact">Book</a>
+                      <a href="#/testimonial">Kind Words</a>
+                      {/* <a href="#/pricing">Pricing</a> */}
+                      <a href="#/contact">Book</a>
                     </div>
                   </div>
                 </div>
             
               <div className="PageHeader-center-nav">
-                <a href="/" className="PageHeader-center-nav-link">
+                <a href="#/" className="PageHeader-center-nav-link">
                   <img 
                     src={images.child_icon} // child_icon -- sj_logo
                     alt="SNEHAL JATALE PHOTOGRAPHY"
@@ -63,8 +63,8 @@ return (
                 src={images.portfolio_right_nav_svg}
                 alt="portfolio_right_nav_svg"
                 className="PageHeader-svg-right-nav" />
-              <a href="/contact">CONTACT</a>
-              <a href="/testimonial">TESTIMONIALS</a>
+              <a href="#/contact">CONTACT</a>
+              <a href="#/testimonial">TESTIMONIALS</a>
             </div>
           </nav>
       </div>
@@ -82,7 +82,7 @@ const UpperWhoIam  = () => {
             <p>I would like to capture your family as it is... the laughter, the magic, the madness.</p>
             <p>My style is natural, organic, and soulful. I love to capture the connection between you and your loved ones, the little details, and the in-between moments. My sessions are relaxed and fun, and I will guide you through the whole process. I want you to feel comfortable and enjoy the experience.</p>
             <p>I feel privileged to tell your story through my lens.</p>
-            <a href="/contact" className="UpperWhoIam-get-in-touch">Get in touch!</a>
+            <a href="#/contact" className="UpperWhoIam-get-in-touch">Get in touch!</a>
           </div>
           <div className="UpperWhoIam-image-section">
             <img src={images.myimg} alt="Family on the beach" />
@@ -99,10 +99,10 @@ return (
             <div className="whoiamphotography-container">
                 <div className="whoiamphotography-title">Gallery</div>
                 <div className="whoiamphotography-list">
-                    <a href="/gallery/cakesmashprebirthday" className="whoiamphotography">Cakesmash</a>
-                    <a href="/gallery/maternity" className="whoiamphotography">Maternity</a>
-                    <a href="/gallery/newborn" className="whoiamphotography">New Born</a>
-                    <a href="/gallery/family" className="whoiamphotography">Family</a>                    
+                    <a href="#/gallery/cakesmashprebirthday" className="whoiamphotography">Cakesmash</a>
+                    <a href="#/gallery/maternity" className="whoiamphotography">Maternity</a>
+                    <a href="#/gallery/newborn" className="whoiamphotography">New Born</a>
+                    <a href="#/gallery/family" className="whoiamphotography">Family</a>                    
                 </div>
             </div>
         </>
@@ -191,24 +191,24 @@ const UpperFooter  = () => {
   }, []);
     return (
       <div className="footer-nav">
-      <a href="/portfolio" className="footer-link">PORTFOLIO</a>
+      <a href="#/portfolio" className="footer-link">PORTFOLIO</a>
         <div className="footer-submenu footer-submenu-common">
           {portCategories.map((category, index) => (
-            <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+            <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
               {category.title}
             </a>
           ))}
         </div>
-      <a href="/whoiam">WHO I AM</a>
+      <a href="#/whoiam">WHO I AM</a>
         <a  className="footer-link">MORE INFO</a>
         <div className="footer-moreinfo-submenu footer-submenu-common">
-          <a href="/testimonial">Kind Words</a>
-          {/* <a href="/pricing">Pricing</a> */}
-          <a href="/contact">Book</a>
+          <a href="#/testimonial">Kind Words</a>
+          {/* <a href="#/pricing">Pricing</a> */}
+          <a href="#/contact">Book</a>
         </div>
-      <a href="/contact">CONTACT</a>
-      <a href="/Testimonial">TESTIMONIALS</a>
+      <a href="#/contact">CONTACT</a>
+      <a href="#/Testimonial">TESTIMONIALS</a>
     </div>
     );
   };

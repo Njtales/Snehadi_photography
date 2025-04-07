@@ -27,29 +27,29 @@ return (
                 className="PageHeader-svg-left-nav" />
               
               <div className="above-vertical-divider">
-                <a href="/Portfolio" className="PageHeader-link">PORTFOLIO</a>
+                <a href="#/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+                      <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
                         {category.title}
                       </a>
                     ))}
                   </div>
-                  <a href="/Pricing" className="PageHeader-link">WHO I AM</a>
+                  <a href="#/Pricing" className="PageHeader-link">WHO I AM</a>
                 </div>
               <div className="below-vertical-divider">
                   <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
-                      <a href="/testimonial">Kind Words</a>
-                      {/* <a href="/pricing">Pricing</a> */}
-                      <a href="/contact">Book</a>
+                      <a href="#/testimonial">Kind Words</a>
+                      {/* <a href="#/pricing">Pricing</a> */}
+                      <a href="#/contact">Book</a>
                     </div>
                   </div>
                 </div>
             
               <div className="PageHeader-center-nav">
-                <a href="/" className="PageHeader-center-nav-link">
+                <a href="#/" className="PageHeader-center-nav-link">
                   <img 
                     src={images.child_icon} // child_icon -- sj_logo
                     alt="SNEHAL JATALE PHOTOGRAPHY"
@@ -63,8 +63,8 @@ return (
                 src={images.portfolio_right_nav_svg}
                 alt="portfolio_right_nav_svg"
                 className="PageHeader-svg-right-nav" />
-              <a href="/contact">CONTACT</a>
-              <a href="/testimonial">TESTIMONIALS</a>
+              <a href="#/contact">CONTACT</a>
+              <a href="#/testimonial">TESTIMONIALS</a>
             </div>
           </nav>
       </div>
@@ -84,7 +84,7 @@ const UpperPricing  = () => {
             <p>Expect a seamless, high-end service where every detail is taken care of, so you can simply relax and enjoy the moment. Your session will be calm, natural, and filled with warmth-no awkward posing, just genuine connection and beautifully crafted imagery.</p>
             <p>The investment: The session fee is £200, and Collections start at £600. Clients typically invest between £1,000 and £3,000 in their photography experience, images and artwork.</p>
             <p>For full pricing details and availability, please get in touch. I'd love to create something truly unforgettable for you.</p>
-            <a href="/contact" className="UpperPricing-get-in-touch">Book your session now!</a>
+            <a href="#/contact" className="UpperPricing-get-in-touch">Book your session now!</a>
           </div>
         </div>
       );
@@ -132,7 +132,7 @@ const MidPricing = () => {
                 <div className="testimonial-text">
                   <span>Words of Love from {testimonial.name}.</span>
                   <p>{testimonial.feedback}</p>
-                  <a href="/testimonial" className="testimonial-read-more">Read more from the clients.</a>
+                  <a href="#/testimonial" className="testimonial-read-more">Read more from the clients.</a>
                 </div>
               </div>
               <div className="testimonial-imagewrapper">
@@ -192,7 +192,7 @@ const PortfolioCategory = () => {
         </div>
 
       <div className="portfolio-category-content">
-          <a href="/contact" className="portfolio-testimonial-button">Book Your Session Now!</a>
+          <a href="#/contact" className="portfolio-testimonial-button">Book Your Session Now!</a>
         </div>
       </div>
     );
@@ -248,24 +248,24 @@ const UpperFooter  = () => {
   }, []);
     return (
       <div className="footer-nav">
-      <a href="/portfolio" className="footer-link">PORTFOLIO</a>
+      <a href="#/portfolio" className="footer-link">PORTFOLIO</a>
         <div className="footer-submenu footer-submenu-common">
           {portCategories.map((category, index) => (
-            <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+            <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
               {category.title}
             </a>
           ))}
         </div>
-      <a href="/Pricing">WHO I AM</a>
+      <a href="#/Pricing">WHO I AM</a>
         <a  className="footer-link">MORE INFO</a>
         <div className="footer-moreinfo-submenu footer-submenu-common">
-          <a href="/testimonial">Kind Words</a>
-          {/* <a href="/pricing">Pricing</a> */}
-          <a href="/contact">Book</a>
+          <a href="#/testimonial">Kind Words</a>
+          {/* <a href="#/pricing">Pricing</a> */}
+          <a href="#/contact">Book</a>
         </div>
-      <a href="/contact">CONTACT</a>
-      <a href="/Testimonial">TESTIMONIALS</a>
+      <a href="#/contact">CONTACT</a>
+      <a href="#/Testimonial">TESTIMONIALS</a>
     </div>
     );
   };

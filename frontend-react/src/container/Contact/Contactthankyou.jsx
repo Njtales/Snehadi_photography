@@ -32,29 +32,29 @@ return (
                 className="PageHeader-svg-left-nav" />
               
               <div className="above-vertical-divider">
-                <a href="/Portfolio" className="PageHeader-link">PORTFOLIO</a>
+                <a href="#/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+                      <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
                         {category.title}
                       </a>
                     ))}
                   </div>
-                  <a href="/WhoIAm" className="PageHeader-link">WHO I AM</a>
+                  <a href="#/WhoIAm" className="PageHeader-link">WHO I AM</a>
                 </div>
               <div className="below-vertical-divider">
                   <a  className="PageHeader-link">MORE INFO</a>
                     <div className="PageHeader-submenu">
-                      <a href="/testimonial">Kind Words</a>
-                      {/* <a href="/pricing">Pricing</a> */}
-                      <a href="/contact">Book</a>
+                      <a href="#/testimonial">Kind Words</a>
+                      {/* <a href="#/pricing">Pricing</a> */}
+                      <a href="#/contact">Book</a>
                     </div>
                   </div>
                 </div>
             
               <div className="PageHeader-center-nav">
-                <a href="/" className="PageHeader-center-nav-link">
+                <a href="#/" className="PageHeader-center-nav-link">
                   <img 
                     src={images.child_icon} // child_icon -- sj_logo
                     alt="SNEHAL JATALE PHOTOGRAPHY"
@@ -68,8 +68,8 @@ return (
                 src={images.portfolio_right_nav_svg}
                 alt="portfolio_right_nav_svg"
                 className="PageHeader-svg-right-nav" />
-              <a href="/contact">CONTACT</a>
-              <a href="/testimonial">TESTIMONIALS</a>
+              <a href="#/contact">CONTACT</a>
+              <a href="#/testimonial">TESTIMONIALS</a>
             </div>
           </nav>
       </div>
@@ -111,10 +111,10 @@ const GalleryLinks = () => {
             <p className="gallery-title">BROWSE OUR GALLERIES</p>  
             <div className="gallery-links">
               
-              <a href="/gallery/cakesmashprebirthday"onMouseEnter={() => handleMouseEnter(images.family_img13)}>01. Cake Smash / Pre-birthday</a>
-              <a href="/gallery/maternity" onMouseEnter={() => handleMouseEnter(images.bump_img01)}>02. Maternity / Bump</a>
-              <a href="/gallery/newborn" onMouseEnter={() => handleMouseEnter(images.newborn_img06)}>03. Newborn</a>
-              <a href="/gallery/family" onMouseEnter={() => handleMouseEnter(images.cake_img02)}>04. Family</a>
+              <a href="#/gallery/cakesmashprebirthday"onMouseEnter={() => handleMouseEnter(images.family_img13)}>01. Cake Smash / Pre-birthday</a>
+              <a href="#/gallery/maternity" onMouseEnter={() => handleMouseEnter(images.bump_img01)}>02. Maternity / Bump</a>
+              <a href="#/gallery/newborn" onMouseEnter={() => handleMouseEnter(images.newborn_img06)}>03. Newborn</a>
+              <a href="#/gallery/family" onMouseEnter={() => handleMouseEnter(images.cake_img02)}>04. Family</a>
             </div>
           </div>
           <div className="gallery-image">
@@ -177,24 +177,24 @@ const ContactFooter  = () => {
   
       return (
           <div className="footer-nav">
-          <a href="/portfolio" className="footer-link">PORTFOLIO</a>
+          <a href="#/portfolio" className="footer-link">PORTFOLIO</a>
             <div className="footer-submenu footer-submenu-common">
               {portCategories.map((category, index) => (
-                <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+                <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
                   {category.title}
                 </a>
               ))}
             </div>
-          <a href="/whoiam">WHO I AM</a>
+          <a href="#/whoiam">WHO I AM</a>
             <a  className="footer-link">MORE INFO</a>
             <div className="footer-moreinfo-submenu footer-submenu-common">
-              <a href="/testimonial">Kind Words</a>
-              {/* <a href="/pricing">Pricing</a> */}
-              <a href="/contact">Book</a>
+              <a href="#/testimonial">Kind Words</a>
+              {/* <a href="#/pricing">Pricing</a> */}
+              <a href="#/contact">Book</a>
             </div>
-          <a href="/contact">CONTACT</a>
-          <a href="/Testimonial">TESTIMONIALS</a>
+          <a href="#/contact">CONTACT</a>
+          <a href="#/Testimonial">TESTIMONIALS</a>
         </div>
       );
     };

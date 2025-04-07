@@ -65,27 +65,27 @@ const Home = () => {
             alt="home_left_nav_svg"
             className="home-svg-left-nav" />
             <div className="home-left-nav">            
-              <a href="/Portfolio" className="home-navsubmenu-link">PORTFOLIO</a>
+              <a href="#/Portfolio" className="home-navsubmenu-link">PORTFOLIO</a>
               {/* <div className="footer-submenu footer-submenu-common"></div> */}
                 <div className="home-navigation-submenu submenu-portfolio">
                   {portCategories.map((category, index) => (
-                    <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+                    <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
                       {category.title}
                     </a>
                   ))}
                 </div>
                   
-              <a href="/WhoIAm" className="home-navsubmenu-link">WHO I AM</a>
+              <a href="#/WhoIAm" className="home-navsubmenu-link">WHO I AM</a>
               <a  className="home-navsubmenu-link">MORE INFO</a>
                     <div className="home-navigation-submenu submenu-moreinfo">
-                      <a href="/testimonial">Kind Words</a>
-                      {/* <a href="/pricing">Pricing</a> */}
-                      <a href="/contact">Book</a>
+                      <a href="#/testimonial">Kind Words</a>
+                      {/* <a href="#/pricing">Pricing</a> */}
+                      <a href="#/contact">Book</a>
                     </div>
             </div>
             <div className="PageHeaderhome-center-nav">
-              <a href="/" className="PageHeaderhome-center-nav-link">
+              <a href="#/" className="PageHeaderhome-center-nav-link">
                 <img 
                   src={images.child_icon} // child_icon -- sj_logo
                   alt="SNEHAL JATALE PHOTOGRAPHY"
@@ -102,8 +102,8 @@ const Home = () => {
               src={images.home_right_nav_svg}
               alt="home_right_nav_svg"
               className="home-svg-right-nav" />
-              <a href="/contact" className="home-navsubmenu-link">CONTACT</a>
-              <a href="/testimonial" className="home-navsubmenu-link">TESTIMONIALS</a>   {/* className="home-navsubmenu-link" */}
+              <a href="#/contact" className="home-navsubmenu-link">CONTACT</a>
+              <a href="#/testimonial" className="home-navsubmenu-link">TESTIMONIALS</a>   {/* className="home-navsubmenu-link" */}
           </div>
         </div>
       </div>
@@ -118,22 +118,22 @@ const About = () => {
       <div className="about-container">
           <div className="about-head-nav">
               <div className="about-nav-title">
-                  <a href="/gallery">NEW-BORN <br/> PHOTOGRAPHY</a>
+                  <a href="#/gallery">NEW-BORN <br/> PHOTOGRAPHY</a>
                   <a className="about-nav-description" 
-                      href="/gallery">Natural. Soulful. Forever</a>
+                      href="#/gallery">Natural. Soulful. Forever</a>
                   
               </div>
   
               <div className="about-nav-midtitle">
-                  <a href="/WhoIAm">Doha, Qatar</a>
+                  <a href="#/WhoIAm">Doha, Qatar</a>
                   <a className="about-nav-description" 
-                  href="/WhoIAm">Meet the Artist</a>
+                  href="#/WhoIAm">Meet the Artist</a>
               </div>
   
               <div className="about-nav-title">
-                  <a href="/portfolio" >PORTFOLIO</a>
+                  <a href="#/portfolio" >PORTFOLIO</a>
                   <a className="about-nav-description" 
-                  href="/portfolio" >Your story. Real moments. Unposed.</a>
+                  href="#/portfolio" >Your story. Real moments. Unposed.</a>
               </div>
           </div>
   
@@ -225,7 +225,7 @@ const About = () => {
                 <div className="testimonial-text">
                   <span>Words of Love from {testimonial.name}.</span>
                   <p>{testimonial.feedback}</p>
-                  <a href="/testimonial" className="testimonial-read-more">Read more</a>
+                  <a href="#/testimonial" className="testimonial-read-more">Read more</a>
                 </div>
               </div>
               <div className="testimonial-imagewrapper">
@@ -327,24 +327,24 @@ const UpperFooter = () => {
     }, []);
     return (
       <div className="footer-nav">
-        <a href="/portfolio" className="footer-link">PORTFOLIO</a>
+        <a href="#/portfolio" className="footer-link">PORTFOLIO</a>
           <div className="footer-submenu footer-submenu-common">
             {portCategories.map((category, index) => (
-              <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+              <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
                 {category.title}
               </a>
             ))}
           </div>
-        <a href="/whoiam">WHO I AM</a>
+        <a href="#/whoiam">WHO I AM</a>
           <a  className="footer-link">MORE INFO</a>
           <div className="footer-moreinfo-submenu footer-submenu-common">
-            <a href="/testimonial">Kind Words</a>
-            {/* <a href="/pricing">Pricing</a> */}
-            <a href="/contact">Book</a>
+            <a href="#/testimonial">Kind Words</a>
+            {/* <a href="#/pricing">Pricing</a> */}
+            <a href="#/contact">Book</a>
           </div>
-        <a href="/contact">CONTACT</a>
-        <a href="/Testimonial">TESTIMONIALS</a>
+        <a href="#/contact">CONTACT</a>
+        <a href="#/Testimonial">TESTIMONIALS</a>
       </div>
     );
   };
