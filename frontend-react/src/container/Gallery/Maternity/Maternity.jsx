@@ -34,7 +34,7 @@ return (
                 <a href="#/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+                      <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
                         {category.title}
                       </a>
                     ))}
@@ -135,9 +135,7 @@ const UpperMaternity = () => {
           columnClassName="my-masonry-grid_column"
         >
           {maternityImages.map((item, index) => (
-            <div
-              key={index}
-              className="masonry-item"
+            <div key={index} className="masonry-item"
               onClick={() => {
                 setSelectedImage(index);
                 setIsModalOpen(true);
@@ -232,7 +230,7 @@ const UpperFooter  = () => {
       <a href="#/portfolio" className="footer-link">PORTFOLIO</a>
         <div className="footer-submenu footer-submenu-common">
           {portCategories.map((category, index) => (
-            <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+            <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
               {category.title}
             </a>
           ))}

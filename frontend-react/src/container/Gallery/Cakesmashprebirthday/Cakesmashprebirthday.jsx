@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { images } from '../../../constants';
 import { IoIosArrowBack, IoIosArrowForward,IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
+import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { urlFor, client } from '../../../client';
 import Slider from 'react-slick';
@@ -32,7 +33,7 @@ return (
                 <a href="#/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+                      <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
                         {category.title}
                       </a>
@@ -93,68 +94,10 @@ function PrevArrow(props) {
   );
 }
 
-// const UpperCakesmash = () => {
-//   const [Cakesmash, setCakesmash] = useState([]);
-//   const sliderRef = useRef(); 
-//   const goToNext = () => sliderRef.current.slickNext();
-//   const goToPrevious = () => sliderRef.current.slickPrev();
-  
-//   useEffect(() => {
-//     const query = `*[_type == "cakesmash"]`;
-//     client.fetch(query)
-//       .then((data) => {
-//         setCakesmash(data);
-//       })
-//       .catch(console.error);
-//   }, []);
-
-//   if (!Cakesmash.length) {
-//     return <div>Loading Cakesmash...</div>;
-//   }
-
-//   const settings = {
-//     dots: false,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     autoplay: false,
-//     nextArrow: <NextArrow />,
-//     prevArrow: <PrevArrow />
-//   };
-//   return (
-//     <div className="cakesmash-slider">
-//     <div className="cakesmash-headline">
-//       <p className="cakesmash-headline_title">"Stop looking and book her. No one else compares!"</p>
-//       <p className="cakesmash-headline_author"> - Nikhil & Sayli</p>
-//     </div>
-//       <Slider ref={sliderRef} {...settings} className="cakesmash-slider">
-//         {Cakesmash.map((cakesmash, index) => (
-//           <div key={index} className="cakesmash-slide">
-//             <div className="cakesmash-content">
-//               <div className="cakesmash-text-content">
-//                 <p className="cakesmash-author">{cakesmash.name}</p>
-//                 <p className="cakesmash-quote">"{cakesmash.feedback}"</p>
-//               </div>
-//               <div className="cakesmash-image">
-//                 {cakesmash.imgUrl && (               
-//                   <img src={urlFor(cakesmash.imgUrl).url()} alt={`${cakesmash.name}'s cakesmash`} />
-//                 )}
-//               </div>
-//             </div>
-//           </div>
-          
-//         ))}
-//       </Slider>
-//       <div className="cakesmash-navigation">
-//         <HiOutlineArrowNarrowLeft onClick={goToPrevious} />
-//         <HiOutlineArrowNarrowRight onClick={goToNext} />
-//       </div>
-//     </div>
-//   );
-//   };
   const UpperCakesmash = () => {
     const [cakesmashImages, setcakesmashImages] = useState([]);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
   
     useEffect(() => {
       // Use the correct schema type name
@@ -166,6 +109,11 @@ function PrevArrow(props) {
         .catch(console.error);
     }, []);
   
+    const closeModal = () => {
+      setIsModalOpen(false);
+      setSelectedImage(null);
+    };
+
     if (!cakesmashImages.length) {
       return <div>Loading Cakesmash Gallery...</div>;
     }
@@ -176,8 +124,9 @@ function PrevArrow(props) {
       1100: 2,
       700: 1,
     };
-  
+
     return (
+      <>
       <div className="masonry-gallery">
         <Masonry
           breakpointCols={breakpointColumnsObj}
@@ -185,7 +134,12 @@ function PrevArrow(props) {
           columnClassName="my-masonry-grid_column"
         >
           {cakesmashImages.map((item, index) => (
-            <div key={index} className="masonry-item">
+            <div key={index} className="masonry-item"
+              onClick={() => {
+                setSelectedImage(index);
+                setIsModalOpen(true);
+              }}
+            >
               {item.imgUrl && (
                 <img 
                   loading="lazy"
@@ -198,6 +152,35 @@ function PrevArrow(props) {
           ))}
         </Masonry>
       </div>
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <button className="modal-arrow left" onClick={(e) => {
+            e.stopPropagation();
+            setSelectedImage((prev) =>
+              prev === 0 ? cakesmashImages.length - 1 : prev - 1
+            );
+          }}>
+            <MdArrowBackIos  />
+          </button>
+  
+          <img
+            src={urlFor(cakesmashImages[selectedImage].imgUrl).width(1600).quality(90).url()}
+            alt="Enlarged"
+            className="modal-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+  
+          <button className="modal-arrow right" onClick={(e) => {
+            e.stopPropagation();
+            setSelectedImage((prev) =>
+              prev === cakesmashImages.length - 1 ? 0 : prev + 1
+            );
+          }}>
+            <MdArrowForwardIos />
+          </button>
+        </div>
+      )}
+    </>
     );
   };
 
@@ -253,7 +236,7 @@ const UpperFooter  = () => {
       <a href="#/portfolio" className="footer-link">PORTFOLIO</a>
         <div className="footer-submenu footer-submenu-common">
           {portCategories.map((category, index) => (
-            <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+            <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
               {category.title}
             </a>

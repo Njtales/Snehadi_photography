@@ -141,11 +141,11 @@ const About = () => {
               <div className="about-aboutme-wrapper">
                   <div className="about-aboutme-textwrapper">
                       <div className="about-aboutme-text">
-                          <span>Hello, I'm Snehal.</span>
+                          <span>Short intro.</span>
                           <p>
-                            Motherhood is a story of fleeting moments- quiet anticipation, tender first embraces, and the beautiful chaos of family life. My work is about preserving these moments with a soft, film-like aesthetic that feels timeless from the very first glance. <br/><br/>
-                            With a relaxed and effortless approach, I create images that are elegant yet deeply personal- where the focus is on connection, not posing. Whether in the glow of pregnancy or the delicate early days of newborn life, I capture the essence of your family in a way that is both artistic and true to you.<br/><br/>
-                            Sessions take place in the comfort of your home, where your love naturally unfolds. If you're looking for photography that is understated, emotive, and beautifully crafted, I'd love to create something unforgettable for you.
+                          I'm Snehal - proud mum to two beautiful daughters, certified baby snuggler, and your friendly professional newborn photographer with over 6 years of experience capturing life’s tiniest, sweetest moments.<br/><br/>
+                          Based in Doha, Qatar I specialise in newborn photography, baby milestone sessions, cake smash sessions and maternity portraits that are full of love, laughter, and a little bit of magic. I do offer indoor and outdoor photo sessions in Doha Qatar.<br/><br/>
+                          Being a mum myself, I know how fast these precious moments fly by. That’s why I create custom newborn photoshoots that are gentle, safe, and full of heart—tailored to reflect your baby’s unique story.
                           </p>
                       </div>
                   </div>

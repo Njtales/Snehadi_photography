@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { images } from '../../../constants';
+import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
+
 import { IoIosArrowBack, IoIosArrowForward,IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { urlFor, client } from '../../../client';
@@ -33,7 +35,7 @@ return (
                 <a href="#/Portfolio" className="PageHeader-link">PORTFOLIO</a>
                   <div className="PageHeader-submenu">
                     {portCategories.map((category, index) => (
-                      <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+                      <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
                         {category.title}
                       </a>
@@ -96,6 +98,8 @@ function PrevArrow(props) {
 
   const UpperFamily = () => {
     const [familyImages, setFamilyImages] = useState([]);
+      const [selectedImage, setSelectedImage] = useState(null);
+      const [isModalOpen, setIsModalOpen] = useState(false);
   
     useEffect(() => {
       // Use the correct schema type name
@@ -106,6 +110,11 @@ function PrevArrow(props) {
         })
         .catch(console.error);
     }, []);
+
+    const closeModal = () => {
+      setIsModalOpen(false);
+      setSelectedImage(null);
+    };
   
     if (!familyImages.length) {
       return <div>Loading Family Gallery...</div>;
@@ -119,6 +128,7 @@ function PrevArrow(props) {
     };
   
     return (
+      <>
       <div className="masonry-gallery">
         <Masonry
           breakpointCols={breakpointColumnsObj}
@@ -126,7 +136,12 @@ function PrevArrow(props) {
           columnClassName="my-masonry-grid_column"
         >
           {familyImages.map((item, index) => (
-            <div key={index} className="masonry-item">
+            <div key={index} className="masonry-item"
+              onClick={() => {
+                setSelectedImage(index);
+                setIsModalOpen(true);
+              }}
+            >
               {item.imgUrl && (
                 <img 
                   loading="lazy"
@@ -139,6 +154,35 @@ function PrevArrow(props) {
           ))}
         </Masonry>
       </div>
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <button className="modal-arrow left" onClick={(e) => {
+            e.stopPropagation();
+            setSelectedImage((prev) =>
+              prev === 0 ? familyImages.length - 1 : prev - 1
+            );
+          }}>
+            <MdArrowBackIos  />
+          </button>
+  
+          <img
+            src={urlFor(familyImages[selectedImage].imgUrl).width(1600).quality(90).url()}
+            alt="Enlarged"
+            className="modal-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+  
+          <button className="modal-arrow right" onClick={(e) => {
+            e.stopPropagation();
+            setSelectedImage((prev) =>
+              prev === familyImages.length - 1 ? 0 : prev + 1
+            );
+          }}>
+            <MdArrowForwardIos />
+          </button>
+        </div>
+      )}
+    </>
     );
   };
 
@@ -194,7 +238,7 @@ const UpperFooter  = () => {
       <a href="#/portfolio" className="footer-link">PORTFOLIO</a>
         <div className="footer-submenu footer-submenu-common">
           {portCategories.map((category, index) => (
-            <a href={`/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+            <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
               {category.title}
             </a>
