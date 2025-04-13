@@ -1,0 +1,151 @@
+
+.newborn-slider { 
+  padding: 70px 0 50px 0;
+  .newborn-headline {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--darkgrey-color);
+    .newborn-headline_author {
+      margin: 3% 0 0 40%;
+      font-size: 1.8rem;
+    }
+  }
+  .newborn-slide {
+    margin: 3% 0 0 0;
+    display: flex;
+    align-items: center;
+    // background-color: var(--offwhite-color);
+  .newborn-content {
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-playfair-display);
+    align-items: center;
+    margin: auto;
+    padding: 30px 0 30px 0; 
+
+    .newborn-text-content {
+      
+      justify-content: center;
+      width: 50%; 
+      margin:  0 5% 0 10%;
+      color: var(--darkgrey-color);
+
+      .newborn-quote {
+        font-family: var(--font-playfair-display);
+        font-size: 1.3rem;
+        margin: 4rem 0rem 1rem 0rem; 
+      }
+      
+      .newborn-author {
+        font-family: var(--font-playfair-display);
+        text-align: left;    
+        font-size: 2rem;
+        margin: 0rem 0rem 7rem 0rem; 
+        display: block; 
+      }
+    }
+    .newborn-image {
+      width: 50%;
+      img {
+        width: auto;
+        max-height: 600px; 
+        display: block; 
+      }
+    }
+  }
+}
+}
+.masonry-gallery {
+  padding: 4% 10%;
+  // max-width: 1400px;
+  margin: 0 auto;
+
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0.5rem;
+  }
+}
+
+/* Masonry grid container */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -1rem; /* Adjust gutter */
+  width: auto;
+}
+
+/* Masonry grid column */
+.my-masonry-grid_column {
+  padding-left: 1.5%; /* Same as gutter size */
+  background-clip: padding-box;
+}
+
+/* Each masonry item */
+.masonry-item {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 8px;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.04);
+      border-radius: 6px;
+    }
+    // display: block;
+    // border-radius: 8px;
+  }
+
+  .image-title {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+}
+
+
+.newborn-navigation {
+  display: flex;
+  justify-content: center; // Center the arrows horizontally
+  padding-bottom: 150px;
+  color: var(--darkgrey-color);
+  svg {
+    cursor: pointer; // Changes the cursor when hovering over the arrows
+    margin: 0 10px; // Adds space between the arrows
+    width: 20px; // Sets a width for the icons
+    height: 20px; // Sets a height for the icons
+
+    &:hover {
+      color: var(--grey-color); // Change color on hover, adjust as needed
+    }
+  }
+}
+
+
+.newborn-navigation {
+  display: flex;
+  justify-content: center; // Center the arrows horizontally
+  padding-bottom: 150px;
+  color: var(--darkgrey-color);
+  svg {
+    cursor: pointer; // Changes the cursor when hovering over the arrows
+    margin: 0 10px; // Adds space between the arrows
+    width: 20px; // Sets a width for the icons
+    height: 20px; // Sets a height for the icons
+
+    &:hover {
+      color: var(--grey-color); // Change color on hover, adjust as needed
+    }
+  }
+}
+
+
+

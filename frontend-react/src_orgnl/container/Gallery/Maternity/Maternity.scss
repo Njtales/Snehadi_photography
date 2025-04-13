@@ -1,0 +1,170 @@
+
+.maternity-slider { 
+  padding: 70px 0 50px 0;
+  .maternity-headline {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--darkgrey-color);
+    .maternity-headline_author {
+      margin: 3% 0 0 40%;
+      font-size: 1.8rem;
+    }
+  }
+
+  .masonry-gallery {
+    padding: 2rem 1rem;
+  }
+  
+  .my-masonry-grid {
+    display: flex;
+    margin-left: -1rem; /* gutter offset */
+    width: auto;
+  }
+  
+  .my-masonry-grid_column {
+    padding-left: 1rem;
+    background-clip: padding-box;
+  }
+  
+  .my-masonry-grid_column img {
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+
+  
+  .maternity-slide {
+    margin: 3% 0 0 0;
+    display: flex;
+    align-items: center;
+    // background-color: var(--offwhite-color);
+  .maternity-content {
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-playfair-display);
+    align-items: center;
+    margin: auto;
+    padding: 30px 0 30px 0; 
+
+    .maternity-text-content {
+      
+      justify-content: center;
+      width: 50%; 
+      margin:  0 5% 0 10%;
+      color: var(--darkgrey-color);
+
+      .maternity-quote {
+        font-family: var(--font-playfair-display);
+        font-size: 1.3rem;
+        margin: 4rem 0rem 1rem 0rem; 
+      }
+      
+      .maternity-author {
+        font-family: var(--font-playfair-display);
+        text-align: left;    
+        font-size: 2rem;
+        margin: 0rem 0rem 7rem 0rem; 
+        display: block; 
+      }
+    }
+    .maternity-image {
+      width: 50%;
+      img {
+        width: auto;
+        max-height: 600px; 
+        display: block; 
+      }
+    }
+  }
+}
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255,255,255, 0.90);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.modal-image {
+  max-width: 60%;
+  max-height: 75%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px color(var(--darkgrey-color));
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: var(--grey-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 21;
+  padding: 0 10%;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+    color: var(--grey-color);
+  }
+}
+
+
+
+.maternity-navigation {
+  display: flex;
+  justify-content: center; // Center the arrows horizontally
+  padding-bottom: 150px;
+  color: var(--darkgrey-color);
+  svg {
+    cursor: pointer; // Changes the cursor when hovering over the arrows
+    margin: 0 10px; // Adds space between the arrows
+    width: 20px; // Sets a width for the icons
+    height: 20px; // Sets a height for the icons
+
+    &:hover {
+      color: var(--grey-color); // Change color on hover, adjust as needed
+    }
+  }
+}
+
+
+.maternity-navigation {
+  display: flex;
+  justify-content: center; // Center the arrows horizontally
+  padding-bottom: 150px;
+  color: var(--darkgrey-color);
+  svg {
+    cursor: pointer; // Changes the cursor when hovering over the arrows
+    margin: 0 10px; // Adds space between the arrows
+    width: 20px; // Sets a width for the icons
+    height: 20px; // Sets a height for the icons
+
+    &:hover {
+      color: var(--grey-color); // Change color on hover, adjust as needed
+    }
+  }
+}
+
+
+

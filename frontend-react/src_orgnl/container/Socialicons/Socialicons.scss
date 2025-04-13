@@ -1,0 +1,52 @@
+.floating-social-icons {
+  position: fixed;
+  bottom: 3%;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  z-index: 9999;
+
+  a {
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    // 1. Facebook - dark blue
+    &:nth-child(1) {
+      color: #1877F2;
+    }
+
+    // 2. Instagram - gradient effect not supported in icon, use magenta/pink base
+    &:nth-child(2) {
+      color: #E4405F;
+    }
+
+    // 3. Phone - light navy
+    &:nth-child(3) {
+      color: #0077B5;
+    }
+
+    // 4. WhatsApp - green
+    &:nth-child(4) {
+      color: #25D366;
+    }
+
+    // 5. Email - classic envelope blue
+    &:nth-child(5) {
+      color: #4285F4;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .floating-social-icons {
+    display: none;
+  }
+}
+

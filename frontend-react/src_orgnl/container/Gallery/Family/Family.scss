@@ -1,0 +1,95 @@
+
+.family-slider { 
+  padding: 70px 0 50px 0;
+  .family-headline {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--darkgrey-color);
+    .family-headline_author {
+      margin: 3% 0 0 40%;
+      font-size: 1.8rem;
+    }
+  }
+  .family-slide {
+    margin: 3% 0 0 0;
+    display: flex;
+    align-items: center;
+    // background-color: var(--offwhite-color);
+  .family-content {
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-playfair-display);
+    align-items: center;
+    margin: auto;
+    padding: 30px 0 30px 0; 
+
+    .family-text-content {
+      
+      justify-content: center;
+      width: 50%; 
+      margin:  0 5% 0 10%;
+      color: var(--darkgrey-color);
+
+      .family-quote {
+        font-family: var(--font-playfair-display);
+        font-size: 1.3rem;
+        margin: 4rem 0rem 1rem 0rem; 
+      }
+      
+      .family-author {
+        font-family: var(--font-playfair-display);
+        text-align: left;    
+        font-size: 2rem;
+        margin: 0rem 0rem 7rem 0rem; 
+        display: block; 
+      }
+    }
+    .family-image {
+      width: 50%;
+      img {
+        width: auto;
+        max-height: 600px; 
+        display: block; 
+      }
+    }
+  }
+}
+}
+
+.family-navigation {
+  display: flex;
+  justify-content: center; // Center the arrows horizontally
+  padding-bottom: 150px;
+  color: var(--darkgrey-color);
+  svg {
+    cursor: pointer; // Changes the cursor when hovering over the arrows
+    margin: 0 10px; // Adds space between the arrows
+    width: 20px; // Sets a width for the icons
+    height: 20px; // Sets a height for the icons
+
+    &:hover {
+      color: var(--grey-color); // Change color on hover, adjust as needed
+    }
+  }
+}
+
+
+.family-navigation {
+  display: flex;
+  justify-content: center; // Center the arrows horizontally
+  padding-bottom: 150px;
+  color: var(--darkgrey-color);
+  svg {
+    cursor: pointer; // Changes the cursor when hovering over the arrows
+    margin: 0 10px; // Adds space between the arrows
+    width: 20px; // Sets a width for the icons
+    height: 20px; // Sets a height for the icons
+
+    &:hover {
+      color: var(--grey-color); // Change color on hover, adjust as needed
+    }
+  }
+}
+
+
+
