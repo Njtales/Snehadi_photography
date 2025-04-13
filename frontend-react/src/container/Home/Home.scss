@@ -1,268 +1,345 @@
-// Mixins
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// // Mixins
+// @mixin flex-center {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-// Reset margin and padding for specific elements
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  body, img {
-    cursor: default;
-    -webkit-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none; 
-  }
-}
+// // Reset margin and padding for specific elements
+// body, html {
+//   margin: 0;
+//   padding: 0;
+//   height: 100%;
+//   body, img {
+//     cursor: default;
+//     -webkit-user-select: none; 
+//     -moz-user-select: none; 
+//     -ms-user-select: none; 
+//     user-select: none; 
+//   }
+// }
+
+// .hero-container {
+//   width: 100vw;
+//   height: 100vh;
+//   overflow: hidden;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+  
+//   .home-hero {
+//   min-height: 100vh;
+//   width: 100%;
+//   overflow: hidden;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-between;
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+
+//     width: 100%;
+//     height: 100vh;
+//     position: relative;
+//     color: var(--darkblack-color);
+//     @include flex-center;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     background-size: cover;
+//     background-position: center;
+//     background-repeat: no-repeat;  
+
+//     .home-navigation {
+//       width: 100%;
+//       position: relative;
+//       top: 0;
+//       left: 0;
+//       right: 0;
+//       // padding: 20px;
+//       padding: 1.5%;
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+
+//       .home-left-nav,
+//       .home-right-nav {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: flex-start;
+//         margin: 4% 0 0 0;
+//         font-size: 1.0rem;
+//         letter-spacing: 1.6px;
+//         font-family: var(--font-playfair-display);
+//         z-index: 5;
+      
+//         .home-navsubmenu-link {
+//           text-decoration: none;
+//           color: var(--darkblack-color);
+//           font-weight: bold;
+//           margin-top: -4%;
+//           margin-bottom: 11%;
+//           transition: color 0.3s ease;
+//           // position: relative;
+//           z-index: 10;
+//           padding: 5% 90px 5% 60px;     ///////// align this for better view but hover don't work
+//         }
+      
+//         .home-navigation-submenu {
+//           visibility: hidden;
+//           opacity: 0;
+//           transition: opacity 0.3s ease, transform 0.3s ease;
+//           position: absolute;
+//           background-color: var(--offwhite-color);
+//           z-index: 5;
+//           margin: 0.7% 0 0 0.3%;
+//           padding: 1% 3%;
+//           width: 20%;
+//           text-align: center;
+//           transform: translateY(-10px);
+      
+//           a {
+//             text-decoration: none;
+//             color: var(--darkgrey-color);
+//             display: block;
+//             margin: 4% 0;
+//             transition: background-color 0.3s ease;
+      
+//             &:hover {
+//               background-color: var(--offwhite-color);
+//             }
+//           }
+//         }
+      
+//         /* ✅ Keep submenu visible when hovering over both the link and the submenu */
+//         .home-navsubmenu-link:hover + .home-navigation-submenu,
+//         .home-navigation-submenu:hover {
+//           background-color: var(--offwhite-color);
+//           visibility: visible;
+//           opacity: 1;
+//           transform: translateY(0);
+//         }
+      
+//         /* 🔥 Apply Different Positions for Each Submenu */
+//         .submenu-portfolio {
+//           top: 23%;
+//           left:16%;
+//         }
+        
+//         .submenu-moreinfo {
+//           top: 63%;
+//           left: 16%;
+//         }
+//       }
+
+//       .home-right-nav {
+//         .home-navsubmenu-link {
+//           padding: 0 0 0 0;
+//           margin: 0 0 40px 0;
+//         }
+//       }
+      
+//         .home-right-nav {
+//           // margin: 60px 0 0 300px;
+//           margin-right: 2%;
+//           align-items: flex-end;
+//         }
+
+//         .home-svg-left-nav {
+//           position: absolute;
+//           width: 200px; 
+//           height: 200px; 
+//           margin-left: 3%;
+//           margin-top: 1%;
+//           z-index: 1;
+//         }
+//         .home-svg-right-nav {
+//           position: absolute;
+//           width: 200px; 
+//           height: 200px; 
+//           margin-left: -5%;
+//           margin-top: -4%;
+//           z-index: 1;
+//         }
+        
+//       .home-center-nav {
+//         position: relative;
+//         left: 40%;
+//         bottom: -220%;
+//         transform: translateX(-50%);
+    
+//         h1 {
+//           font-size: 2em; 
+//           font-family: var(--font-playfair-display);
+//           text-align: center;
+//           color: var(--darkblack-color);
+//           span{
+//             font-size: 1.3em;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .PageHeaderhome-center-nav {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center; 
+//   text-align: center; 
+//   font-family: var(--font-Kalnia);
+//   letter-spacing: 1.6px;
+//   z-index: 5;
+//   position: absolute;
+//   top: 150%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+
+//   .PageHeaderhome-center-nav-link {
+//     color: var(--darkgrey-color);
+//     text-decoration: none;
+
+//     .PageHeaderhome-center-nav-logo {
+//       height: 250px;
+//       width: auto;
+//       // margin-top: 140%;
+//     }
+
+//     h1, span {
+//       text-align: center;
+//       color: var(--darkgrey-color);
+//       line-height: 1; 
+//     }
+
+//     span {
+//       font-size: 1.5em;
+//       display: block; 
+//     }
+//   }
+// }    
+
+// .home-scroll-indicator {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   position: absolute;
+//   bottom: -180%; // Adjust if necessary
+//   left: 50%;
+//   transform: translateX(-50%);
+
+//   span {
+//     text-transform: uppercase;
+//     font-size: 0.8em;
+//     color: var(--offwhite-color); 
+//   }
+// }
+// .home-arrowdown {
+//   display: inline-block;
+//   color: var(--offwhite-color);
+//   margin-top: 10px;
+//   animation: bounceArrow 1s infinite; 
+// }
+// @keyframes bounceArrow {
+//   0%, 100% {
+//     transform: translateY(0);
+//   }
+//   50% {
+//     transform: translateY(10px);
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .home-navigation {
+//     flex-direction: row;
+//     justify-content: space-between;
+
+//     .home-left-nav,
+//     .home-right-nav {
+//       flex-direction: row;
+//     }
+
+//     .home-center-nav {
+//       h1 {
+//         font-size: 1.5em; 
+//       }
+//     }
+//   }
+// }
 
 .hero-container {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  .home-hero {
+  background-color: var(--offwhite-color);
   min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+}
 
+.header-logo {
+  max-width: 250px;
+  img {
     width: 100%;
-    height: 100vh;
-    position: relative;
-    color: var(--darkblack-color);
-    @include flex-center;
-    flex-direction: column;
-    justify-content: space-between;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;  
-
-    .home-navigation {
-      width: 100%;
-      position: relative;
-      top: 0;
-      left: 0;
-      right: 0;
-      // padding: 20px;
-      padding: 1.5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .home-left-nav,
-      .home-right-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 4% 0 0 0;
-        font-size: 1.0rem;
-        letter-spacing: 1.6px;
-        font-family: var(--font-playfair-display);
-        z-index: 5;
-      
-        .home-navsubmenu-link {
-          text-decoration: none;
-          color: var(--darkblack-color);
-          font-weight: bold;
-          margin-top: -4%;
-          margin-bottom: 11%;
-          transition: color 0.3s ease;
-          // position: relative;
-          z-index: 10;
-          padding: 5% 90px 5% 60px;     ///////// align this for better view but hover don't work
-        }
-      
-        .home-navigation-submenu {
-          visibility: hidden;
-          opacity: 0;
-          transition: opacity 0.3s ease, transform 0.3s ease;
-          position: absolute;
-          background-color: var(--offwhite-color);
-          z-index: 5;
-          margin: 0.7% 0 0 0.3%;
-          padding: 1% 3%;
-          width: 20%;
-          text-align: center;
-          transform: translateY(-10px);
-      
-          a {
-            text-decoration: none;
-            color: var(--darkgrey-color);
-            display: block;
-            margin: 4% 0;
-            transition: background-color 0.3s ease;
-      
-            &:hover {
-              background-color: var(--offwhite-color);
-            }
-          }
-        }
-      
-        /* ✅ Keep submenu visible when hovering over both the link and the submenu */
-        .home-navsubmenu-link:hover + .home-navigation-submenu,
-        .home-navigation-submenu:hover {
-          background-color: var(--offwhite-color);
-          visibility: visible;
-          opacity: 1;
-          transform: translateY(0);
-        }
-      
-        /* 🔥 Apply Different Positions for Each Submenu */
-        .submenu-portfolio {
-          top: 23%;
-          left:16%;
-        }
-        
-        .submenu-moreinfo {
-          top: 63%;
-          left: 16%;
-        }
-      }
-
-      .home-right-nav {
-        .home-navsubmenu-link {
-          padding: 0 0 0 0;
-          margin: 0 0 40px 0;
-        }
-      }
-      
-        .home-right-nav {
-          // margin: 60px 0 0 300px;
-          margin-right: 2%;
-          align-items: flex-end;
-        }
-
-        .home-svg-left-nav {
-          position: absolute;
-          width: 200px; 
-          height: 200px; 
-          margin-left: 3%;
-          margin-top: 1%;
-          z-index: 1;
-        }
-        .home-svg-right-nav {
-          position: absolute;
-          width: 200px; 
-          height: 200px; 
-          margin-left: -5%;
-          margin-top: -4%;
-          z-index: 1;
-        }
-        
-      .home-center-nav {
-        position: relative;
-        left: 40%;
-        bottom: -220%;
-        transform: translateX(-50%);
-    
-        h1 {
-          font-size: 2em; 
-          font-family: var(--font-playfair-display);
-          text-align: center;
-          color: var(--darkblack-color);
-          span{
-            font-size: 1.3em;
-          }
-        }
-      }
-    }
+    height: auto;
   }
 }
 
-.PageHeaderhome-center-nav {
+.top-nav {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center; 
-  text-align: center; 
-  font-family: var(--font-Kalnia);
-  letter-spacing: 1.6px;
-  z-index: 5;
-  position: absolute;
-  top: 150%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  gap: 5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
 
-  .PageHeaderhome-center-nav-link {
+  a {
     color: var(--darkgrey-color);
     text-decoration: none;
 
-    .PageHeaderhome-center-nav-logo {
-      height: 250px;
-      width: auto;
-      // margin-top: 140%;
-    }
-
-    h1, span {
-      text-align: center;
-      color: var(--darkgrey-color);
-      line-height: 1; 
-    }
-
-    span {
-      font-size: 1.5em;
-      display: block; 
+    &:hover {
+      transition: color 0.5s ease;
+      // text-decoration: underline;
     }
   }
-}    
+}
 
-.home-scroll-indicator {
+.hero-intro-vertical {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  bottom: -180%; // Adjust if necessary
-  left: 50%;
-  transform: translateX(-50%);
+  padding: 2rem;
 
-  span {
-    text-transform: uppercase;
-    font-size: 0.8em;
-    color: var(--offwhite-color); 
+  .intro-image-horizontal {
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 5;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    object-fit: cover;
   }
-}
-.home-arrowdown {
-  display: inline-block;
-  color: var(--offwhite-color);
-  margin-top: 10px;
-  animation: bounceArrow 1s infinite; 
-}
-@keyframes bounceArrow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
+
+  .intro-text-below {
+    max-width: 900px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--darkgrey-color);
+    font-family: var(--font-playfair-display);
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
   }
 }
 
 @media (max-width: 768px) {
-  .home-navigation {
-    flex-direction: row;
-    justify-content: space-between;
-
-    .home-left-nav,
-    .home-right-nav {
-      flex-direction: row;
+  .hero-intro-vertical {
+    .intro-image-horizontal {
+      width: 100%;
     }
 
-    .home-center-nav {
-      h1 {
-        font-size: 1.5em; 
-      }
+    .intro-text-below {
+      padding: 0 1rem;
     }
   }
 }

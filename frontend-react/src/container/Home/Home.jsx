@@ -18,100 +18,164 @@ import './HomeContact.scss';
 import Socialicons from '../../container/Socialicons/Socialicons';
 
   // ============================================== Home Component ==============================================
-const Home = () => {
-    const [homes, setHomes] = useState([]);
-    const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
-    const timeoutRef = useRef(null); 
-    const [portCategories, setPortCategories] = useState([]);
+// const Home = () => {
+//     const [homes, setHomes] = useState([]);
+//     const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
+//     const timeoutRef = useRef(null); 
+//     const [portCategories, setPortCategories] = useState([]);
   
-    useEffect(() => {
-        const query = '*[_type == "home"]';
+//     useEffect(() => {
+//         const query = '*[_type == "home"]';
   
-        client.fetch(query).then((data) => {
-            if (Array.isArray(data)) {
-                setHomes(data);
-            }
-        });
-    }, []);
+//         client.fetch(query).then((data) => {
+//             if (Array.isArray(data)) {
+//                 setHomes(data);
+//             }
+//         });
+//     }, []);
 
-    useEffect(() => {
-      const query = '*[_type == "portfoliocategory"]';
+//     useEffect(() => {
+//       const query = '*[_type == "portfoliocategory"]';
   
-      client.fetch(query).then((data) => {
-        setPortCategories(data);
-      });
-    }, []);
+//       client.fetch(query).then((data) => {
+//         setPortCategories(data);
+//       });
+//     }, []);
   
-    useEffect(() => {
-      const nextBackground = () => {
-        setCurrentBackgroundIndex((prevIndex) => 
-          prevIndex === homes.length - 1 ? 0 : prevIndex + 1
-        );
-      };
-      timeoutRef.current = setTimeout(nextBackground, 6000);
-      return () => clearTimeout(timeoutRef.current);
-    }, [currentBackgroundIndex, homes.length]);
+//     useEffect(() => {
+//       const nextBackground = () => {
+//         setCurrentBackgroundIndex((prevIndex) => 
+//           prevIndex === homes.length - 1 ? 0 : prevIndex + 1
+//         );
+//       };
+//       timeoutRef.current = setTimeout(nextBackground, 6000);
+//       return () => clearTimeout(timeoutRef.current);
+//     }, [currentBackgroundIndex, homes.length]);
 
-    const backgroundStyle = homes.length > 0 ? { 
-      backgroundImage: `url(${urlFor(homes[currentBackgroundIndex].imgUrl).url()})` 
-    } : {};
+//     const backgroundStyle = homes.length > 0 ? { 
+//       backgroundImage: `url(${urlFor(homes[currentBackgroundIndex].imgUrl).url()})` 
+//     } : {};
   
-  return (
-    <>
-    <div className="hero-container">
-      <div className="home-hero" style={backgroundStyle}>       
-        <div className="home-navigation">
-          <img 
-            src={images.home_left_nav_svg}
-            alt="home_left_nav_svg"
-            className="home-svg-left-nav" />
-            <div className="home-left-nav">            
-              <a href="#/Portfolio" className="home-navsubmenu-link">PORTFOLIO</a>
-              {/* <div className="footer-submenu footer-submenu-common"></div> */}
-                <div className="home-navigation-submenu submenu-portfolio">
-                  {portCategories.map((category, index) => (
-                    <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
+//   return (
+//     <>
+//     <div className="hero-container">
+//       <div className="home-hero" style={backgroundStyle}>       
+//         <div className="home-navigation">
+//           <img 
+//             src={images.home_left_nav_svg}
+//             alt="home_left_nav_svg"
+//             className="home-svg-left-nav" />
+//             <div className="home-left-nav">            
+//               <a href="#/Portfolio" className="home-navsubmenu-link">PORTFOLIO</a>
+//               {/* <div className="footer-submenu footer-submenu-common"></div> */}
+//                 <div className="home-navigation-submenu submenu-portfolio">
+//                   {portCategories.map((category, index) => (
+//                     <a href={`#/gallery/${category.title.replace(/\s+/g, '').replace(/\//g, '').toLowerCase()}`} key={index}>
 
-                      {category.title}
-                    </a>
-                  ))}
-                </div>
+//                       {category.title}
+//                     </a>
+//                   ))}
+//                 </div>
                   
-              <a href="#/WhoIAm" className="home-navsubmenu-link">WHO I AM</a>
-              <a  className="home-navsubmenu-link">MORE INFO</a>
-                    <div className="home-navigation-submenu submenu-moreinfo">
-                      <a href="#/testimonial">Kind Words</a>
-                      {/* <a href="#/pricing">Pricing</a> */}
-                      <a href="#/contact">Book</a>
-                    </div>
-            </div>
-            <div className="PageHeaderhome-center-nav">
-              <a href="#/" className="PageHeaderhome-center-nav-link">
-                <img 
-                  src={images.child_icon} // child_icon -- sj_logo
-                  alt="SNEHAL JATALE PHOTOGRAPHY"
-                  className="PageHeaderhome-center-nav-logo" />
-                {/* <h1>BABY BLISS</h1><span>STUDIO</span> */}
-                </a>
-            </div>
-          <div className="home-scroll-indicator">
-              <span>SCROLL FOR MORE</span>
-              <div className="home-arrowdown"><IoIosArrowDown/></div>
-          </div>
-          <div className="home-right-nav">
-              <img 
-              src={images.home_right_nav_svg}
-              alt="home_right_nav_svg"
-              className="home-svg-right-nav" />
-              <a href="#/contact" className="home-navsubmenu-link">CONTACT</a>
-              <a href="#/testimonial" className="home-navsubmenu-link">TESTIMONIALS</a>   {/* className="home-navsubmenu-link" */}
-          </div>
-        </div>
+//               <a href="#/WhoIAm" className="home-navsubmenu-link">WHO I AM</a>
+//               <a  className="home-navsubmenu-link">MORE INFO</a>
+//                     <div className="home-navigation-submenu submenu-moreinfo">
+//                       <a href="#/testimonial">Kind Words</a>
+//                       {/* <a href="#/pricing">Pricing</a> */}
+//                       <a href="#/contact">Book</a>
+//                     </div>
+//             </div>
+//             <div className="PageHeaderhome-center-nav">
+//               <a href="#/" className="PageHeaderhome-center-nav-link">
+//                 <img 
+//                   src={images.child_icon} // child_icon -- sj_logo
+//                   alt="SNEHAL JATALE PHOTOGRAPHY"
+//                   className="PageHeaderhome-center-nav-logo" />
+//                 {/* <h1>BABY BLISS</h1><span>STUDIO</span> */}
+//                 </a>
+//             </div>
+//           <div className="home-scroll-indicator">
+//               <span>SCROLL FOR MORE</span>
+//               <div className="home-arrowdown"><IoIosArrowDown/></div>
+//           </div>
+//           <div className="home-right-nav">
+//               <img 
+//               src={images.home_right_nav_svg}
+//               alt="home_right_nav_svg"
+//               className="home-svg-right-nav" />
+//               <a href="#/contact" className="home-navsubmenu-link">CONTACT</a>
+//               <a href="#/testimonial" className="home-navsubmenu-link">TESTIMONIALS</a>   {/* className="home-navsubmenu-link" */}
+//           </div>
+//         </div>
+//       </div>
+//       </div>
+//     </>
+//     );  
+//   }
+
+const Home = () => {
+  const [homes, setHomes] = useState([]);
+  const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    const query = '*[_type == "home"]';
+    client.fetch(query).then((data) => {
+      if (Array.isArray(data)) {
+        setHomes(data);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    const nextBackground = () => {
+      setCurrentBackgroundIndex((prevIndex) =>
+        prevIndex === homes.length - 1 ? 0 : prevIndex + 1
+      );
+    };
+    timeoutRef.current = setTimeout(nextBackground, 6000);
+    return () => clearTimeout(timeoutRef.current);
+  }, [currentBackgroundIndex, homes.length]);
+
+  const currentImageUrl = homes.length > 0 ? urlFor(homes[currentBackgroundIndex].imgUrl).url() : '';
+
+  return (
+    <div className="hero-container">
+      <div className="header-logo">
+        <img src={images.child_icon} alt="Baby Bliss Studio Logo" />
       </div>
+
+      <div className="top-nav">
+        <a href="#/">Home</a>
+        <a href="#/portfolio">Portfolio</a>
+        <a href="#/testimonial">Testimonial</a>
+        <a href="#/whoiam">Who I am</a>
+        <a href="#/contact">Contact</a>
       </div>
-    </>
-    );  
-  }
+
+      <div className="hero-intro-vertical">
+    {homes.length > 0 && (
+      <img
+        src={urlFor(homes[currentBackgroundIndex].imgUrl).url()}
+        alt="Intro changing from Sanity"
+        className="intro-image-horizontal"
+      />
+    )}
+
+    <div className="intro-text-below">
+      <p>
+        Hi, I’m Snehal Jatale, a newborn photographer and proud mom of two beautiful girls.
+        My photography journey began 8 years ago, inspired by capturing the pure, tender
+        moments of early motherhood. I specialize in newborn, baby, and family photography,
+        creating timeless images filled with love, softness, and connection. Based in Doha
+        Qatar, I offer a calm, safe, and cozy experience for every little one and their family.
+      </p>
+    </div>
+  </div>
+    </div>
+  );
+};
+
 
 
   // ============================================== About Component ==============================================
