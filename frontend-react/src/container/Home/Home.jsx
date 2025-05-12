@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { MdEmail, MdPhone } from 'react-icons/md';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 import { images } from '../../constants';
 import { IoIosArrowBack, IoIosArrowForward,IoIosArrowDown, IoIosArrowRoundUp } from "react-icons/io";
@@ -207,7 +206,7 @@ const About = () => {
               <div className="about-aboutme-wrapper">
                   <div className="about-aboutme-textwrapper">
                       <div className="about-aboutme-text">
-                          <span>Short intro.</span>
+                          <span>Short about me!</span>
                           <p>
                           I'm Snehal - proud mum to two beautiful daughters, certified baby snuggler, and your friendly professional newborn photographer with over 6 years of experience capturing life’s tiniest, sweetest moments.<br/><br/>
                           Based in Doha, Qatar I specialise in newborn photography, baby milestone sessions, cake smash sessions and maternity portraits that are full of love, laughter, and a little bit of magic. I do offer indoor and outdoor photo sessions in Doha Qatar.<br/><br/>
@@ -232,24 +231,6 @@ const About = () => {
   };
 
   // ============================================== Testimonial Component ==============================================
-
-  // function NextArrow(props) {
-  //   const { onClick } = props;
-  //   return (
-  //     <div className="slick-next" onClick={onClick}>
-  //       {'>'} {/* You can replace these with your custom icons or images */}
-  //     </div>
-  //   );
-  // }
-  
-  // function PrevArrow(props) {
-  //   const { onClick } = props;
-  //   return (
-  //     <div className="slick-prev" onClick={onClick}>
-  //       {'<'} {/* You can replace these with your custom icons or images */}
-  //     </div>
-  //   );
-  // }
 
   const Testimonial = () => {
     const [testimonials, setTestimonials] = useState([]);
@@ -306,8 +287,8 @@ const About = () => {
           ))}
         </Slider>
           <div className="testimonial-navigation">
-              <IoIosArrowBack onClick={goToPrevious} />
-              <IoIosArrowForward onClick={goToNext} />
+              <FaArrowLeft onClick={goToPrevious} />
+              <FaArrowRight onClick={goToNext} />
             </div>
             </div>
     );

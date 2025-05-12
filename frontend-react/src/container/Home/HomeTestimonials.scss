@@ -74,11 +74,11 @@
   svg {
     cursor: pointer; // Changes the cursor when hovering over the arrows
     margin: 0 10px; // Adds space between the arrows
-    width: 20px; // Sets a width for the icons
-    height: 20px; // Sets a height for the icons
+    width: 15px; // Sets a width for the icons
+    height: 15px; // Sets a height for the icons
 
     &:hover {
-      color: var(--grey-color); // Change color on hover, adjust as needed
+      color: var(--darkgrey-color); // Change color on hover, adjust as needed
     }
   }
 }
